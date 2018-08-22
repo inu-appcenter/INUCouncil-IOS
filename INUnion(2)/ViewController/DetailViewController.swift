@@ -6,13 +6,11 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-import UIKit
+
+ import UIKit
 
 class DetailViewController: UIViewController, UITextViewDelegate
 {
-  
-    var getImage = UIImage()
-    
     var getTitle = String()
     var getTime = String()
     var getlocation = String()
@@ -25,32 +23,25 @@ class DetailViewController: UIViewController, UITextViewDelegate
      self.navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var titleText: UITextField!
-    @IBOutlet weak var NoticeLabel: UILabel!
-    @IBOutlet weak var imgImage: UIImageView!
-    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var timeText: UITextField!
     @IBOutlet weak var whereText: UITextField!
-    
+    @IBOutlet weak var textView: UITextView!
+   
     override func viewDidLoad() {
-      
         super.viewDidLoad()
         self.textView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
         let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
         statusBarView.backgroundColor = statusBarColor
         view.addSubview(statusBarView)
-        
-        imgImage.image = getImage
-      
         titleText.text! = getTitle
         timeText.text! = getTime
-        //whereText.text! = getlocation
+        whereText.text! = getlocation
         textView.text! = getcontents
-        
+   
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -103,3 +94,4 @@ class DetailViewController: UIViewController, UITextViewDelegate
 
 
 }
+ 

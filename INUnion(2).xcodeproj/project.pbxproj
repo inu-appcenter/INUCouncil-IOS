@@ -29,10 +29,10 @@
 		A56706DC2111FFEE00A66C81 /* PhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DB2111FFEE00A66C81 /* PhoneDirectoryViewController.swift */; };
 		A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DD2112001700A66C81 /* SettingViewController.swift */; };
 		A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DF211201E800A66C81 /* SearchMajorViewController.swift */; };
+		A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */; };
 		A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */; };
-		A5A92F78212CFA4E004AA994 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A92F77212CFA4E004AA994 /* CollectionViewCell.swift */; };
 		A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */; };
-		A5D3A952212C553A0042AD07 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A951212C553A0042AD07 /* TestViewController.swift */; };
+		A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */; };
 		A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */; };
 		A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */; };
 		A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */; };
@@ -68,10 +68,10 @@
 		A56706DB2111FFEE00A66C81 /* PhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A56706DD2112001700A66C81 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A56706DF211201E800A66C81 /* SearchMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMajorViewController.swift; sourceTree = "<group>"; };
+		A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoticeViewController.swift; sourceTree = "<group>"; };
-		A5A92F77212CFA4E004AA994 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
-		A5D3A951212C553A0042AD07 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoticeViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNoticeViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCalendarViewController.swift; sourceTree = "<group>"; };
 		A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPhoneDircetoryViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */,
 				A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */,
 				A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */,
-				A5A92F77212CFA4E004AA994 /* CollectionViewCell.swift */,
+				A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 				A56706D72111FE4500A66C81 /* NoticeViewController.swift */,
 				A56706D52111F0A200A66C81 /* LoginViewController.swift */,
 				A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */,
-				A5D3A951212C553A0042AD07 /* TestViewController.swift */,
+				A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -332,10 +332,10 @@
 				A56706C22111ED7700A66C81 /* ViewController.swift in Sources */,
 				A51D97D92114239500088FE2 /* NetworkModel.swift in Sources */,
 				A5E9DC5321217AE300EC8DA4 /* StudentSettingViewController.swift in Sources */,
+				A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */,
 				A56706DA2111FF3B00A66C81 /* CalendarViewController.swift in Sources */,
 				A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */,
 				68C55170211D941200D22DB4 /* SelectSecondMajorViewController.swift in Sources */,
-				A5A92F78212CFA4E004AA994 /* CollectionViewCell.swift in Sources */,
 				A558559821229813003EADE6 /* StudentDetailViewController.swift in Sources */,
 				A56706C02111ED7700A66C81 /* AppDelegate.swift in Sources */,
 				A56706D62111F0A200A66C81 /* LoginViewController.swift in Sources */,
@@ -345,7 +345,7 @@
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
 				A56706D82111FE4500A66C81 /* NoticeViewController.swift in Sources */,
 				A56706DC2111FFEE00A66C81 /* PhoneDirectoryViewController.swift in Sources */,
-				A5D3A952212C553A0042AD07 /* TestViewController.swift in Sources */,
+				A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */,
 				A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */,
 				A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */,
 				A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */,
@@ -499,17 +499,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U4K8TG474J;
 				INFOPLIST_FILE = "INUnion(2)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "LeeHJ.INUnion-2-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inu.INUION;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "INUnion(2)/INUnion(2)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -520,16 +522,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U4K8TG474J;
 				INFOPLIST_FILE = "INUnion(2)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "LeeHJ.INUnion-2-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inu.INUION;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "INUnion(2)/INUnion(2)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

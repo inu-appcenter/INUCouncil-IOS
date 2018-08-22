@@ -48,10 +48,7 @@ class StudentCalendarViewController: UIViewController, UITableViewDelegate, UITa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        
-        cell.imgImage.image = imageArr[indexPath.row] as? UIImage //tableviewcell에 지정한 이미지랑 라벨
-        cell.CellLabel.text! = name[indexPath.row] as! String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell") as! CalendarTableViewCell
         
         return cell
     }
@@ -80,5 +77,4 @@ class StudentCalendarViewController: UIViewController, UITableViewDelegate, UITa
         print(date)
     }
     
-}
-*/
+}*/

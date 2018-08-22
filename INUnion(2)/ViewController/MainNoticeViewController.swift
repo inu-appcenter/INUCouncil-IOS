@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var BoardSearchBar: UISearchBar!
-    
     @IBOutlet weak var CollectionView: UICollectionView!
+   
     var images = ["다현","Icon","settings","PlusButton"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,7 @@ class TestViewController: UIViewController, UICollectionViewDelegate, UICollecti
         BoardSearchBar.backgroundImage = UIImage()
         BoardSearchBar.setValue("취소", forKey: "_cancelButtonText")
         CollectionView.layer.cornerRadius = 10
+   
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,7 +51,15 @@ class TestViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         return cell
     }
-
+    
+//Detail Notice로 넘어가는 함수
+   /* func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let Storyboard = UIStoryboard(name: "Main", bundle:nil)
+        let DNvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as! DetailNoticeViewController
+        DNvC.getImage = imageArr[indexPath.row] as! UIImage
+        DNvC.getname = name[indexPath.row] as! String
+self.navigationController?.pushViewController(DNvC, animated: true)
+    }*/
     
     @objc func keyboardWillHide(notification: NSNotification) {
     }
