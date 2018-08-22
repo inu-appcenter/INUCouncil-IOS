@@ -1,0 +1,13 @@
+//
+//  NoticeCollectionViewCell.swift
+//  INUnion(2)
+//
+//  Created by 이형주 on 2018. 8. 21..
+//  Copyright © 2018년 이형주. All rights reserved.
+//
+
+import UIKit
+
+class NoticeCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var MyImageView: UIImageView!
+}
