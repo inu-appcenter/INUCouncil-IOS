@@ -31,7 +31,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         BoardSearchBar.backgroundImage = UIImage()
         BoardSearchBar.setValue("취소", forKey: "_cancelButtonText")
         CollectionView.layer.cornerRadius = 10
-   
+      
     }
     
     override func didReceiveMemoryWarning() {
