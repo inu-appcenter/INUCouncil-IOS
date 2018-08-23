@@ -9,5 +9,11 @@
 import UIKit
 
 class NoticeCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var MyImageView: UIImageView!
+    @IBOutlet weak var MyImageView2: UIImageView!
+    @IBOutlet weak var MyImageView3: UIImageView!
+    @IBOutlet weak var MyImageView4: UIImageView!
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var ContentsText: UITextView!
 }

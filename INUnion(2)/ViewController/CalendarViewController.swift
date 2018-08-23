@@ -16,18 +16,14 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var Label: UILabel!
   
-    var titlelabel : NSArray = []
-    var time : NSArray = []
-    var location : NSArray = []
-    var contents :NSArray = []
+    var titlelabel = ["밥먹기","집가기"]
+    var time = ["13:00","14:00"]
+    var location = ["밥드세요","집에가세요"]
+    var contents = ["맥도날드","집"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        time = ["13:00","14:00"]
-        titlelabel = ["밥먹기","집가기"]
-        contents = ["밥드세요","집에가세요"]
-        location = ["맥도날드","집"]
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
         let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
         statusBarView.backgroundColor = statusBarColor
@@ -53,9 +49,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell") as! CalendarTableViewCell
-       cell.TimeLabel.text! = time[indexPath.row] as! String
-        cell.TitleLabel.text! = titlelabel[indexPath.row] as! String
-        cell.ContentsLabel.text! = contents[indexPath.row] as! String
+       cell.TimeLabel.text! = time[indexPath.row] 
+        cell.TitleLabel.text! = titlelabel[indexPath.row]
+        cell.ContentsLabel.text! = contents[indexPath.row]
        
         return cell
     }
@@ -66,23 +62,33 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
         
         let DvC = Storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
     
-        DvC.getTitle = titlelabel[indexPath.row] as! String
-        DvC.getTime = time[indexPath.row] as! String
-        DvC.getcontents = contents[indexPath.row] as! String
-        DvC.getlocation = location[indexPath.row] as! String
+    DvC.getTitle = titlelabel[indexPath.row]
+    DvC.getTime = time[indexPath.row]
+    DvC.getcontents = contents[indexPath.row]
+    DvC.getlocation = location[indexPath.row]
         
         self.navigationController?.pushViewController(DvC, animated: true)
     }
-
+    
+    //테이블 뷰 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == UITableViewCellEditingStyle.delete)
+        {
+            time.remove(at: indexPath.row)
+            titlelabel.remove(at: indexPath.row)
+            contents.remove(at: indexPath.row)
+            location.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
   
  
-
+   
    
     // 이벤트 점
   /*  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {

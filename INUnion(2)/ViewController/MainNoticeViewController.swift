@@ -12,8 +12,14 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
 
     @IBOutlet weak var BoardSearchBar: UISearchBar!
     @IBOutlet weak var CollectionView: UICollectionView!
-   
-    var images = ["다현","Icon","settings","PlusButton"]
+    @IBOutlet weak var MajorLabel: UILabel!
+    @IBAction func ModifyButton(_ sender: Any) {
+    }
+    
+    var titles = ["1번","2번","3번","4번"]
+    var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
+    var images = ["다현","다현","다현","다현"]
+    var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
     override func viewDidLoad() {
         super.viewDidLoad()
        self.CollectionView.delegate = self
@@ -33,14 +39,22 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
       
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
+       
+        cell.TitleLabel.text! = titles[indexPath.row]
+        cell.TimeLabel.text! = time[indexPath.row]
         cell.MyImageView.image = UIImage(named: images[indexPath.row])
+        cell.MyImageView2.image = UIImage(named: images[indexPath.row])
+        cell.MyImageView3.image = UIImage(named: images[indexPath.row])
+        cell.MyImageView4.image = UIImage(named: images[indexPath.row])
+        cell.ContentsText.text! = contents[indexPath.row]
         cell.contentView.layer.cornerRadius = 10
-       cell.contentView.layer.borderWidth = 1
+        cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 248, green: 249, blue: 250, alpha: 1).cgColor
        cell.contentView.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.gray.cgColor
