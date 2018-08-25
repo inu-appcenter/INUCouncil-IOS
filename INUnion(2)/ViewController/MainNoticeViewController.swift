@@ -30,8 +30,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         view.addSubview(statusBarView)
         BoardSearchBar.backgroundImage = UIImage()
         BoardSearchBar.setValue("취소", forKey: "_cancelButtonText")
-        CollectionView.layer.cornerRadius = 10
-      
+   CollectionView.layer.cornerRadius = 4
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,29 +51,34 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.MyImageView2.image = UIImage(named: images[indexPath.row])
         cell.MyImageView3.image = UIImage(named: images[indexPath.row])
         cell.MyImageView4.image = UIImage(named: images[indexPath.row])
+        
         cell.ContentsText.text! = contents[indexPath.row]
-        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.cornerRadius = 4
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 248, green: 249, blue: 250, alpha: 1).cgColor
-       cell.contentView.layer.masksToBounds = false
+        cell.contentView.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         cell.layer.shadowRadius = 1
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        cell.layer.shadowPath = UIBezierPath(roundedRect:
+            cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
         return cell
     }
     
-//Detail Notice로 넘어가는 함수
-   /* func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let Storyboard = UIStoryboard(name: "Main", bundle:nil)
         let DNvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as! DetailNoticeViewController
-        DNvC.getImage = imageArr[indexPath.row] as! UIImage
-        DNvC.getname = name[indexPath.row] as! String
-self.navigationController?.pushViewController(DNvC, animated: true)
-    }*/
-    
+      //  DNvC.getImage = images[indexPath.row]
+        DNvC.getTitle = titles[indexPath.row]
+        DNvC.getTime = time[indexPath.row]
+
+        self.navigationController?.pushViewController(DNvC, animated: true)
+    }
+ 
     @objc func keyboardWillHide(notification: NSNotification) {
     }
     

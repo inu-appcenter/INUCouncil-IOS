@@ -7,7 +7,7 @@
 //
 
 
-import UIKit
+/*import UIKit
 
 struct StudentNoticeCellData {
     let image : UIImage?
@@ -76,5 +76,5 @@ class StudentNoticeViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
 }
-
+*/
 

@@ -15,5 +15,6 @@ class NoticeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var MyImageView3: UIImageView!
     @IBOutlet weak var MyImageView4: UIImageView!
     @IBOutlet weak var TimeLabel: UILabel!
-    @IBOutlet weak var ContentsText: UITextView!
+    @IBOutlet weak var ContentsText: UILabel!
 }
+

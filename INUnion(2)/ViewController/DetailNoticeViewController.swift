@@ -16,19 +16,20 @@ class  DetailNoticeViewController: UIViewController, UITextViewDelegate
     @IBAction func BackButtonClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBOutlet weak var titleText: UITextField!
-    @IBOutlet weak var NoticeLabel: UILabel!
-    @IBOutlet weak var imgImage: UIImageView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var timeText: UITextField!
-    @IBOutlet weak var whereText: UITextField!
-    var getname = String()
-    var getImage = UIImage()
+
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var ImageView: UIImageView!
+    
+    var getTitle = String()
+    var getTime = String()
+  //  var getImage = UIImage()
     
 override func viewDidLoad() {
     
     super.viewDidLoad()
-    self.textView.delegate = self
+    
+    //self.textView.delegate = self
     
     NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     
@@ -39,37 +40,36 @@ override func viewDidLoad() {
     statusBarView.backgroundColor = statusBarColor
     view.addSubview(statusBarView)
     
-    imgImage.image = getImage
-    NoticeLabel.text! = getname
+
     
 }
 
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    self.textView.resignFirstResponder()
+    //self.textView.resignFirstResponder()
 }
 
-func textViewDidBeginEditing(_ textView: UITextView) {
+/*func textViewDidBeginEditing(_ textView: UITextView) {
     textView.backgroundColor = UIColor.lightGray
 }
 
 func textViewDidEndEditing(_ textView: UITextView) {
     textView.backgroundColor = UIColor.white
-}
+}*/
 
-@objc func updateTextView(notification:Notification) {
+/*@objc func updateTextView(notification:Notification) {
     let userInfo = notification.userInfo!
     let keyboardEndFrameScreenCoordinates = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     let keyboardEndFrame = self.view.convert(keyboardEndFrameScreenCoordinates, to: view.window)
     
     if notification.name == Notification.Name.UIKeyboardWillHide{
-        textView.contentInset = UIEdgeInsets.zero
+     /  textView.contentInset = UIEdgeInsets.zero
     } else{
         textView.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
         textView.scrollIndicatorInsets = textView.contentInset
     }
     textView.scrollRangeToVisible(textView.selectedRange)
-}
+}*/
 
 class CustomNavController: UINavigationController {
     override func viewDidLoad() {

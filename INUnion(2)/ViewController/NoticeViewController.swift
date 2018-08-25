@@ -6,7 +6,7 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 struct NoticeCellData {
     let image : UIImage?
@@ -81,9 +81,8 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
         let DvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as! DetailNoticeViewController
         DvC.getImage = imageArr[indexPath.row] as! UIImage
-        DvC.getname = name[indexPath.row] as! String
+       
         self.navigationController?.pushViewController(DvC, animated: true)
     }
-    }
-    
+    }*/
 
