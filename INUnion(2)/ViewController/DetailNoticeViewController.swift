@@ -8,69 +8,86 @@
 
 import UIKit
 
-class  DetailNoticeViewController: UIViewController, UITextViewDelegate
+class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 {
-    @IBAction func ReviseButtonClick(_ sender: Any) {
+    
+    var people = ["Lorem , ."]
+    var places = ["seoul","incheon","busan","bupyeong","city"]
+    var searchable = [Searchable]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchable.count
     }
     
-    @IBAction func BackButtonClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if searchable[indexPath.row].user.name != nil{
+           
+            let cell: ContentsCell = tableView.dequeueReusableCell(withIdentifier: "ContentsCell", for: indexPath) as! ContentsCell
+            cell.ContentsView.text = searchable[indexPath.row].user.name
+            
+            return cell
+        } //Display User Cell
+      
+        else{
+            let cell: ImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
+            cell.ContentsLabel.text = searchable[indexPath.row].place.name
+            
+            return cell
+        } //Display Place Cell
     }
-
-    @IBOutlet weak var TimeLabel: UILabel!
-    @IBOutlet weak var TitleLabel: UILabel!
-    @IBOutlet weak var ImageView: UIImageView!
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if searchable[indexPath.row].user.name != nil{
+            return UITableViewAutomaticDimension
+        }else{
+            return 254
+        }
+    }
+    
+    @IBOutlet weak var tableview: UITableView!
+    
+ /*   @IBAction func BackButtonClick(_ sender: Any) {
+self.navigationController?.popViewController(animated: true)
+    }
+   */
+  /*  var imageArr:NSArray = []
     var getTitle = String()
     var getTime = String()
-  //  var getImage = UIImage()
+    var getContents = String()
+    //var getImage = UIImage()
+*/
     
 override func viewDidLoad() {
     
     super.viewDidLoad()
     
-    //self.textView.delegate = self
+    tableview.delegate = self
+    tableview.dataSource = self
+    populate_array()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-    
+    //   imageArr = [UIImage(named: "다현")!,UIImage(named: "Icon")!]
+  
+  /*  NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     
     let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
     let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
     statusBarView.backgroundColor = statusBarColor
     view.addSubview(statusBarView)
-    
-
-    
+   
+ //   TitleLabel.text! = getTitle
+  //  TimeLabel.text! = getTime
+  */
 }
 
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+/*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    //self.textView.resignFirstResponder()
+  
 }
 
-/*func textViewDidBeginEditing(_ textView: UITextView) {
-    textView.backgroundColor = UIColor.lightGray
-}
-
-func textViewDidEndEditing(_ textView: UITextView) {
-    textView.backgroundColor = UIColor.white
-}*/
-
-/*@objc func updateTextView(notification:Notification) {
-    let userInfo = notification.userInfo!
-    let keyboardEndFrameScreenCoordinates = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-    let keyboardEndFrame = self.view.convert(keyboardEndFrameScreenCoordinates, to: view.window)
-    
-    if notification.name == Notification.Name.UIKeyboardWillHide{
-     /  textView.contentInset = UIEdgeInsets.zero
-    } else{
-        textView.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
-        textView.scrollIndicatorInsets = textView.contentInset
-    }
-    textView.scrollRangeToVisible(textView.selectedRange)
-}*/
-
+   
 class CustomNavController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,12 +102,47 @@ override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.topItem?.title = "";
     
 }
-
+*/
+    
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
 }
+    
+    func populate_array() {
+        
+        for each in people{
+            var user = User()
+            user.name = each
+            var element = Searchable()
+           element.user = user
+            self.searchable.append(element)
+        }
+        for each in places{
+            var place = Place()
+            place.name = each
+            var element = Searchable()
+            element.place = place
+            self.searchable.append(element)
+        }
+        tableview.reloadData()
+    }
+    
 
-
-
+    class User {
+        var name: String?
+    }
+    class Place {
+        var name: String?
+    }
+    
+    class Searchable{
+        var place = Place()
+        var user = User()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       tableview.estimatedRowHeight = 100
+        tableview.rowHeight = UITableViewAutomaticDimension
+    }
 }

@@ -1,15 +1,24 @@
 PODS:
   - Alamofire (4.6.0)
+  - Device (3.0.3)
   - FSCalendar (2.7.9)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.5)
+  - Device (~> 3.0.3)
   - FSCalendar
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Device
+    - FSCalendar
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Device: 9a5264ee4e0f392e7153d2c46b10c8df46b7aad2
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
 
-PODFILE CHECKSUM: ad28774349cbecb647c64d8061f7036e24f441c8
+PODFILE CHECKSUM: 7165bc5eb7924219b069d8cde6ceebd19a827af7
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
