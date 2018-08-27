@@ -12,22 +12,24 @@ import Device
 
 class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    
     @IBOutlet weak var BoardSearchBar: UISearchBar!
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var MajorLabel: UILabel!
-    @IBAction func ModifyButton(_ sender: Any) {
+   
+    @IBAction func WfiteButtonClicked(_ sender: Any) {
     }
     
     var titles = ["1번","2번","3번","4번"]
     var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
-    var imageArr:NSArray = []
-    let images = ["다현","다현","다현","다현"]
+    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
+   
     var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageArr = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
+       
         
         self.CollectionView.delegate = self
         self.CollectionView.dataSource = self
@@ -73,13 +75,13 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
         cell.TitleLabel.text! = titles[indexPath.row]
         cell.TimeLabel.text! = time[indexPath.row]
-        cell.MyImageView.image =  imageArr[indexPath.row] as? UIImage
-        cell.MyImageView2.image = imageArr[indexPath.row] as? UIImage
-        cell.MyImageView3.image = imageArr[indexPath.row] as? UIImage
-        cell.MyImageView4.image = imageArr[indexPath.row] as? UIImage
+        cell.MyImageView.image =  imageArr[indexPath.row] as! UIImage 
+        cell.MyImageView2.image = imageArr[indexPath.row] as! UIImage
+        cell.MyImageView3.image = imageArr[indexPath.row] as! UIImage
+        cell.MyImageView4.image = imageArr[indexPath.row] as! UIImage
         cell.ContentsText.text! = contents[indexPath.row]
         
-        cell.contentView.layer.cornerRadius = 4
+        cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor(red: 248, green: 249, blue: 250, alpha: 1).cgColor
         cell.contentView.layer.masksToBounds = true
@@ -94,17 +96,17 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 
-   /* func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let Storyboard = UIStoryboard(name: "Main", bundle:nil)
-        let DNvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as! DetailNoticeViewController
+        let DNvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController
        
-       // DNvC.getImage = imageArr[indexPath.row] as! UIImage
-       /* DNvC.getTitle = titles[indexPath.row]
-        DNvC.getTime = time[indexPath.row]
-        DNvC.getContents = contents[indexPath.row]*/
-        self.navigationController?.pushViewController(DNvC, animated: true)
+  //  DNvC?.imageArr = imageArr[indexPath.row] as! UIImage
+    DNvC?.contents = [contents[indexPath.row]]
+    DNvC?.titlelabel = titles[indexPath.row]
+        DNvC?.timelabel = time[indexPath.row]
+        self.navigationController?.pushViewController(DNvC!, animated: true)
     }
- */
+ 
     @objc func keyboardWillHide(notification: NSNotification) {
     }
     

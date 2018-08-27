@@ -9,67 +9,81 @@
 import UIKit
 
 class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
+
 {
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
     
-    var people = ["Lorem , ."]
+    @IBAction func BackButtonClicked(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
+    }
+  
+    @IBOutlet weak var MainView: UIView!
+    
+    class Contents {
+        var name: String?
+    }
+    class Image {
+        var name: String?
+        
+    }
+    class Searchable{
+        var image = Image()
+        var contents = Contents()
+    }
+ 
+    var titlelabel = ""
+    var timelabel = ""
+    var imageArr = [""]
+    var contents = [""]
     var places = ["seoul","incheon","busan","bupyeong","city"]
     var searchable = [Searchable]()
-    
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchable.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if searchable[indexPath.row].user.name != nil{
-           
+        if searchable[indexPath.row].contents.name != nil{
             let cell: ContentsCell = tableView.dequeueReusableCell(withIdentifier: "ContentsCell", for: indexPath) as! ContentsCell
-            cell.ContentsView.text = searchable[indexPath.row].user.name
-            
+            cell.ContentsView.text = searchable[indexPath.row].contents.name
             return cell
-        } //Display User Cell
-      
+        } //첫번째 셀 보여줌
         else{
             let cell: ImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-            cell.ContentsLabel.text = searchable[indexPath.row].place.name
-            
+         //   cell.ContentsImage.image = image[indexPath.row] as! UIImage
+           
             return cell
-        } //Display Place Cell
+        } //두번째 셀 보여줌
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searchable[indexPath.row].user.name != nil{
+        if searchable[indexPath.row].contents.name != nil{
             return UITableViewAutomaticDimension
         }else{
-            return 254
+            return 266
         }
     }
     
     @IBOutlet weak var tableview: UITableView!
     
- /*   @IBAction func BackButtonClick(_ sender: Any) {
-self.navigationController?.popViewController(animated: true)
-    }
-   */
-  /*  var imageArr:NSArray = []
+  /*
     var getTitle = String()
     var getTime = String()
     var getContents = String()
     //var getImage = UIImage()
 */
-    
 override func viewDidLoad() {
     
     super.viewDidLoad()
     
+   MainView.layer.cornerRadius = 10
     tableview.delegate = self
     tableview.dataSource = self
     populate_array()
-    
     //   imageArr = [UIImage(named: "다현")!,UIImage(named: "Icon")!]
   
-  /*  NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+   NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     
     let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
@@ -77,12 +91,13 @@ override func viewDidLoad() {
     statusBarView.backgroundColor = statusBarColor
     view.addSubview(statusBarView)
    
- //   TitleLabel.text! = getTitle
-  //  TimeLabel.text! = getTime
-  */
+    TitleLabel.text! = titlelabel
+    TimeLabel.text! = timelabel
+  
 }
 
-/*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
   
 }
@@ -97,12 +112,7 @@ class CustomNavController: UINavigationController {
     }
 }
 
-override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationController?.navigationBar.topItem?.title = "";
-    
-}
-*/
+
     
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -111,38 +121,27 @@ override func didReceiveMemoryWarning() {
     
     func populate_array() {
         
-        for each in people{
-            var user = User()
-            user.name = each
+        for each in contents{
+            var contents = Contents()
+            contents.name = each
             var element = Searchable()
-           element.user = user
+            element.contents = contents
             self.searchable.append(element)
         }
         for each in places{
-            var place = Place()
-            place.name = each
+            var image = Image()
+            image.name = each
             var element = Searchable()
-            element.place = place
+            element.image = image
             self.searchable.append(element)
         }
         tableview.reloadData()
     }
-    
-
-    class User {
-        var name: String?
-    }
-    class Place {
-        var name: String?
-    }
-    
-    class Searchable{
-        var place = Place()
-        var user = User()
-    }
-    
+    //첫번째 셀 크기 텍스트 길이에 따라 유동적으로 변함.
     override func viewWillAppear(_ animated: Bool) {
-       tableview.estimatedRowHeight = 100
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = "";
+        tableview.estimatedRowHeight = 100
         tableview.rowHeight = UITableViewAutomaticDimension
     }
 }

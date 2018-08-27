@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UITextViewDelegate
     }
     
     @IBAction func BackButtonClick(_ sender: Any) {
-     self.navigationController?.popViewController(animated: true)
+    self.navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var timeText: UITextField!
