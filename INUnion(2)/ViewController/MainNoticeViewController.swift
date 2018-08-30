@@ -22,7 +22,8 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var titles = ["1번","2번","3번","4번"]
     var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
-    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
+//    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
+    var imageArr:[UIImage] = [UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!]
    
     var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
    
@@ -75,10 +76,10 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
         cell.TitleLabel.text! = titles[indexPath.row]
         cell.TimeLabel.text! = time[indexPath.row]
-        cell.MyImageView.image =  imageArr[indexPath.row] as! UIImage 
-        cell.MyImageView2.image = imageArr[indexPath.row] as! UIImage
-        cell.MyImageView3.image = imageArr[indexPath.row] as! UIImage
-        cell.MyImageView4.image = imageArr[indexPath.row] as! UIImage
+        cell.MyImageView.image =  imageArr[indexPath.row]
+        cell.MyImageView2.image = imageArr[indexPath.row]
+        cell.MyImageView3.image = imageArr[indexPath.row]
+        cell.MyImageView4.image = imageArr[indexPath.row]
         cell.ContentsText.text! = contents[indexPath.row]
         
         cell.contentView.layer.cornerRadius = 10
@@ -97,14 +98,19 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     
 
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let Storyboard = UIStoryboard(name: "Main", bundle:nil)
-        let DNvC = Storyboard.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController
+    let cell = collectionView.cellForItem(at: indexPath)
+    cell?.isSelected = false
+    
+    
+    if let DNvC = storyboard?.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController{
        
-  //  DNvC?.imageArr = imageArr[indexPath.row] as! UIImage
-    DNvC?.contents = [contents[indexPath.row]]
-    DNvC?.titlelabel = titles[indexPath.row]
-        DNvC?.timelabel = time[indexPath.row]
-        self.navigationController?.pushViewController(DNvC!, animated: true)
+//        DNvC.imageArr = imageArr[indexPath.row] as! NSArray
+        DNvC.imageArr = imageArr
+    DNvC.contents = [contents[indexPath.row]]
+    DNvC.titlelabel = titles[indexPath.row]
+        DNvC.timelabel = time[indexPath.row]
+    self.navigationController?.show(DNvC, sender: nil)
+    }
     }
  
     @objc func keyboardWillHide(notification: NSNotification) {

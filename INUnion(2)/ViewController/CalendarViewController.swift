@@ -58,16 +58,15 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     //선택한 테이블 뷰 상세보기
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let DvC = Storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
     
-    DvC.getTitle = titlelabel[indexPath.row]
-    DvC.getTime = time[indexPath.row]
-    DvC.getcontents = contents[indexPath.row]
-    DvC.getlocation = location[indexPath.row]
-        
-        self.navigationController?.pushViewController(DvC, animated: true)
+    if let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+        dvc.getTitle = titlelabel[indexPath.row]
+        dvc.getTime = time[indexPath.row]
+        dvc.getcontents = contents[indexPath.row]
+        dvc.getlocation = location[indexPath.row]
+       self.navigationController?.show(dvc, sender: nil)
+    }
+
     }
     
     //테이블 뷰 삭제

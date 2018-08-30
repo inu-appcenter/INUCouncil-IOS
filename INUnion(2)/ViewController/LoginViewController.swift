@@ -7,27 +7,69 @@
 //
 import UIKit
 
+/*
+컴퓨터공학부
+ID: dcse0780
+PW: zjavb1698
+*/
 
 class LoginViewController: UIViewController, UITextFieldDelegate
 {
 
+    @IBOutlet weak var CheckIDLabel: UILabel!
     
     @IBOutlet weak var IDTextField: UITextField!
     @IBOutlet weak var PassTextField: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
    
-    var loginResult : Bool?
+    var loginResult : AnsResult?
    
+    override func viewWillAppear(_ animated: Bool) {
+        IDTextField.text = ""
+        PassTextField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
         IDTextField.delegate = self
         PassTextField.delegate = self
-    
+        CheckIDLabel.isHidden = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)}
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == IDTextField{
+            PassTextField.becomeFirstResponder()
+        } else if textField == PassTextField{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    @objc func keyboardWillChange(notification: Notification){
+        guard ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil else {
+            return
+        }
+        if notification.name == Notification.Name.UIKeyboardWillShow || notification.name == Notification.Name.UIKeyboardWillChangeFrame{
+            view.frame.origin.y = -270
+        }
+        else{
+            view.frame.origin.y = 0
+        }
+    }
     
     @IBAction func LoginButtonClicked(_ sender: Any) {
         var username : String!
@@ -37,10 +79,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         let model = NetworkModel(self)
         model.login(username: username, password: password)
        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-       if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UINavigationController {
+        //주석 해제하면 login 생략 가능.
+        
+   /*     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+       if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {
          self.present(vc, animated: true, completion: nil)
-        }
+        }*/
     }
 }
 
@@ -48,14 +92,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             func networkSuc(resultdata: Any, code: String) {
                 if code == "loginSuccess" {
                     print(resultdata)
-                    loginResult = resultdata as? Bool
-                    if loginResult == true {
+                    if let item = resultdata as? NSDictionary{
+                        let ans = item["ans"] as? Bool ?? false
+                        let obj = AnsResult.init(ans: ans)
+                        self.loginResult = obj
+                    }
+                    if loginResult?.ans == true {
+                         CheckIDLabel.isHidden = true
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        if let vc = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as?
-                            UINavigationController {self.present(vc, animated: true, completion: nil)}} else{
-                        IDTextField.text = ""
-                        PassTextField.text = ""
-                       
+                        if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as?
+                            UITabBarController {self.present(vc, animated: true, completion: nil)}
+                    }else{
+                         CheckIDLabel.isHidden = false
                     }
                 }
             }
@@ -63,6 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             func networkFail(code: String) {
                 if(code == "loginError") {
                     print("실패하였습니다.")
+                    CheckIDLabel.isHidden = false
                 }
             }
 }

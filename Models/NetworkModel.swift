@@ -20,6 +20,7 @@ private let serverURL = "http://117.16.231.66:7001"
         self.view = view
     }
 
+//    로그인 통신
     func login(username: String, password: String) {
       
         let param = ["username": username,
@@ -30,22 +31,16 @@ private let serverURL = "http://117.16.231.66:7001"
         
         Alamofire.request("\(serverURL)/login", method: .post, parameters: param, headers: header).responseJSON { response in
             switch response.result{
-            case .success:
-                print("login succes")
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "loginSuccess")
+                
             case .failure(let error):
-                print(error)
+                self.view.networkFail(code: "loginError")
+                print("loginError")
             
             }
         }
     }
 
-class ViewModel{
-    var view: ViewCallback
-    init(_ view: ViewCallback){
-        self.view = view
-    }
-    func letter() {
-        self.view.viewSuc(code: "letter")
-    }
-}
+
  }

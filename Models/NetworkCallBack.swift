@@ -13,7 +13,3 @@ protocol NetworkCallback {
     func networkFail(code: String)
 }
 
-protocol ViewCallback{
-    func viewSuc(code : String)
-    func viewFail(code : String)
-}

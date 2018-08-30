@@ -34,9 +34,9 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
  
     var titlelabel = ""
     var timelabel = ""
-    var imageArr = [""]
+    var imageArr :[UIImage]? = []
     var contents = [""]
-    var places = ["seoul","incheon","busan","bupyeong","city"]
+    var places = ["seoul","incheon","busan","bupyeong"]
     var searchable = [Searchable]()
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +50,7 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         } //첫번째 셀 보여줌
         else{
             let cell: ImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-         //   cell.ContentsImage.image = image[indexPath.row] as! UIImage
+            cell.ContentsImage.image = imageArr?[indexPath.row]
            
             return cell
         } //두번째 셀 보여줌
