@@ -18,6 +18,8 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var MajorLabel: UILabel!
    
     @IBAction func WfiteButtonClicked(_ sender: Any) {
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoticeViewController") as?
+            UIViewController {self.present(vc, animated: true, completion: nil)}
     }
     
     var titles = ["1번","2번","3번","4번"]

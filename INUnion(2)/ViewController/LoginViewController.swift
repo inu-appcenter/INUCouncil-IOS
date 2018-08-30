@@ -11,6 +11,9 @@ import UIKit
 컴퓨터공학부
 ID: dcse0780
 PW: zjavb1698
+ 
+정보통신공학과 ID: dite0781
+PW: wjdqh0828
 */
 
 class LoginViewController: UIViewController, UITextFieldDelegate

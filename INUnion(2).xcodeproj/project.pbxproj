@@ -18,13 +18,13 @@
 		A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */; };
 		A5300FB92132F44900E20BCE /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FB82132F44900E20BCE /* ContentsCell.swift */; };
 		A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FBA2132F48000E20BCE /* ImageCell.swift */; };
+		A55033F021385BB600C12958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55033EF21385BB600C12958 /* Assets.xcassets */; };
 		A558559821229813003EADE6 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559721229813003EADE6 /* StudentDetailViewController.swift */; };
 		A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */; };
 		A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */; };
 		A56706C02111ED7700A66C81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706BF2111ED7700A66C81 /* AppDelegate.swift */; };
 		A56706C22111ED7700A66C81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706C12111ED7700A66C81 /* ViewController.swift */; };
 		A56706C52111ED7700A66C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56706C32111ED7700A66C81 /* Main.storyboard */; };
-		A56706C72111ED7800A66C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56706C62111ED7800A66C81 /* Assets.xcassets */; };
 		A56706CA2111ED7800A66C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56706C82111ED7800A66C81 /* LaunchScreen.storyboard */; };
 		A56706D22111EDD900A66C81 /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706D12111EDD900A66C81 /* CustomNavigationViewController.swift */; };
 		A56706D62111F0A200A66C81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706D52111F0A200A66C81 /* LoginViewController.swift */; };
@@ -59,6 +59,7 @@
 		A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMajorViewController.swift; sourceTree = "<group>"; };
 		A5300FB82132F44900E20BCE /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		A5300FBA2132F48000E20BCE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		A55033EF21385BB600C12958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		A558559721229813003EADE6 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		A56706BF2111ED7700A66C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A56706C12111ED7700A66C81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A56706C42111ED7700A66C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A56706C62111ED7800A66C81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A56706C92111ED7800A66C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A56706CB2111ED7800A66C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A56706D12111EDD900A66C81 /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				A56706BF2111ED7700A66C81 /* AppDelegate.swift */,
 				A56706C32111ED7700A66C81 /* Main.storyboard */,
 				A56706D12111EDD900A66C81 /* CustomNavigationViewController.swift */,
-				A56706C62111ED7800A66C81 /* Assets.xcassets */,
+				A55033EF21385BB600C12958 /* Assets.xcassets */,
 				A56706C82111ED7800A66C81 /* LaunchScreen.storyboard */,
 				A56706CB2111ED7800A66C81 /* Info.plist */,
 				A56706D32111F01F00A66C81 /* NanumBarunGothic.ttf */,
@@ -276,7 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A56706CA2111ED7800A66C81 /* LaunchScreen.storyboard in Resources */,
-				A56706C72111ED7800A66C81 /* Assets.xcassets in Resources */,
+				A55033F021385BB600C12958 /* Assets.xcassets in Resources */,
 				A56706C52111ED7700A66C81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

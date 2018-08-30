@@ -11,7 +11,7 @@ class SettingViewController: UIViewController {
 
     @IBAction func LogoutButtonClick(_ sender: Any) {
         navigationController?.setNavigationBarHidden(false, animated: true)
-//        navigationController?.popToRootViewController(animated: true)
+
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
