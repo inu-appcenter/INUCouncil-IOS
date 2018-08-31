@@ -1344,8 +1344,6 @@
                                 </constraints>
                                 <state key="normal" image="WriteIcon"/>
                                 <connections>
-                                    <action selector="ModifyButton:" destination="dRX-Jb-93f" eventType="touchUpInside" id="Lcw-CW-txS"/>
-                                    <action selector="ModifyButvar:" destination="dRX-Jb-93f" eventType="touchUpInside" id="OFN-gI-jIr"/>
                                     <action selector="WfiteButtonClicked:" destination="dRX-Jb-93f" eventType="touchUpInside" id="p0N-uQ-Nj4"/>
                                 </connections>
                             </button>
@@ -1685,17 +1683,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mD-bF-cr3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.82330907534246578" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DWE-nD-x39">
-                                <rect key="frame" x="17" y="139" width="375" height="349"/>
+                                <rect key="frame" x="17" y="183" width="375" height="305"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-pC-1AG">
-                                <rect key="frame" x="0.0" y="120" width="414" height="2"/>
+                                <rect key="frame" x="0.0" y="164" width="414" height="2"/>
                                 <color key="backgroundColor" red="0.87058823529411766" green="0.88627450980392153" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="37e-ak-zsB"/>
@@ -1743,7 +1741,7 @@
                                 </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="n5D-Ht-Kad">
-                                <rect key="frame" x="16" y="86" width="86" height="19"/>
+                                <rect key="frame" x="16" y="130" width="86" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="2aF-kp-pgn"/>
                                 </constraints>
@@ -1758,7 +1756,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgs-Ek-IO1">
-                                <rect key="frame" x="17" y="39" width="17" height="17"/>
+                                <rect key="frame" x="17" y="83" width="17" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="LMK-tf-h4m"/>
                                 </constraints>
@@ -1768,7 +1766,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kz-kZ-M6F">
-                                <rect key="frame" x="372" y="39" width="31" height="19"/>
+                                <rect key="frame" x="372" y="83" width="31" height="19"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                                 <state key="normal" title="완료">
                                     <color key="titleColor" red="0.12941176470588234" green="0.14509803921568626" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
@@ -1778,7 +1776,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항 작성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-x6-CQv">
-                                <rect key="frame" x="144" y="39" width="125" height="19"/>
+                                <rect key="frame" x="144" y="83" width="125" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="tb4-M7-NdO"/>
                                 </constraints>
@@ -1817,15 +1815,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pmv-RV-7Sc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wbg-kz-q5C"/>
                     <connections>
                         <outlet property="InputUpload" destination="CB4-pH-Fdr" id="4xo-j0-RW8"/>
+                        <outlet property="UploadCollectionView" destination="CB4-pH-Fdr" id="5pH-Sy-PO6"/>
                         <outlet property="UploadTextField" destination="DWE-nD-x39" id="0mZ-rX-PKa"/>
                         <outlet property="UploadUpload" destination="CB4-pH-Fdr" id="f4F-Ig-1HC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLb-Tf-fsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692.753623188406" y="-1758.4239130434785"/>
+            <point key="canvasLocation" x="4600" y="-1758.4239130434785"/>
         </scene>
         <!--연락처-->
         <scene sceneID="26d-oU-Pi8">
@@ -2192,6 +2192,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgF-Hm-Vtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2779.7101449275365" y="1490.217391304348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sfw-y0-txq">
+            <objects>
+                <navigationController storyboardIdentifier="AddNoticeViewController" automaticallyAdjustsScrollViewInsets="NO" id="uHu-pX-drL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Fa-H7-U8C">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uHB-QW-uas" kind="relationship" relationship="rootViewController" id="AOZ-HQ-Fh0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD4-lu-Ehq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3692.753623188406" y="-1758.4239130434785"/>
         </scene>
     </scenes>
     <resources>

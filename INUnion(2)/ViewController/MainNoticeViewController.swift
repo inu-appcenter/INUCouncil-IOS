@@ -17,10 +17,10 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var MajorLabel: UILabel!
    
- /*   @IBAction func WfiteButtonClicked(_ sender: Any) {
+    @IBAction func WfiteButtonClicked(_ sender: Any) {
         if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoticeViewController") as?
-            UIViewController {self.present(vc, animated: true, completion: nil)}
-    }*/
+            UINavigationController {self.present(vc, animated: true, completion: nil)}
+    }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var titles = ["1번","2번","3번","4번"]
