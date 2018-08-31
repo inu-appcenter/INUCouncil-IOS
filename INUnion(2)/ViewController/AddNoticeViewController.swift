@@ -1,4 +1,4 @@
-import UIKit
+/*import UIKit
 import Photos
 
 class AddNoticeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate {
@@ -62,4 +62,4 @@ class AddNoticeViewController: UIViewController,UICollectionViewDelegate,UIColle
         // Dispose of any resources that can be recreated.
     }
 }
-
+*/

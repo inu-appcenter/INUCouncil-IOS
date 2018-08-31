@@ -1301,6 +1301,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lwb-Ma-4ei"/>
                     <connections>
+                        <outlet property="MajorLabel" destination="zDt-sE-Ure" id="nXP-gC-NPF"/>
                         <outlet property="SearchBar" destination="HRD-W7-IKG" id="AZu-PP-VYh"/>
                         <outlet property="Tableview" destination="5Hp-vD-JbS" id="A7q-WG-3FX"/>
                     </connections>
@@ -2158,7 +2159,7 @@
         <scene sceneID="TXg-zU-z8i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZVp-35-Clu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="연락처" image="비활성화" selectedImage="비활성화" id="5Rg-Pk-SsM"/>
+                    <tabBarItem key="tabBarItem" title="연락처" image="unactive" selectedImage="unactive" id="5Rg-Pk-SsM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="waP-m8-7QL">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -10201,6 +10202,7 @@ AAAAAAAAAAAAAAdP5Q
 </mutableData>
         </image>
         <image name="settings" width="24" height="24"/>
+        <image name="unactive" width="23" height="22"/>
         <image name="백 버튼" width="16" height="16"/>
         <image name="비활성화" width="23" height="22"/>
         <image name="연락처 추가하기 버튼" width="48" height="48"/>

@@ -44,6 +44,8 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var Tableview: UITableView!
     
+    @IBOutlet weak var MajorLabel: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)

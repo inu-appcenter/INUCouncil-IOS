@@ -17,22 +17,27 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var MajorLabel: UILabel!
    
-    @IBAction func WfiteButtonClicked(_ sender: Any) {
+ /*   @IBAction func WfiteButtonClicked(_ sender: Any) {
         if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoticeViewController") as?
             UIViewController {self.present(vc, animated: true, completion: nil)}
-    }
+    }*/
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var titles = ["1번","2번","3번","4번"]
     var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
-//    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
-    var imageArr:[UIImage] = [UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!,UIImage(named: "다현")!]
+
+   
+    //    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
+    
+    var imageArr:[UIImage] = [UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!]
    
     var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+
+        MajorLabel.text! = self.appDelegate.department!
         
         self.CollectionView.delegate = self
         self.CollectionView.dataSource = self

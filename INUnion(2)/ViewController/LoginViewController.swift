@@ -16,8 +16,7 @@ PW: zjavb1698
 PW: wjdqh0828
 */
 
-class LoginViewController: UIViewController, UITextFieldDelegate
-{
+class LoginViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var CheckIDLabel: UILabel!
     
@@ -26,6 +25,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var LoginButton: UIButton!
    
     var loginResult : AnsResult?
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
    
     override func viewWillAppear(_ animated: Bool) {
         IDTextField.text = ""
@@ -81,10 +82,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         password=PassTextField.text!
         let model = NetworkModel(self)
         model.login(username: username, password: password)
-       
+        
         //주석 해제하면 login 생략 가능.
         
-   /*     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      /*  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
        if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {
          self.present(vc, animated: true, completion: nil)
         }*/
@@ -97,14 +98,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                     print(resultdata)
                     if let item = resultdata as? NSDictionary{
                         let ans = item["ans"] as? Bool ?? false
-                        let obj = AnsResult.init(ans: ans)
+                        let department = item["department"] as? String ?? ""
+                        
+                        let obj = AnsResult.init(ans: ans, department: department )
                         self.loginResult = obj
+                        
+                        self.appDelegate.department = self.loginResult?.department
                     }
                     if loginResult?.ans == true {
                          CheckIDLabel.isHidden = true
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as?
-                            UITabBarController {self.present(vc, animated: true, completion: nil)}
+                       
+                        if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {self.present(vc, animated: true, completion: nil)
+                        }
+                    
                     }else{
                          CheckIDLabel.isHidden = false
                     }

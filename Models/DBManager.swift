@@ -11,8 +11,11 @@ import Foundation
 // 로그인 결과 확인
 class AnsResult{
     var ans : Bool?
-    init(ans : Bool){
+    var department : String?
+    
+    init(ans : Bool, department: String){
         self.ans = ans
+        self.department = department
     }
     
 }
