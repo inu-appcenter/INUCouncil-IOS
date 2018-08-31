@@ -8,6 +8,7 @@
 
 import UIKit
 import Device
+import Kingfisher
 
 
 class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -18,21 +19,28 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var MajorLabel: UILabel!
    
     @IBAction func WfiteButtonClicked(_ sender: Any) {
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoticeViewController") as?
-            UINavigationController {self.present(vc, animated: true, completion: nil)}
+
     }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var model : NetworkModel?
+
+    var boardList:[NoticeResult] = []{
+        didSet {
+            if self.CollectionView != nil {
+                self.CollectionView.reloadData()
+            }
+        }
+    }
     var titles = ["1번","2번","3번","4번"]
     var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
 
-   
-    //    var imageArr:NSArray = [UIImage(named:"다현")!,UIImage(named:"Icon")!,UIImage(named:"PlusButton")!,UIImage(named:"다현")!]
     
     var imageArr:[UIImage] = [UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!]
    
     var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,13 +58,21 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         CollectionView.layer.cornerRadius = 4
         CollectionView.layer.backgroundColor = UIColor.clear.cgColor
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        model = NetworkModel(self)
+        boardList.removeAll()
+        model?.boardList(department: self.appDelegate.department!)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
       
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return boardList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -81,13 +97,40 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
-        cell.TitleLabel.text! = titles[indexPath.row]
-        cell.TimeLabel.text! = time[indexPath.row]
-        cell.MyImageView.image =  imageArr[indexPath.row]
-        cell.MyImageView2.image = imageArr[indexPath.row]
-        cell.MyImageView3.image = imageArr[indexPath.row]
-        cell.MyImageView4.image = imageArr[indexPath.row]
-        cell.ContentsText.text! = contents[indexPath.row]
+        cell.TitleLabel.text! = boardList[indexPath.row].title!
+        cell.TimeLabel.text! = boardList[indexPath.row].timeSave!
+//        cell.MyImageView.image =  imageArr[indexPath.row]
+//        cell.MyImageView2.image = imageArr[indexPath.row]
+//        cell.MyImageView3.image = imageArr[indexPath.row]
+//        cell.MyImageView4.image = imageArr[indexPath.row]
+        
+        for i in 0..<(boardList[indexPath.row].fileName?.count)!{
+            let logo = "http://117.231.66:7001/imgload/\(boardList[indexPath.row].fileName![i])"
+            let resource = ImageResource(downloadURL: URL(string: logo)!, cacheKey: logo)
+            switch i{
+            case 0:
+                cell.MyImageView.kf.setImage(with: resource)
+                break
+            case 1:
+                cell.MyImageView2.kf.setImage(with: resource)
+                break
+            case 2:
+                cell.MyImageView3.kf.setImage(with: resource)
+                break
+            case 3:
+                cell.MyImageView4.kf.setImage(with: resource)
+                break
+            default:
+                cell.MyImageView.isHidden = true
+                cell.MyImageView2.isHidden = true
+                cell.MyImageView3.isHidden = true
+                cell.MyImageView4.isHidden = true
+                break
+            }
+            
+        }
+        cell.ContentsText.text! = boardList[indexPath.row].content!
+        
         
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.borderWidth = 1
@@ -110,12 +153,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     if let DNvC = storyboard?.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController{
-       
-//        DNvC.imageArr = imageArr[indexPath.row] as! NSArray
-        DNvC.imageArr = imageArr
-    DNvC.contents = [contents[indexPath.row]]
-    DNvC.titlelabel = titles[indexPath.row]
-        DNvC.timelabel = time[indexPath.row]
+        DNvC.boardId = boardList[indexPath.row].content_serial_id!
     self.navigationController?.show(DNvC, sender: nil)
     }
     }
@@ -123,11 +161,41 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     @objc func keyboardWillHide(notification: NSNotification) {
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
+    
 }
 
+
+extension MainNoticeViewController: NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
+        if code == "boardListSuccess" {
+            print(resultdata)
+            
+            var temp: [NoticeResult] = []
+            if let items = resultdata as? [NSDictionary] {
+                for item in items {
+                    let content_serial_id = item["content_serial_id"] as? Int ?? 0
+                    let title = item["title"] as? String ?? ""
+                    let content = item["content"] as? String ?? ""
+                    let department = item["department"] as? String ?? ""
+                    let timeSave = item["timeSave"] as? String ?? ""
+                    let keyNum = item["keyNum"] as? Int ?? 0
+                    let fileName = item["fileName"] as? [String] ?? [""]
+                    let fileKey = item["fileKey"] as? Int ?? 0
+                    let obj = NoticeResult.init(content_serial_id: content_serial_id, title: title, content: content, department: department, timeSave: timeSave, keyNum: keyNum, fileName: fileName, fileKey: fileKey)
+                    temp.append(obj)
+                }
+            }
+            
+            self.boardList = temp
+            
+        }
+    }
+    
+    func networkFail(code: String) {
+        if(code == "boardListError") {
+            print("실패하였습니다.")
+        }
+        
+    }
+}
 

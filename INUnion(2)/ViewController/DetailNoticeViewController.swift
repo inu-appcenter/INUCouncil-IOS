@@ -38,9 +38,15 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
     var contents = [""]
     var places = ["seoul","incheon","busan","bupyeong"]
     var searchable = [Searchable]()
+    
+    var boardId:Int = 0
+    var detailBoard: [BoardDetail] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var model : NetworkModel?
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchable.count
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if searchable[indexPath.row].contents.name != nil{
@@ -50,7 +56,7 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         } //첫번째 셀 보여줌
         else{
             let cell: ImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-            cell.ContentsImage.image = imageArr?[indexPath.row]
+//            cell.ContentsImage.image = imageArr?[indexPath.row]
            
             return cell
         } //두번째 셀 보여줌
@@ -77,15 +83,14 @@ override func viewDidLoad() {
     
     super.viewDidLoad()
     
+    model?.boardDetailList(department: (self.appDelegate.department)!, content_serial_id: String(boardId))
    MainView.layer.cornerRadius = 10
     tableview.delegate = self
     tableview.dataSource = self
     populate_array()
-    //   imageArr = [UIImage(named: "다현")!,UIImage(named: "Icon")!]
-  
-   NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     
+  
+
     let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
     let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
     statusBarView.backgroundColor = statusBarColor
@@ -143,5 +148,38 @@ override func didReceiveMemoryWarning() {
         self.navigationController?.navigationBar.topItem?.title = "";
         tableview.estimatedRowHeight = 100
         tableview.rowHeight = UITableViewAutomaticDimension
+    }
+}
+
+extension DetailNoticeViewController: NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
+        if code == "boardListSuccess" {
+            print(resultdata)
+            
+            var temp: [BoardDetail] = []
+            if let item = resultdata as? NSDictionary {
+                    let content_serial_id = item["content_serial_id"] as? Int ?? 0
+                    let title = item["title"] as? String ?? ""
+                    let content = item["content"] as? String ?? ""
+                    let department = item["department"] as? String ?? ""
+                    let timeSave = item["timeSave"] as? String ?? ""
+                    let keyNum = item["keyNum"] as? Int ?? 0
+                    let fileName = item["fileName"] as? [String] ?? [""]
+                    let fileKey = item["fileKey"] as? Int ?? 0
+                    let obj = BoardDetail.init(content_serial_id: content_serial_id, title: title, content: content, department: department, timeSave: timeSave)
+                    temp.append(obj)
+                
+            }
+            
+            self.detailBoard = temp
+            
+        }
+    }
+    
+    func networkFail(code: String) {
+        if(code == "boardListError") {
+            print("실패하였습니다.")
+        }
+        
     }
 }

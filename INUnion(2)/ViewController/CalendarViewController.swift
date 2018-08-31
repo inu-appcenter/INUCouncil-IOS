@@ -17,9 +17,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     @IBOutlet weak var Label: UILabel!
   
     var titlelabel = ["밥먹기","집가기"]
-    var time = ["13:00","14:00"]
+    var StartTime = ["13:00","14:00"]
+    var EndTime = ["14:00","15:00"]
     var location = ["밥드세요","집에가세요"]
-    var contents = ["맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드맥도날드","집"]
+    var contents = ["맥도날드","집"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,38 +44,38 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
       
        
     }
-  
     //테이블 갯수 몇개인지
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titlelabel.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell") as! CalendarTableViewCell
-       cell.TimeLabel.text! = time[indexPath.row] 
+        cell.TimeLabel.text! = StartTime[indexPath.row]
         cell.TitleLabel.text! = titlelabel[indexPath.row]
         cell.ContentsLabel.text! = contents[indexPath.row]
-       
+        
         return cell
     }
     
     //선택한 테이블 뷰 상세보기
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    if let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-        dvc.getTitle = titlelabel[indexPath.row]
-        dvc.getTime = time[indexPath.row]
-        dvc.getcontents = contents[indexPath.row]
-        dvc.getlocation = location[indexPath.row]
-       self.navigationController?.show(dvc, sender: nil)
-    }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+            dvc.getTitle = titlelabel[indexPath.row]
+            dvc.getStartTime = StartTime[indexPath.row]
+            dvc.getEndTime = EndTime[indexPath.row]
+            dvc.getcontents = contents[indexPath.row]
+            dvc.getlocation = location[indexPath.row]
+            self.navigationController?.show(dvc, sender: nil)
+        }
+        
     }
     
     //테이블 뷰 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete)
         {
-            time.remove(at: indexPath.row)
+            StartTime.remove(at: indexPath.row)
             titlelabel.remove(at: indexPath.row)
             contents.remove(at: indexPath.row)
             location.remove(at: indexPath.row)
@@ -85,17 +87,17 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-  
- 
-   
-   
+    
+    
+    
+    
     // 이벤트 점
-  /*  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return 1
-    }*/
+    /*  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+     return 1
+     }*/
     
     func calendarCurrentMonthDidChange(_ calendar: FSCalendar) {
-       Label.text = "\(calendar.year(of: calendar.currentPage))년 \(calendar.month(of: calendar.currentPage))월"
+        Label.text = "\(calendar.year(of: calendar.currentPage))년 \(calendar.month(of: calendar.currentPage))월"
     }
     
     // 날짜 연동
@@ -105,3 +107,4 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     }
     
 }
+

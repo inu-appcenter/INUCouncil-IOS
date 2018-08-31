@@ -7,43 +7,63 @@
 //
 
 
- import UIKit
+import UIKit
 
-class DetailViewController: UIViewController, UITextViewDelegate
+class DetailViewController: UIViewController
 {
     var getTitle = String()
-    var getTime = String()
+    var getStartTime = String()
+    var getEndTime = String()
     var getlocation = String()
     var getcontents = String()
     
-    @IBAction func ReviseButtonClick(_ sender: Any) {
+    @IBOutlet weak var MajorLabel: UILabel!
+    
+    @IBOutlet weak var CardView: UIView!
+    
+    @IBAction func AlertButtonClicked(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "수정하기", style: .default, handler: self.okHandler))
+        alertController.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: self.okHandler))
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(alertController,animated:true, completion: nil)
     }
     
-    @IBAction func BackButtonClick(_ sender: Any) {
-    self.navigationController?.popViewController(animated: true)
+    func okHandler(alert: UIAlertAction!){
+        self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
-    @IBOutlet weak var titleText: UITextField!
-    @IBOutlet weak var timeText: UITextField!
-    @IBOutlet weak var whereText: UITextField!
-    @IBOutlet weak var textView: UITextView!
-   
+    
+    
+    
+    
+    
+    @IBAction func BackButtonClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var StartTimeText: UILabel!
+    @IBOutlet weak var EndTimeText: UILabel!
+    @IBOutlet weak var whereText: UILabel!
+    @IBOutlet weak var textView: UILabel!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.textView.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        CardView.layer.cornerRadius = 10
         
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
         let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
         statusBarView.backgroundColor = statusBarColor
         view.addSubview(statusBarView)
         titleText.text! = getTitle
-        timeText.text! = getTime
+        StartTimeText.text! = getStartTime
+        EndTimeText.text! = getEndTime
         whereText.text! = getlocation
         textView.text! = getcontents
-   
+        
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.textView.resignFirstResponder()
@@ -56,20 +76,7 @@ class DetailViewController: UIViewController, UITextViewDelegate
     func textViewDidEndEditing(_ textView: UITextView) {
         textView.backgroundColor = UIColor.white
     }
-
-    @objc func updateTextView(notification:Notification) {
-        let userInfo = notification.userInfo!
-        let keyboardEndFrameScreenCoordinates = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardEndFrame = self.view.convert(keyboardEndFrameScreenCoordinates, to: view.window)
-        
-        if notification.name == Notification.Name.UIKeyboardWillHide{
-            textView.contentInset = UIEdgeInsets.zero
-        } else{
-            textView.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
-            textView.scrollIndicatorInsets = textView.contentInset
-        }
-        textView.scrollRangeToVisible(textView.selectedRange)
-    }
+    
     
     class CustomNavController: UINavigationController {
         override func viewDidLoad() {
@@ -85,13 +92,9 @@ class DetailViewController: UIViewController, UITextViewDelegate
         self.navigationController?.navigationBar.topItem?.title = "";
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
 }
- 

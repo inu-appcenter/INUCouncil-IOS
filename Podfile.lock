@@ -1,24 +1,44 @@
 PODS:
   - Alamofire (4.6.0)
+  - BSGridCollectionViewLayout (1.2.1)
+  - BSImagePicker (2.8.0):
+    - BSGridCollectionViewLayout (~> 1.2.0)
+    - BSImageView (~> 1.0.0)
+  - BSImageView (1.0.0)
   - Device (3.0.3)
   - FSCalendar (2.7.9)
+  - Kingfisher (4.8.1)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BSImagePicker
   - Device (~> 3.0.3)
   - FSCalendar
+  - Kingfisher
+  - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BSGridCollectionViewLayout
+    - BSImagePicker
+    - BSImageView
     - Device
     - FSCalendar
+    - Kingfisher
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BSGridCollectionViewLayout: 1a7d6f30517d3c9d181774bc74be4dfcab7b8115
+  BSImagePicker: b06623bd22f1941bbb04168426b95d38017e3081
+  BSImageView: ed9c50d917111d8cac66c21c5a41c03f57908819
   Device: 9a5264ee4e0f392e7153d2c46b10c8df46b7aad2
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 7165bc5eb7924219b069d8cde6ceebd19a827af7
+PODFILE CHECKSUM: 0973e9945d19ab4c2a0e845c1239ef1f5cc4a5f7
 
 COCOAPODS: 1.5.3

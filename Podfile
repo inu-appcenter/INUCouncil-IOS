@@ -10,6 +10,10 @@ target 'INUnion(2)' do
 pod 'FSCalendar'
 pod 'Alamofire', '~> 4.5'
 pod "Device", '~> 3.0.3'
+pod 'Kingfisher'
+pod "BSImagePicker"
+pod 'Toast-Swift', '~> 3.0.1'
+
 post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
         config.build_settings.delete('CODE_SIGNING_ALLOWED')

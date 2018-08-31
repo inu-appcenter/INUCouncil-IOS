@@ -6,7 +6,7 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 class StudentDetailViewController: UIViewController, UITextViewDelegate
 {
@@ -95,5 +95,5 @@ class StudentDetailViewController: UIViewController, UITextViewDelegate
     
     
     
-}
+}*/
 
