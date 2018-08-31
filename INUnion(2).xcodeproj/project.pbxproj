@@ -18,7 +18,6 @@
 		A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */; };
 		A5300FB92132F44900E20BCE /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FB82132F44900E20BCE /* ContentsCell.swift */; };
 		A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FBA2132F48000E20BCE /* ImageCell.swift */; };
-		A55033F021385BB600C12958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55033EF21385BB600C12958 /* Assets.xcassets */; };
 		A558559821229813003EADE6 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559721229813003EADE6 /* StudentDetailViewController.swift */; };
 		A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */; };
 		A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */; };
@@ -39,6 +38,7 @@
 		A5AFD2B7213677F700BDA2FD /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */; };
 		A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */; };
 		A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */; };
+		A5E432352139266F00E59261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E432342139266F00E59261 /* Assets.xcassets */; };
 		A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */; };
 		A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */; };
 		A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */; };
@@ -59,7 +59,6 @@
 		A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMajorViewController.swift; sourceTree = "<group>"; };
 		A5300FB82132F44900E20BCE /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		A5300FBA2132F48000E20BCE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		A55033EF21385BB600C12958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		A558559721229813003EADE6 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoticeViewController.swift; sourceTree = "<group>"; };
+		A5E432342139266F00E59261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNoticeViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCalendarViewController.swift; sourceTree = "<group>"; };
 		A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPhoneDircetoryViewController.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				A56706BF2111ED7700A66C81 /* AppDelegate.swift */,
 				A56706C32111ED7700A66C81 /* Main.storyboard */,
 				A56706D12111EDD900A66C81 /* CustomNavigationViewController.swift */,
-				A55033EF21385BB600C12958 /* Assets.xcassets */,
+				A5E432342139266F00E59261 /* Assets.xcassets */,
 				A56706C82111ED7800A66C81 /* LaunchScreen.storyboard */,
 				A56706CB2111ED7800A66C81 /* Info.plist */,
 				A56706D32111F01F00A66C81 /* NanumBarunGothic.ttf */,
@@ -276,7 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A56706CA2111ED7800A66C81 /* LaunchScreen.storyboard in Resources */,
-				A55033F021385BB600C12958 /* Assets.xcassets in Resources */,
+				A5E432352139266F00E59261 /* Assets.xcassets in Resources */,
 				A56706C52111ED7700A66C81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

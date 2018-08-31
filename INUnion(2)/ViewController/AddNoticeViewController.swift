@@ -3,7 +3,7 @@ import Photos
 
 class AddNoticeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate {
    
-/*    @IBAction func CancelButtonClicked(_ sender: Any) {
+   @IBAction func CancelButtonClicked(_ sender: Any) {
         ViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -13,8 +13,7 @@ class AddNoticeViewController: UIViewController,UICollectionViewDelegate,UIColle
             postImageArray.append(imageArr[i])
             ViewController?.dismiss(animated: true, completion: nil)
         }
-    }*/
-    
+    }
     var photomaximum : Int = 0
     
     var imageArr = [#imageLiteral(resourceName: "PlusButton-1")]
@@ -62,4 +61,3 @@ class AddNoticeViewController: UIViewController,UICollectionViewDelegate,UIColle
         // Dispose of any resources that can be recreated.
     }
 }
-*/
