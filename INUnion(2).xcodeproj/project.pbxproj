@@ -35,6 +35,9 @@
 		A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DF211201E800A66C81 /* SearchMajorViewController.swift */; };
 		A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */; };
 		A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */; };
+		A57F46B8213A6830008D675D /* PhoneBookViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F46B5213A682F008D675D /* PhoneBookViewDetail.swift */; };
+		A57F46B9213A6830008D675D /* PhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F46B6213A682F008D675D /* PhoneDirectoryViewController.swift */; };
+		A57F46BA213A6830008D675D /* MakingnewPhonebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F46B7213A6830008D675D /* MakingnewPhonebook.swift */; };
 		A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B0213666D800BDA2FD /* DBManager.swift */; };
 		A5AFD2B7213677F700BDA2FD /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */; };
 		A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */; };
@@ -81,6 +84,9 @@
 		A56706DF211201E800A66C81 /* SearchMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMajorViewController.swift; sourceTree = "<group>"; };
 		A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoticeViewController.swift; sourceTree = "<group>"; };
+		A57F46B5213A682F008D675D /* PhoneBookViewDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneBookViewDetail.swift; sourceTree = "<group>"; };
+		A57F46B6213A682F008D675D /* PhoneDirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneDirectoryViewController.swift; path = ../../../PhoneDirectoryViewController.swift; sourceTree = "<group>"; };
+		A57F46B7213A6830008D675D /* MakingnewPhonebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakingnewPhonebook.swift; path = ../../../MakingnewPhonebook.swift; sourceTree = "<group>"; };
 		A5AFD2B0213666D800BDA2FD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 		A52FABDB2125C83D008532EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A57F46B7213A6830008D675D /* MakingnewPhonebook.swift */,
+				A57F46B5213A682F008D675D /* PhoneBookViewDetail.swift */,
+				A57F46B6213A682F008D675D /* PhoneDirectoryViewController.swift */,
 				A56706C12111ED7700A66C81 /* ViewController.swift */,
 				A520397A211F3D0100AD9918 /* DetailViewController.swift */,
 				A56706DD2112001700A66C81 /* SettingViewController.swift */,
@@ -345,12 +354,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A536C9492139AAF6005B34EF /* AddCalendarViewController.swift in Sources */,
+				A57F46BA213A6830008D675D /* MakingnewPhonebook.swift in Sources */,
 				A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */,
 				A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */,
 				A56706C22111ED7700A66C81 /* ViewController.swift in Sources */,
 				A51D97D92114239500088FE2 /* NetworkModel.swift in Sources */,
 				A5E9DC5321217AE300EC8DA4 /* StudentSettingViewController.swift in Sources */,
 				A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */,
+				A57F46B8213A6830008D675D /* PhoneBookViewDetail.swift in Sources */,
 				A56706DA2111FF3B00A66C81 /* CalendarViewController.swift in Sources */,
 				A5300FB92132F44900E20BCE /* ContentsCell.swift in Sources */,
 				A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */,
@@ -364,6 +375,7 @@
 				A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */,
 				68C55177211DA0F000D22DB4 /* StudentInfoClass.swift in Sources */,
 				A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */,
+				A57F46B9213A6830008D675D /* PhoneDirectoryViewController.swift in Sources */,
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
 				A56706D82111FE4500A66C81 /* NoticeViewController.swift in Sources */,
 				A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */,
