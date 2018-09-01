@@ -6,7 +6,7 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 import UIKit
-
+import Toast_Swift
 /*
 컴퓨터공학부
 ID: dcse0780
@@ -81,6 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
          username=IDTextField.text!
         password=PassTextField.text!
         let model = NetworkModel(self)
+        startLoading()
         model.login(username: username, password: password)
         
         //주석 해제하면 login 생략 가능.
@@ -89,6 +90,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
        if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {
          self.present(vc, animated: true, completion: nil)
         }*/
+    }
+    
+    func startLoading(){
+        self.view.makeToastActivity(.center)
+    }
+    func endLoading(){
+        self.view.hideToastActivity()
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -105,7 +114,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                         
                         self.appDelegate.department = self.loginResult?.department
                     }
+                    endLoading()
                     if loginResult?.ans == true {
+                        
                          CheckIDLabel.isHidden = true
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                        
