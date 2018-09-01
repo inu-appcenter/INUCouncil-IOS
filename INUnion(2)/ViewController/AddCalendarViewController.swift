@@ -17,7 +17,7 @@ class AddCalendarViewController: UIViewController {
     
     
     @IBAction func XbuttnClicked(_ sender: Any) {
-  
+  self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var CompleteButton: UIButton!
     
@@ -31,7 +31,6 @@ class AddCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        CompleteButtonCkecked()
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = UIDatePickerMode.dateAndTime
@@ -57,20 +56,9 @@ class AddCalendarViewController: UIViewController {
         }
     }*/
     
-    func CompleteButtonCkecked(){
-        if(((TitleText.text?.isEmpty)! || (StartText.text?.isEmpty)! || (EndText.text?.isEmpty)! || (LocateText.text?.isEmpty)!) == false)
-        {
-            CompleteButton.isEnabled = true
-        }
-        else
-        {
-            CompleteButton.isEnabled = false
-        }
-    }
+   
     
-    override func viewWillAppear(_ animated: Bool) {
-        CompleteButtonCkecked()
-    }
+ 
     //시작일,종료일 입력받음. 입력 완료 후 배경 탭해야 종료 됨.
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
