@@ -1,16 +1,20 @@
 //
-//  PhoneDirectory.swift
+//  PhoneDirectoryViewController.swift
 //  INUnion(2)
 //
-//  Created by 이형주 on 2018. 8. 1..
+//  Created by 이형주 on 2018. 9. 1..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
+/*
 import UIKit
 
 class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate  {
     
     let names = ["이교수", "김교수"]
     let phones = ["0101234","0104567"]
+    let emails = ["sambong@gmail.com", "ncdinos@ncdinos.com"]
+    let labs = ["403", "112"]
+    let memo = ["실습 많이 시킴", "아무 내용 없음. 밥 먹고 싶다"]
     
     var filtered: [String]!
     var searchActive: Bool = false
@@ -27,25 +31,33 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DirectoryTableViewCell
         
         if searchActive{
-            cell.PhoneLabel.text = filtered[indexPath.row]
-            cell.NameLabel.text = filtered[indexPath.row]
+            cell.PhoneLabel.text! = filtered[indexPath.row]
+            cell.NameLabel.text! = filtered[indexPath.row]
         } else{
-            cell.PhoneLabel.text = phones[indexPath.row]
-            cell.NameLabel.text = names[indexPath.row]
+            cell.PhoneLabel.text! = phones[indexPath.row]
+            cell.NameLabel.text! = names[indexPath.row]
         }
         return (cell)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        // let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        // 테이블바를 선택했을 경우의 동작을 정의
+        let PvD = mainStoryboard.instantiateViewController(withIdentifier: "PhoneBookViewDetail")as! PhoneBookViewDetail
         
+        
+        PvD.GetName = names[indexPath.row]
+        PvD.GetNum = phones[indexPath.row]
+        PvD.GetLab = labs[indexPath.row]
+        PvD.GetEmail = emails[indexPath.row]
+        PvD.GetMemo = memo[indexPath.row]
+        
+        //self.navigationController?.pushViewController(PvD, animated: true)
     }
+    
     
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var Tableview: UITableView!
     
-    @IBOutlet weak var MajorLabel: UILabel!
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
@@ -87,5 +99,9 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         searchActive = false
     }
     
+    
+    
+    
 }
+ */
 

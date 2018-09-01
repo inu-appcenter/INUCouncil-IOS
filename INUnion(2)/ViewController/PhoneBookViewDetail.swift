@@ -2,11 +2,11 @@
 //  PhoneBookViewDetail.swift
 //  INUnion(2)
 //
-//  Created by 유용상 on 2018. 8. 26..
+//  Created by 이형주 on 2018. 9. 1..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 import UIKit
 
 
@@ -47,8 +47,8 @@ class PhoneBookViewDetail: UIViewController {
         MemoTextField.text! = GetMemo
         MemoTextField.underlined()
     }
-        
-        
+    
+    
     
     var GetName = String()
     var GetNum = String()
@@ -60,21 +60,22 @@ class PhoneBookViewDetail: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        
+    
     @objc func updateTextView(notification:Notification) {
         let userInfo = notification.userInfo!
         let keyboardEndFrameScreenCoordinates = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         _ = self.view.convert(keyboardEndFrameScreenCoordinates, to: view.window)
         
         if notification.name == Notification.Name.UIKeyboardWillHide{
-        //tableview.contentInset = UIEdgeInsets.zero
+            //tableview.contentInset = UIEdgeInsets.zero
         } else{
-        //Tableview.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
-        //Tableview.scrollIndicatorInsets = textView.contentInset
-            }
-        //Tableview.scrollRangeToVisible(textView.selectedRange)
-            }
-    
-
+            //Tableview.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
+            //Tableview.scrollIndicatorInsets = textView.contentInset
         }
+        //Tableview.scrollRangeToVisible(textView.selectedRange)
+    }
+    
+    
+}
 
+*/
