@@ -60,12 +60,14 @@ class BoardDetail{
     var content: String?
     var department: String?
     var timeSave: String?
+    var fileName:[String]?
     
-    init(content_serial_id:Int, title:String, content:String, department:String, timeSave:String) {
+    init(content_serial_id:Int, title:String, content:String, department:String, timeSave:String,fileName: [String]) {
         self.content_serial_id = content_serial_id
         self.timeSave = timeSave
         self.content = content
         self.department = department
         self.title = title
+        self.fileName = fileName
     }
 }

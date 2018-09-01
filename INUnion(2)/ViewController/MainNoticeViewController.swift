@@ -32,15 +32,6 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
     }
-    var titles = ["1번","2번","3번","4번"]
-    var time = ["1시간전", "2시간전", "3시간전", "4시간전"]
-
-    
-    var imageArr:[UIImage] = [UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!,UIImage(named: "dahyun")!]
-   
-    var contents = ["1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요1번이에요","2번이에요","3번이에요","4번이에요"]
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,8 +54,9 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         model = NetworkModel(self)
         boardList.removeAll()
         model?.boardList(department: self.appDelegate.department!)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+
+//        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -154,6 +146,8 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     if let DNvC = storyboard?.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController{
         DNvC.boardId = boardList[indexPath.row].content_serial_id!
+        DNvC.titleName = boardList[indexPath.row].title!
+        DNvC.titleTime = boardList[indexPath.row].timeSave!
     self.navigationController?.show(DNvC, sender: nil)
     }
     }

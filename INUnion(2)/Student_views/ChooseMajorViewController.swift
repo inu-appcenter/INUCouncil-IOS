@@ -31,6 +31,8 @@ class ChooseMajorViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+
         super.viewDidLoad()
         addNoti()
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)

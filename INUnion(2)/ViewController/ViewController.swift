@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
    override func viewDidLoad() {
         super.viewDidLoad()
+
   /*  let header = ["Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
                   "Content-Type" : "application/x-www-form-urlencoded"]
     Alamofire.request("http://117.16.231.66:7001/boardModify/", method: .post, parameters: nil, headers: header).responseJSON { response in
