@@ -30,6 +30,7 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
             }
         }
     }
+    var deleteResult: AnsBoolResult?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var model : NetworkModel?
   
@@ -88,12 +89,17 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         let alertController = UIAlertController(title: "선택해", message: "쉬이발", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action:UIAlertAction) in
-            //            self.navigationController?.popToRootViewController(animated: true)
-            
+            self.model?.deleteBoard(content_serial_id: "\(self.detailBoard!.content_serial_id!)")
+            return
         }
         let editAction = UIAlertAction(title: "수정수정정수정", style: .default) {
             (_) in
-            
+            if let addNotice = self.storyboard?.instantiateViewController(withIdentifier: "AddNoticeViewController") as? AddNoticeViewController{
+                addNotice.noticeTitle = self.titleName
+                addNotice.noticeContent = (self.detailBoard?.content)!
+                addNotice.noticeNumber = (self.detailBoard?.content_serial_id)!
+                self.present(addNotice, animated: true, completion: nil)
+            }
             return
         }
         
@@ -181,9 +187,17 @@ extension DetailNoticeViewController: NetworkCallback{
                 
                 detailBoard = obj
             }
+        }else if code == "boardDeleteSuccess"{
+            print(resultdata)
             
-            
-            
+            if let item = resultdata as? NSDictionary {
+                let ans = item["ans"] as? Bool ?? false
+                let obj = AnsBoolResult.init(ans: ans)
+                self.deleteResult = obj
+            }
+            if deleteResult?.ans == true{
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

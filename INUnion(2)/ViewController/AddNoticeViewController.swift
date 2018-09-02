@@ -18,7 +18,14 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
         for i in 1..<imageArr.count{
         uploadArr.append(imageArr[i])
         }
+        if noticeNumber == 0{
+            // 글등록
         model?.uploadBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text!, department: (self.appDelegate.department)!)
+        }else{
+            // 글 수정
+            model?.modifyBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text, department: (self.appDelegate.department)!, content_serial_id: String(noticeNumber))
+            
+        }
     }
     
     var imageArr = [#imageLiteral(resourceName: "PlusButton-1")]
@@ -30,6 +37,9 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var model : NetworkModel?
     var uploadResult: AnsBoolResult?
+    var noticeTitle: String = ""
+    var noticeContent: String = ""
+    var noticeNumber: Int = 0
     
    @IBOutlet weak var UploadCollectionView: UICollectionView!
     @IBOutlet weak var UploadTextField: UITextView!
@@ -45,6 +55,12 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         model = NetworkModel(self)
+        if noticeTitle != ""{
+            uploadTitleTextField.text = noticeTitle
+        }
+        if noticeContent != ""{
+            UploadTextField.text = noticeContent
+        }
 
     }
     
@@ -209,7 +225,18 @@ extension AddNoticeViewController:NetworkCallback{
             if uploadResult?.ans == true{
                 endLoading()
             }
-    }
+        }else if code == "modifyProductSuccess"{
+            print(resultdata)
+            
+            if let item = resultdata as? NSDictionary {
+                let ans = item["ans"] as? Bool ?? false
+                let obj = AnsBoolResult.init(ans: ans)
+                self.uploadResult = obj
+            }
+            if uploadResult?.ans == true{
+                endLoading()
+            }
+        }
     }
     func networkFail(code: String) {
         if code == "uploadProductError"{

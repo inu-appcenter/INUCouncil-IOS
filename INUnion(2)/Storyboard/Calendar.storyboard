@@ -92,7 +92,7 @@
                                 </constraints>
                                 <state key="normal" image="PlusButton"/>
                                 <connections>
-                                    <segue destination="EmI-cs-i40" kind="presentation" id="yVV-KK-8Wz"/>
+                                    <segue destination="jGb-nl-hRb" kind="presentation" id="9zW-KQ-FqR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이날의 이벤트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O5-B8-4qe">
@@ -115,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ad-J6-d0G">
-                                <rect key="frame" x="25" y="570.66666666666663" width="367" height="165.33333333333337"/>
+                                <rect key="frame" x="25" y="570.66666666666663" width="367" height="116.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -241,151 +241,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COy-KC-ox7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4624.8000000000002" y="-200.14992503748127"/>
-        </scene>
-        <!--Add Calendar View Controller-->
-        <scene sceneID="7AV-Vo-t3O">
-            <objects>
-                <viewController id="EmI-cs-i40" customClass="AddCalendarViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hHj-kT-i6m">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T3m-sz-mA3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nS-9L-sCm">
-                                <rect key="frame" x="18" y="37" width="17" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Xbutton"/>
-                                <connections>
-                                    <action selector="XbuttnClicked:" destination="EmI-cs-i40" eventType="touchUpInside" id="0Bj-al-ND1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peR-nM-56I">
-                                <rect key="frame" x="372" y="39" width="31" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
-                                <state key="normal" title="완료">
-                                    <color key="titleColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="CompleteButtonClicked:" destination="EmI-cs-i40" eventType="touchUpInside" id="3DM-LH-5GU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="일정 작성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-DZ-IB5">
-                                <rect key="frame" x="151" y="39" width="113" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="일정 제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-ez-lCr">
-                                <rect key="frame" x="15" y="123" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시작일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EO-A7-Udx">
-                                <rect key="frame" x="15" y="238" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="종료일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT9-Hq-wUB">
-                                <rect key="frame" x="15" y="353" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메모" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbY-wB-mCc">
-                                <rect key="frame" x="14" y="582" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위치 추가" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZe-KZ-d7K">
-                                <rect key="frame" x="16" y="468" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVd-Ua-goZ">
-                                <rect key="frame" x="15" y="185" width="384" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-ME-CM4">
-                                <rect key="frame" x="15" y="300" width="384" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFF-3e-ojH">
-                                <rect key="frame" x="15" y="415" width="384" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tE-vw-9Uk">
-                                <rect key="frame" x="15" y="530" width="384" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="일정 제목을 써주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-Pv-EGd">
-                                <rect key="frame" x="16" y="156" width="233" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrB-Ub-e7s">
-                                <rect key="frame" x="20" y="378" width="344" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R11-tu-Tfy">
-                                <rect key="frame" x="7" y="492" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-nG-rOA">
-                                <rect key="frame" x="14" y="271" width="361" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4I2-Io-Mai">
-                                <rect key="frame" x="10" y="623" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NLB-dM-1Ip"/>
-                    </view>
-                    <connections>
-                        <outlet property="CompleteButton" destination="peR-nM-56I" id="mXF-qC-JNN"/>
-                        <outlet property="EndText" destination="OrB-Ub-e7s" id="Dbz-2O-nae"/>
-                        <outlet property="LocateText" destination="R11-tu-Tfy" id="cov-wJ-Uj1"/>
-                        <outlet property="StartText" destination="zoP-nG-rOA" id="DGG-oV-eVO"/>
-                        <outlet property="TitleText" destination="5Cw-Pv-EGd" id="KvW-yj-oN8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xbo-ki-wnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5316" y="-846"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="UtG-IW-fYz">
@@ -611,14 +466,17 @@
             </objects>
             <point key="canvasLocation" x="5319.1999999999998" y="-191.1544227886057"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--캘린더-->
         <scene sceneID="SZr-a3-tVg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rqd-My-rr1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar-page-empty" id="O51-EI-Rl1"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RWr-PU-Vpv">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23137254900000001" green="0.35686274509999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -629,11 +487,243 @@
             </objects>
             <point key="canvasLocation" x="3685.5999999999999" y="-200.14992503748127"/>
         </scene>
+        <!--Add Calendar View Controller-->
+        <scene sceneID="tpE-F4-azg">
+            <objects>
+                <viewController id="jGb-nl-hRb" customClass="AddCalendarViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FVQ-HF-sE4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr4-Ln-BNW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-tR-8lQ">
+                                        <rect key="frame" x="373" y="38" width="31" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                                        <state key="normal" title="완료">
+                                            <color key="titleColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CompleteButtonClicked:" destination="jGb-nl-hRb" eventType="touchUpInside" id="Xwy-hH-LtN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="일정 작성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuX-lV-nPX">
+                                        <rect key="frame" x="150" y="40" width="113" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgZ-2r-37D">
+                                        <rect key="frame" x="17" y="39" width="17" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Xbutton"/>
+                                        <connections>
+                                            <action selector="XbuttnClicked:" destination="jGb-nl-hRb" eventType="touchUpInside" id="Zjs-mN-Wbg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbM-El-kfi">
+                                <rect key="frame" x="0.0" y="70" width="414" height="666"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ0-aa-LvF">
+                                        <rect key="frame" x="15" y="163" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zg-gn-wZd">
+                                        <rect key="frame" x="15" y="278" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q51-OJ-32Z">
+                                        <rect key="frame" x="14" y="507" width="33" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 추가" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvm-U9-OaN">
+                                        <rect key="frame" x="16" y="393" width="69" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-H2-fC0">
+                                        <rect key="frame" x="15" y="53" width="69" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZYf-zB-b4L">
+                                        <rect key="frame" x="15" y="110" width="384" height="2"/>
+                                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="DYb-Jx-f1s"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-fn-c3t">
+                                        <rect key="frame" x="15" y="225" width="384" height="2"/>
+                                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="56Z-nX-EdR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-vo-cAi">
+                                        <rect key="frame" x="15" y="340" width="384" height="2"/>
+                                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="kK5-6u-x3d"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lPq-56-he9">
+                                        <rect key="frame" x="15" y="455" width="384" height="2"/>
+                                        <color key="backgroundColor" red="0.87058823529999996" green="0.8862745098" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="DIo-9C-1tn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일정 제목을 써주세요" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9e-bZ-9cs">
+                                        <rect key="frame" x="18" y="87" width="382" height="19"/>
+                                        <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRq-fz-Gxr">
+                                        <rect key="frame" x="16" y="311" width="382" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="Rru-zc-2pk"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5q-sF-yPq">
+                                        <rect key="frame" x="16" y="426" width="382" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="COy-WG-KWh"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-Jd-oqV">
+                                        <rect key="frame" x="16" y="196" width="382" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="nOC-Li-CLK"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aci-od-gKl">
+                                        <rect key="frame" x="15" y="540" width="383" height="181"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="181" id="cMc-rc-W4b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" / 300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-yA-7ly">
+                                        <rect key="frame" x="355" y="732" width="42" height="19"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDW-ja-UDI">
+                                        <rect key="frame" x="315" y="732" width="39.333333333333314" height="18.666666666666629"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SRq-fz-Gxr" firstAttribute="trailing" secondItem="v5q-sF-yPq" secondAttribute="trailing" id="0Vf-37-4Nl"/>
+                                    <constraint firstAttribute="bottom" secondItem="aci-od-gKl" secondAttribute="bottom" constant="54" id="0r6-ni-Uyy"/>
+                                    <constraint firstItem="ZYf-zB-b4L" firstAttribute="top" secondItem="v9e-bZ-9cs" secondAttribute="bottom" constant="4" id="0uZ-iu-Hb0"/>
+                                    <constraint firstItem="ZeP-yA-7ly" firstAttribute="leading" secondItem="zDW-ja-UDI" secondAttribute="trailing" id="0vr-aR-tUw"/>
+                                    <constraint firstItem="JIP-fn-c3t" firstAttribute="trailing" secondItem="AX0-vo-cAi" secondAttribute="trailing" id="1TT-Hd-VmT"/>
+                                    <constraint firstItem="SRq-fz-Gxr" firstAttribute="top" secondItem="9zg-gn-wZd" secondAttribute="bottom" constant="12" id="1i9-Cb-XTf"/>
+                                    <constraint firstItem="JIP-fn-c3t" firstAttribute="leading" secondItem="9zg-gn-wZd" secondAttribute="leading" id="5T5-pn-UDV"/>
+                                    <constraint firstItem="v9e-bZ-9cs" firstAttribute="top" secondItem="Fdg-H2-fC0" secondAttribute="bottom" constant="13" id="7gh-3T-le2"/>
+                                    <constraint firstItem="h1W-Jd-oqV" firstAttribute="trailing" secondItem="SRq-fz-Gxr" secondAttribute="trailing" id="8b2-yE-Il6"/>
+                                    <constraint firstAttribute="trailing" secondItem="v9e-bZ-9cs" secondAttribute="trailing" constant="14" id="AR9-JV-A6K"/>
+                                    <constraint firstItem="ZYf-zB-b4L" firstAttribute="trailing" secondItem="JIP-fn-c3t" secondAttribute="trailing" id="DcV-nF-qS4"/>
+                                    <constraint firstItem="h1W-Jd-oqV" firstAttribute="centerX" secondItem="JIP-fn-c3t" secondAttribute="centerX" id="Esj-1h-JE1"/>
+                                    <constraint firstItem="Q51-OJ-32Z" firstAttribute="top" secondItem="lPq-56-he9" secondAttribute="bottom" constant="50" id="F3O-5A-17P"/>
+                                    <constraint firstItem="ZeP-yA-7ly" firstAttribute="top" secondItem="aci-od-gKl" secondAttribute="bottom" constant="11" id="Fsk-W7-cm1"/>
+                                    <constraint firstItem="AX0-vo-cAi" firstAttribute="trailing" secondItem="lPq-56-he9" secondAttribute="trailing" id="G6g-wF-fDl"/>
+                                    <constraint firstItem="JIP-fn-c3t" firstAttribute="top" secondItem="h1W-Jd-oqV" secondAttribute="bottom" constant="10" id="JlL-IQ-JHV"/>
+                                    <constraint firstItem="Fdg-H2-fC0" firstAttribute="top" secondItem="fbM-El-kfi" secondAttribute="top" constant="53" id="KC3-vV-jFg"/>
+                                    <constraint firstItem="h1W-Jd-oqV" firstAttribute="leading" secondItem="SRq-fz-Gxr" secondAttribute="leading" id="Lfe-Pn-Heh"/>
+                                    <constraint firstItem="AX0-vo-cAi" firstAttribute="top" secondItem="SRq-fz-Gxr" secondAttribute="bottom" constant="10" id="N5i-7L-4rh"/>
+                                    <constraint firstItem="SRq-fz-Gxr" firstAttribute="leading" secondItem="jvm-U9-OaN" secondAttribute="leading" id="NFV-J9-dww"/>
+                                    <constraint firstItem="jvm-U9-OaN" firstAttribute="leading" secondItem="v5q-sF-yPq" secondAttribute="leading" id="NmG-Xy-ewZ"/>
+                                    <constraint firstItem="v5q-sF-yPq" firstAttribute="top" secondItem="jvm-U9-OaN" secondAttribute="bottom" constant="12" id="Par-ux-Gfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZeP-yA-7ly" secondAttribute="trailing" constant="17" id="RT8-Wh-GA3"/>
+                                    <constraint firstItem="jvm-U9-OaN" firstAttribute="top" secondItem="AX0-vo-cAi" secondAttribute="bottom" constant="51" id="SyY-EL-s4e"/>
+                                    <constraint firstItem="Q51-OJ-32Z" firstAttribute="leading" secondItem="fbM-El-kfi" secondAttribute="leading" constant="14" id="TEl-lR-okO"/>
+                                    <constraint firstItem="ZYf-zB-b4L" firstAttribute="leading" secondItem="NJ0-aa-LvF" secondAttribute="leading" id="WCm-xz-C8d"/>
+                                    <constraint firstItem="lPq-56-he9" firstAttribute="top" secondItem="v5q-sF-yPq" secondAttribute="bottom" constant="10" id="afI-X8-deS"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZYf-zB-b4L" secondAttribute="trailing" constant="15" id="az8-Dm-vnu"/>
+                                    <constraint firstItem="v9e-bZ-9cs" firstAttribute="leading" secondItem="fbM-El-kfi" secondAttribute="leading" constant="18" id="bf8-hn-ITd"/>
+                                    <constraint firstAttribute="trailing" secondItem="aci-od-gKl" secondAttribute="trailing" constant="16" id="bmX-OU-Qpk"/>
+                                    <constraint firstItem="Fdg-H2-fC0" firstAttribute="leading" secondItem="fbM-El-kfi" secondAttribute="leading" constant="15" id="dB6-C7-wRz"/>
+                                    <constraint firstItem="aci-od-gKl" firstAttribute="leading" secondItem="fbM-El-kfi" secondAttribute="leading" constant="15" id="dih-F6-eRz"/>
+                                    <constraint firstItem="AX0-vo-cAi" firstAttribute="leading" secondItem="lPq-56-he9" secondAttribute="leading" id="gKY-W0-FQi"/>
+                                    <constraint firstItem="9zg-gn-wZd" firstAttribute="top" secondItem="JIP-fn-c3t" secondAttribute="bottom" constant="51" id="lBf-LG-MTo"/>
+                                    <constraint firstItem="zDW-ja-UDI" firstAttribute="top" secondItem="aci-od-gKl" secondAttribute="bottom" constant="11" id="nEn-My-nbE"/>
+                                    <constraint firstItem="NJ0-aa-LvF" firstAttribute="leading" secondItem="JIP-fn-c3t" secondAttribute="leading" id="piX-fd-YC4"/>
+                                    <constraint firstItem="Fdg-H2-fC0" firstAttribute="leading" secondItem="ZYf-zB-b4L" secondAttribute="leading" id="sjk-z7-9YM"/>
+                                    <constraint firstItem="NJ0-aa-LvF" firstAttribute="top" secondItem="ZYf-zB-b4L" secondAttribute="bottom" constant="51" id="sxC-9o-tCm"/>
+                                    <constraint firstItem="ZYf-zB-b4L" firstAttribute="centerX" secondItem="fbM-El-kfi" secondAttribute="centerX" id="uPi-4j-rcf"/>
+                                    <constraint firstItem="h1W-Jd-oqV" firstAttribute="top" secondItem="NJ0-aa-LvF" secondAttribute="bottom" constant="12" id="vl9-bx-dgQ"/>
+                                    <constraint firstItem="9zg-gn-wZd" firstAttribute="leading" secondItem="AX0-vo-cAi" secondAttribute="leading" id="w41-kQ-kjk"/>
+                                    <constraint firstItem="aci-od-gKl" firstAttribute="top" secondItem="Q51-OJ-32Z" secondAttribute="bottom" constant="12" id="wyF-Gf-nXS"/>
+                                    <constraint firstItem="h1W-Jd-oqV" firstAttribute="leading" secondItem="fbM-El-kfi" secondAttribute="leading" constant="16" id="yOT-7c-HFM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fbM-El-kfi" firstAttribute="trailing" secondItem="vr4-Ln-BNW" secondAttribute="trailing" id="2z4-YZ-sD4"/>
+                            <constraint firstItem="vr4-Ln-BNW" firstAttribute="top" secondItem="FVQ-HF-sE4" secondAttribute="top" id="7m8-Oa-F1F"/>
+                            <constraint firstItem="fbM-El-kfi" firstAttribute="top" secondItem="FVQ-HF-sE4" secondAttribute="top" constant="70" id="8p4-SG-LRd"/>
+                            <constraint firstItem="vr4-Ln-BNW" firstAttribute="leading" secondItem="VyO-Zo-wx6" secondAttribute="leading" id="V51-X8-wkB"/>
+                            <constraint firstItem="fbM-El-kfi" firstAttribute="top" secondItem="vr4-Ln-BNW" secondAttribute="bottom" id="da7-YN-EmA"/>
+                            <constraint firstItem="fbM-El-kfi" firstAttribute="bottom" secondItem="VyO-Zo-wx6" secondAttribute="bottom" id="hND-Dh-GD9"/>
+                            <constraint firstItem="fbM-El-kfi" firstAttribute="leading" secondItem="vr4-Ln-BNW" secondAttribute="leading" id="hdj-Xw-GAF"/>
+                            <constraint firstItem="vr4-Ln-BNW" firstAttribute="trailing" secondItem="VyO-Zo-wx6" secondAttribute="trailing" id="meX-ZT-6UH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VyO-Zo-wx6"/>
+                    </view>
+                    <connections>
+                        <outlet property="CompleteButton" destination="4Ea-tR-8lQ" id="qyM-fM-Ynd"/>
+                        <outlet property="EndText" destination="SRq-fz-Gxr" id="zRB-AP-9jx"/>
+                        <outlet property="InputTextLabel" destination="zDW-ja-UDI" id="g2Q-bf-vqP"/>
+                        <outlet property="LocateText" destination="v5q-sF-yPq" id="i48-gV-JnO"/>
+                        <outlet property="MaximulLabel" destination="ZeP-yA-7ly" id="aIC-S3-DHR"/>
+                        <outlet property="MemoTextView" destination="aci-od-gKl" id="Mwe-2l-mDD"/>
+                        <outlet property="StartText" destination="h1W-Jd-oqV" id="MdM-Bz-Kzy"/>
+                        <outlet property="TitleText" destination="v9e-bZ-9cs" id="Yh7-kh-PZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wp1-vx-BI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5354" y="-1013"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Group" width="16" height="4"/>
         <image name="PlusButton" width="66" height="66"/>
         <image name="Xbutton" width="17" height="17"/>
         <image name="backbutton" width="16" height="16"/>
+        <image name="calendar-page-empty" width="24" height="24"/>
     </resources>
 </document>

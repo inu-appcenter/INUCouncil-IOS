@@ -5,8 +5,8 @@
 //  Created by 이형주 on 2018. 9. 1..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
-/*
-import UIKit
+
+/*import UIKit
 
 class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate  {
     
@@ -41,8 +41,8 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         // let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let PvD = mainStoryboard.instantiateViewController(withIdentifier: "PhoneBookViewDetail")as! PhoneBookViewDetail
+        let storyboard: UIStoryboard = UIStoryboard(name: "Phone", bundle: nil)
+        let PvD = storyboard.instantiateViewController(withIdentifier: "PhoneBookViewDetail")as! PhoneBookViewDetail
         
         
         PvD.GetName = names[indexPath.row]

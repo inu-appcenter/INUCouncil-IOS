@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FUe-3K-D50">
-                                <rect key="frame" x="0.0" y="255" width="375" height="412"/>
+                                <rect key="frame" x="0.0" y="255" width="375" height="363"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="22" minimumInteritemSpacing="22" id="cHA-I0-K8L">
                                     <size key="itemSize" width="382" height="279"/>
@@ -345,7 +345,7 @@
         <!--Add Notice View Controller-->
         <scene sceneID="Je0-Ng-7ea">
             <objects>
-                <viewController id="amh-tR-u3L" customClass="AddNoticeViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoticeViewController" id="amh-tR-u3L" customClass="AddNoticeViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wCj-TW-pYd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -481,15 +481,17 @@
             </objects>
             <point key="canvasLocation" x="4628" y="-1897"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--공지사항-->
         <scene sceneID="0RY-PK-lW7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iic-FE-tGq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="공지사항" image="Icon" id="vyy-N6-cPX"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zD1-pf-b0O">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.23137254900000001" green="0.35686274509999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.23137254901960785" green="0.35686274509803922" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -508,6 +510,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon" width="27" height="26"/>
         <image name="WriteIcon" width="50" height="50"/>
         <image name="Xbutton" width="17" height="17"/>
         <image name="imageView:d60-vY-d5H:image" width="344" height="344">

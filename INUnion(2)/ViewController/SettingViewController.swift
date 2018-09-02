@@ -9,30 +9,70 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
-    @IBAction func LogoutButtonClick(_ sender: Any) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-
-        navigationController?.dismiss(animated: true, completion: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
+    @IBOutlet weak var settingTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
-        
+        settingTable.tableFooterView = UIView()
+
     }
       
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+}
+
+extension SettingViewController: UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return " 씨발 앱센터"
+        case 1:
+            return " 망해라 앱센터"
+        default:
+            return ""
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell") as! SettingTableViewCell
+        switch indexPath.section {
+        case 0:
+            cell.settingSwitch.isHidden = false
+            cell.settingNameLabel.text = "알림 허용"
+        case 1:
+            cell.settingSwitch.isHidden = true
+            cell.settingNameLabel.text = "로그아웃"
+            cell.settingNameLabel.textColor = UIColor.red
+        default:
+            break
+        }
+        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
+        switch indexPath.section {
+        case 0:
+            break
+        case 1:
+            self.dismiss(animated: true, completion:nil)
+            break
+        default:
+            break
+        }
     }
     
 }

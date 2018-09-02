@@ -127,5 +127,68 @@ private let serverURL = "http://117.16.231.66:7001"
         )
     }
     
-    
+//    공지사항 수정
+    func modifyBoard(userfile: [UIImage] ,title: String, content: String, department:String, content_serial_id: String){
+        let params: Parameters = [
+            "title" : title,
+            "content" : content,
+            "department" : department,
+            "content_serial_id": content_serial_id]
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key,value) in params {
+                if let value = value as? String {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+            }
+            for index in 0..<userfile.count {
+                var data = UIImagePNGRepresentation(userfile[index])
+                if data != nil {
+                    // PNG
+                    multipartFormData.append(data!, withName: "userfile",fileName: "userfile", mimeType: "image/png")
+                } else {
+                    // jpg
+                    data = UIImageJPEGRepresentation(userfile[index], 0.5)
+                    multipartFormData.append((data?.base64EncodedData())!, withName: "userfile",fileName: "userfile", mimeType: "image/jpeg")
+                }
+            }
+        },
+                         to: "\(serverURL)/boardModify/",
+            headers: ["Content-Type" : "multipart/form-data"],
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON{ res in
+                        switch res.result{
+                        case .success(let item):
+                            self.view.networkSuc(resultdata: item, code: "modifyProductSuccess")
+                            break
+                        case .failure(let error):
+                            print(error)
+                            self.view.networkFail(code: "modifyProductError")
+                            break
+                        }
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        }
+        )
+    }
+//    공지사항 삭제
+    func deleteBoard(content_serial_id: String){
+        let param = ["content_serial_id": content_serial_id]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/boardDelete/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "boardDeleteSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "boardDeleteError")
+                print(error)
+            }
+        }
+    }
  }

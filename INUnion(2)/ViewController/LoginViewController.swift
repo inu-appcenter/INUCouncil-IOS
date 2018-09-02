@@ -114,17 +114,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                         
                         self.appDelegate.department = self.loginResult?.department
                     }
-                    endLoading()
                     if loginResult?.ans == true {
-                        
+                        endLoading()
+
                          CheckIDLabel.isHidden = true
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                        
                         if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {self.present(vc, animated: true, completion: nil)
                         }
                     
-                    }else{
-                         CheckIDLabel.isHidden = false
                     }
                 }
             }
@@ -132,6 +130,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             func networkFail(code: String) {
                 if(code == "loginError") {
                     print("실패하였습니다.")
+                    endLoading()
+                    self.view.makeToast("로그인실패")
                     CheckIDLabel.isHidden = false
                 }
             }
