@@ -6,19 +6,37 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-/*import Foundation
+import Foundation
 import UIKit
 
 
 
 class PhoneBookViewDetail: UIViewController {
     
-    // Outlet 모음
-    @IBOutlet weak var Name: UILabel!
-    @IBOutlet weak var NumTextField: UITextField!
-    @IBOutlet weak var EmailTextField: UITextField!
-    @IBOutlet weak var LabTextField: UITextField!
-    @IBOutlet weak var MemoTextField: UITextField!
+    @IBOutlet weak var CardView: UIView!
+    
+    @IBAction func AlertButton(_ sender: Any) {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "수정하기", style: .default, handler: self.okHandler))
+        alertController.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: self.okHandler))
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(alertController,animated:true, completion: nil)
+        
+    }
+    func okHandler(alert: UIAlertAction!){
+        self.navigationController?.pushViewController(UIViewController(), animated: true)
+    }
+    
+    
+    @IBAction func BackButtonClicked(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var ProfNameLabel: UILabel!
+    @IBOutlet weak var PhoneNumberLabel: UILabel!
+    @IBOutlet weak var EmailLabel: UILabel!
+    @IBOutlet weak var LabLabel: UILabel!
+   
+    @IBOutlet weak var MemoTextView: UITextView!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -27,29 +45,16 @@ class PhoneBookViewDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PhoneBookViewDetail.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PhoneBookViewDetail.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-        Name.text! = GetName
-        
-        NumTextField.text! = GetNum
-        NumTextField.underlined()
-        NumTextField.resignFirstResponder()
-        
-        EmailTextField.text! = GetEmail
-        EmailTextField.underlined()
-        
-        LabTextField.text! = GetLab
-        LabTextField.underlined()
-        
-        MemoTextField.text! = GetMemo
-        MemoTextField.underlined()
+       
+        CardView.layer.cornerRadius = 10
+        ProfNameLabel.text! = GetName
+        PhoneNumberLabel.text! = GetNum
+        EmailLabel.text! = GetEmail
+        LabLabel.text! = GetLab
+        MemoTextView.text! = GetMemo
     }
     
-    
-    
+  
     var GetName = String()
     var GetNum = String()
     var GetEmail = String()
@@ -61,21 +66,4 @@ class PhoneBookViewDetail: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func updateTextView(notification:Notification) {
-        let userInfo = notification.userInfo!
-        let keyboardEndFrameScreenCoordinates = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        _ = self.view.convert(keyboardEndFrameScreenCoordinates, to: view.window)
-        
-        if notification.name == Notification.Name.UIKeyboardWillHide{
-            //tableview.contentInset = UIEdgeInsets.zero
-        } else{
-            //Tableview.contentInset = UIEdgeInsets(top :0, left:0, bottom: keyboardEndFrame.height, right: 0)
-            //Tableview.scrollIndicatorInsets = textView.contentInset
-        }
-        //Tableview.scrollRangeToVisible(textView.selectedRange)
-    }
-    
-    
 }
-
-*/

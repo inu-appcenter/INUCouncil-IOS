@@ -6,7 +6,7 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-
+/*
 import UIKit
 
 class StudentPhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate{
@@ -100,3 +100,4 @@ class StudentPhoneDirectoryViewController: UIViewController,UITableViewDataSourc
         searchActive = false
     }
 }
+*/

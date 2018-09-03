@@ -10,7 +10,7 @@ struct CellData {
     
 }
 
-class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, FSCalendarDelegate,FSCalendarDataSource {
+class CalendarViewController: UIViewController,  UITableViewDelegate,UITableViewDataSource, FSCalendarDelegate,FSCalendarDataSource {
  
     @IBOutlet weak var CalendarTableView: UITableView!
     @IBOutlet weak var calendar: FSCalendar!
