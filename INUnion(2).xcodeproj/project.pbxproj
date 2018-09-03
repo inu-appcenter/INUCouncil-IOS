@@ -40,9 +40,9 @@
 		A5AFD2B7213677F700BDA2FD /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */; };
 		A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */; };
 		A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */; };
+		A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */; };
 		A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */; };
 		A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */; };
-		A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */; };
 		A5E9DC5321217AE300EC8DA4 /* StudentSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */; };
 		A5EEEAB5213C5059001EF395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EEEAB4213C5059001EF395 /* Assets.xcassets */; };
 		C84F70F9213C1D0F00545009 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84F70F8213C1D0F00545009 /* SettingTableViewCell.swift */; };
@@ -92,9 +92,9 @@
 		A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoticeViewController.swift; sourceTree = "<group>"; };
+		A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNoticeViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCalendarViewController.swift; sourceTree = "<group>"; };
-		A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPhoneDircetoryViewController.swift; sourceTree = "<group>"; };
 		A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSettingViewController.swift; sourceTree = "<group>"; };
 		A5EEEAB4213C5059001EF395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84F70F8213C1D0F00545009 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 				68C55176211DA0F000D22DB4 /* StudentInfoClass.swift */,
 				A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */,
 				A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */,
-				A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */,
 				A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */,
 				A558559721229813003EADE6 /* StudentDetailViewController.swift */,
 			);
@@ -190,6 +189,7 @@
 				A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */,
 				A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */,
 				A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */,
+				A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -397,6 +397,7 @@
 				A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */,
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
 				A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */,
+				A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */,
 				A56706D82111FE4500A66C81 /* NoticeViewController.swift in Sources */,
 				A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */,
 				A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */,
@@ -405,7 +406,6 @@
 				A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */,
 				A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */,
 				A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */,
-				A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */,
 				A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */,
 				A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */,
 				A56706D22111EDD900A66C81 /* CustomNavigationViewController.swift in Sources */,

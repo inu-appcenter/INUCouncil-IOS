@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Calendar View Controller-->
+        <!--달력-->
         <scene sceneID="MxK-1P-e07">
             <objects>
                 <viewController storyboardIdentifier="CalendarViewController" id="spD-sU-jlC" customClass="CalendarViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-sw-4Af"/>
                     </view>
-                    <navigationItem key="navigationItem" id="guB-Up-x0m">
+                    <navigationItem key="navigationItem" title="달력" id="guB-Up-x0m">
                         <barButtonItem key="backBarButtonItem" title=" " id="BAy-9F-pmX"/>
                     </navigationItem>
                     <connections>
@@ -466,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="5319.1999999999998" y="-191.1544227886057"/>
         </scene>
-        <!--캘린더-->
+        <!--달력-->
         <scene sceneID="SZr-a3-tVg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rqd-My-rr1" sceneMemberID="viewController">
+                <navigationController title="달력" automaticallyAdjustsScrollViewInsets="NO" id="Rqd-My-rr1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar-page-empty" id="O51-EI-Rl1"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -477,6 +477,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.23137254900000001" green="0.35686274509999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
