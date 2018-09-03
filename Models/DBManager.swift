@@ -35,19 +35,16 @@ class NoticeResult{
     var content: String?
     var department: String?
     var timeSave: String?
-    var keyNum:Int?
     var fileName:[String]?
-    var fileKey:Int?
     
-    init(content_serial_id: Int, title: String, content:String, department:String, timeSave:String, keyNum:Int, fileName:[String], fileKey:Int){
+
+    init(content_serial_id: Int, title: String, content:String, department:String, timeSave:String, fileName:[String]){
         self.content_serial_id = content_serial_id
         self.title = title
         self.content = content
         self.department = department
         self.timeSave = timeSave
-        self.keyNum = keyNum
         self.fileName = fileName
-        self.fileKey = fileKey
     }
     
 }

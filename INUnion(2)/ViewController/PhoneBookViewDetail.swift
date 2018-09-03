@@ -35,7 +35,7 @@ class PhoneBookViewDetail: UIViewController {
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var LabLabel: UILabel!
-   
+    
     @IBOutlet weak var MemoTextView: UITextView!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,7 +45,7 @@ class PhoneBookViewDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         CardView.layer.cornerRadius = 10
         ProfNameLabel.text! = GetName
         PhoneNumberLabel.text! = GetNum
@@ -54,7 +54,7 @@ class PhoneBookViewDetail: UIViewController {
         MemoTextView.text! = GetMemo
     }
     
-  
+    
     var GetName = String()
     var GetNum = String()
     var GetEmail = String()
@@ -67,3 +67,4 @@ class PhoneBookViewDetail: UIViewController {
     }
     
 }
+

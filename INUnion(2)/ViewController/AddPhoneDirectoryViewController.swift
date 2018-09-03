@@ -12,27 +12,27 @@ class AddPhoneDirectoryViewController: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var MemoTextView: UITextView!
     
-  
+    
     @IBOutlet weak var InputTextLabel: UILabel!
-
+    
     @IBOutlet weak var MaximulLabel: UILabel!
- 
+    
     @IBAction func CompleteButtonClicked(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func XButtonClicked(_ sender: Any) {
-    self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
-  
+    
     @IBOutlet weak var NameText: UITextField!
     @IBOutlet weak var AddNumberText: UITextField!
     @IBOutlet weak var AddEmail: UITextField!
- 
+    
     @IBOutlet weak var LocateText: UITextField!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +77,5 @@ class AddPhoneDirectoryViewController: UIViewController,UITextViewDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         return updatedText.count <= 300 // Change limit based on your requirement.
     }
- 
+    
 }
-

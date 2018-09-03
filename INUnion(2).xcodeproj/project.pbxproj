@@ -10,7 +10,6 @@
 		68C55170211D941200D22DB4 /* SelectSecondMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C5516F211D941200D22DB4 /* SelectSecondMajorViewController.swift */; };
 		68C55177211DA0F000D22DB4 /* StudentInfoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C55176211DA0F000D22DB4 /* StudentInfoClass.swift */; };
 		7074A07C58FCF2D3E029864F /* Pods_INUnion_2_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1F00FA5F2B6827C449D694 /* Pods_INUnion_2_.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		A51A563C213D2C70001E0A7F /* AddPhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A563B213D2C70001E0A7F /* AddPhoneDirectoryViewController.swift */; };
 		A51D97D92114239500088FE2 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D97D82114239500088FE2 /* NetworkModel.swift */; };
 		A51D97DB211423D500088FE2 /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D97DA211423D500088FE2 /* NetworkCallBack.swift */; };
 		A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520397A211F3D0100AD9918 /* DetailViewController.swift */; };
@@ -34,15 +33,16 @@
 		A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DF211201E800A66C81 /* SearchMajorViewController.swift */; };
 		A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */; };
 		A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */; };
+		A5931D6C213A6AF00001E59A /* MakingNewPhonebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */; };
 		A5931D6E213A6B450001E59A /* PhoneBookViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */; };
 		A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */; };
 		A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B0213666D800BDA2FD /* DBManager.swift */; };
 		A5AFD2B7213677F700BDA2FD /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */; };
 		A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */; };
 		A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */; };
+		A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */; };
 		A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */; };
 		A5E9DC4F2121792400EC8DA4 /* StudentCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */; };
-		A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */; };
 		A5E9DC5321217AE300EC8DA4 /* StudentSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */; };
 		A5EEEAB5213C5059001EF395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EEEAB4213C5059001EF395 /* Assets.xcassets */; };
 		C84F70F9213C1D0F00545009 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84F70F8213C1D0F00545009 /* SettingTableViewCell.swift */; };
@@ -58,7 +58,6 @@
 		68C5516F211D941200D22DB4 /* SelectSecondMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSecondMajorViewController.swift; sourceTree = "<group>"; };
 		68C55176211DA0F000D22DB4 /* StudentInfoClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoClass.swift; sourceTree = "<group>"; };
 		7231E0C1B44DD3B17F437F0F /* Pods-INUnion(2).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUnion(2).release.xcconfig"; path = "Pods/Target Support Files/Pods-INUnion(2)/Pods-INUnion(2).release.xcconfig"; sourceTree = "<group>"; };
-		A51A563B213D2C70001E0A7F /* AddPhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A51D97D82114239500088FE2 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		A51D97DA211423D500088FE2 /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
 		A520397A211F3D0100AD9918 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -86,15 +85,16 @@
 		A56706DF211201E800A66C81 /* SearchMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMajorViewController.swift; sourceTree = "<group>"; };
 		A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoticeViewController.swift; sourceTree = "<group>"; };
+		A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingNewPhonebook.swift; sourceTree = "<group>"; };
 		A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewDetail.swift; sourceTree = "<group>"; };
 		A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A5AFD2B0213666D800BDA2FD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		A5D3A94F212C54C20042AD07 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoticeViewController.swift; sourceTree = "<group>"; };
+		A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNoticeViewController.swift; sourceTree = "<group>"; };
 		A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCalendarViewController.swift; sourceTree = "<group>"; };
-		A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPhoneDircetoryViewController.swift; sourceTree = "<group>"; };
 		A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSettingViewController.swift; sourceTree = "<group>"; };
 		A5EEEAB4213C5059001EF395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84F70F8213C1D0F00545009 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 				68C55176211DA0F000D22DB4 /* StudentInfoClass.swift */,
 				A5E9DC4C2121783200EC8DA4 /* StudentNoticeViewController.swift */,
 				A5E9DC4E2121792400EC8DA4 /* StudentCalendarViewController.swift */,
-				A5E9DC5021217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift */,
 				A5E9DC5221217AE300EC8DA4 /* StudentSettingViewController.swift */,
 				A558559721229813003EADE6 /* StudentDetailViewController.swift */,
 			);
@@ -187,9 +186,10 @@
 				A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */,
 				A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */,
 				A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */,
+				A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */,
 				A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */,
 				A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */,
-				A51A563B213D2C70001E0A7F /* AddPhoneDirectoryViewController.swift */,
+				A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -397,15 +397,15 @@
 				A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */,
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
 				A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */,
-				A51A563C213D2C70001E0A7F /* AddPhoneDirectoryViewController.swift in Sources */,
+				A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */,
 				A56706D82111FE4500A66C81 /* NoticeViewController.swift in Sources */,
 				A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */,
 				A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */,
 				A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */,
+				A5931D6C213A6AF00001E59A /* MakingNewPhonebook.swift in Sources */,
 				A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */,
 				A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */,
 				A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */,
-				A5E9DC5121217A9000EC8DA4 /* StudentPhoneDircetoryViewController.swift in Sources */,
 				A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */,
 				A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */,
 				A56706D22111EDD900A66C81 /* CustomNavigationViewController.swift in Sources */,

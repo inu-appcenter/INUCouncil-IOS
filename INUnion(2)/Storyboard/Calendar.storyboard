@@ -19,20 +19,20 @@
         <!--달력-->
         <scene sceneID="MxK-1P-e07">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" title="달력" id="spD-sU-jlC" customClass="CalendarViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="spD-sU-jlC" customClass="CalendarViewController" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1b-xA-70e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="31o-6e-KU7">
-                                <rect key="frame" x="0.0" y="64" width="414" height="227"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="227"/>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.43137254899999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="jhE-R0-QYT"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP4-bD-AZu" customClass="FSCalendar">
-                                <rect key="frame" x="23" y="142" width="367" height="318"/>
+                                <rect key="frame" x="23" y="186.00000000000003" width="367" height="317.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fP4-bD-AZu" secondAttribute="height" multiplier="367:318" id="z0m-cK-dr9"/>
@@ -77,13 +77,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-qo-4n6">
-                                <rect key="frame" x="150" y="97" width="111" height="23"/>
+                                <rect key="frame" x="151" y="141" width="111" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="COX-nF-Msg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTP-Ub-WAx">
-                                <rect key="frame" x="181" y="428" width="52" height="52"/>
+                                <rect key="frame" x="181" y="478" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="YaX-iB-hyr"/>
                                 </constraints>
@@ -93,13 +96,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이날의 이벤트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O5-B8-4qe">
-                                <rect key="frame" x="24" y="496" width="99" height="19"/>
+                                <rect key="frame" x="24" y="538.66666666666663" width="99" height="19"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                 <color key="textColor" red="0.67843137249999996" green="0.70980392160000005" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yv9-Dx-ddc">
+                                <rect key="frame" x="0.0" y="64" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.35686274509999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YTr-rd-3Jx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달력" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O7-as-EE7">
+                                <rect key="frame" x="192.66666666666666" y="77" width="30" height="25"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ad-J6-d0G">
-                                <rect key="frame" x="25" y="528" width="367" height="159"/>
+                                <rect key="frame" x="25" y="570.66666666666663" width="367" height="116.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -131,7 +147,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q9-Mk-MAr">
-                                                    <rect key="frame" x="96" y="23" width="37" height="19"/>
+                                                    <rect key="frame" x="96" y="23" width="36.666666666666657" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -184,25 +200,32 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="31o-6e-KU7" firstAttribute="top" secondItem="Pi3-sw-4Af" secondAttribute="top" id="5Tf-dx-8Oq"/>
-                            <constraint firstItem="Zqc-qo-4n6" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="150" id="6Aj-6V-52u"/>
+                            <constraint firstItem="1O7-as-EE7" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="192.5" id="4vj-Pd-Cni"/>
+                            <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="yv9-Dx-ddc" secondAttribute="trailing" id="99j-Bt-kqL"/>
                             <constraint firstItem="fP4-bD-AZu" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="23" id="9zE-JA-fLw"/>
-                            <constraint firstItem="Zqc-qo-4n6" firstAttribute="top" secondItem="Pi3-sw-4Af" secondAttribute="top" constant="33" id="BI1-qw-zSC"/>
+                            <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="Zqc-qo-4n6" secondAttribute="trailing" constant="152" id="E2H-9D-onX"/>
+                            <constraint firstItem="31o-6e-KU7" firstAttribute="top" secondItem="1O7-as-EE7" secondAttribute="bottom" constant="12" id="F3D-Vp-6KM"/>
                             <constraint firstItem="0Ad-J6-d0G" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="25" id="FGI-X8-f3w"/>
+                            <constraint firstItem="31o-6e-KU7" firstAttribute="top" secondItem="yv9-Dx-ddc" secondAttribute="bottom" id="KWJ-3a-DW3"/>
                             <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="fP4-bD-AZu" secondAttribute="trailing" constant="24" id="ORK-LS-gkL"/>
+                            <constraint firstItem="Zqc-qo-4n6" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="151" id="Qh4-5e-HH4"/>
+                            <constraint firstItem="0Ad-J6-d0G" firstAttribute="bottom" secondItem="Pi3-sw-4Af" secondAttribute="bottom" id="R2D-PS-LvM"/>
                             <constraint firstItem="0Ad-J6-d0G" firstAttribute="top" secondItem="0O5-B8-4qe" secondAttribute="bottom" constant="13" id="R65-E8-LgT"/>
-                            <constraint firstItem="0O5-B8-4qe" firstAttribute="top" secondItem="fP4-bD-AZu" secondAttribute="bottom" constant="36" id="RWp-xz-Cxc"/>
                             <constraint firstItem="0O5-B8-4qe" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="24" id="Ty0-qu-bTD"/>
                             <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="0O5-B8-4qe" secondAttribute="trailing" constant="291" id="Vos-3t-Es2"/>
+                            <constraint firstItem="1O7-as-EE7" firstAttribute="top" secondItem="Pi3-sw-4Af" secondAttribute="top" constant="13" id="W9v-gk-k6m"/>
+                            <constraint firstItem="fP4-bD-AZu" firstAttribute="top" secondItem="Zqc-qo-4n6" secondAttribute="bottom" constant="22" id="YCn-0q-Ltz"/>
+                            <constraint firstItem="yv9-Dx-ddc" firstAttribute="leading" secondItem="e1b-xA-70e" secondAttribute="leading" id="YdJ-3y-HrT"/>
                             <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="XTP-Ub-WAx" secondAttribute="trailing" constant="181" id="ZhL-hg-phx"/>
                             <constraint firstItem="31o-6e-KU7" firstAttribute="trailing" secondItem="Pi3-sw-4Af" secondAttribute="trailing" id="atT-H1-nQ5"/>
                             <constraint firstItem="31o-6e-KU7" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" id="cEo-PZ-Lk1"/>
-                            <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="Zqc-qo-4n6" secondAttribute="trailing" constant="153" id="gAa-Wd-cyI"/>
-                            <constraint firstItem="fP4-bD-AZu" firstAttribute="top" secondItem="Zqc-qo-4n6" secondAttribute="bottom" constant="22" id="ivI-9F-nre"/>
+                            <constraint firstItem="Zqc-qo-4n6" firstAttribute="top" secondItem="yv9-Dx-ddc" secondAttribute="bottom" constant="27" id="i7p-kq-160"/>
+                            <constraint firstItem="0O5-B8-4qe" firstAttribute="top" secondItem="fP4-bD-AZu" secondAttribute="bottom" constant="35" id="ndT-Mf-sgE"/>
                             <constraint firstItem="XTP-Ub-WAx" firstAttribute="top" secondItem="31o-6e-KU7" secondAttribute="bottom" constant="137" id="oeh-Wx-Pil"/>
+                            <constraint firstItem="yv9-Dx-ddc" firstAttribute="top" secondItem="Pi3-sw-4Af" secondAttribute="top" id="pRc-Zu-Bah"/>
                             <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="0Ad-J6-d0G" secondAttribute="trailing" constant="22" id="qHv-z6-12W"/>
+                            <constraint firstItem="Pi3-sw-4Af" firstAttribute="trailing" secondItem="1O7-as-EE7" secondAttribute="trailing" constant="191.5" id="qVb-Xz-Kpe"/>
                             <constraint firstItem="XTP-Ub-WAx" firstAttribute="leading" secondItem="Pi3-sw-4Af" secondAttribute="leading" constant="181" id="uJ7-jr-Gjt"/>
-                            <constraint firstItem="0Ad-J6-d0G" firstAttribute="bottom" secondItem="Pi3-sw-4Af" secondAttribute="bottom" id="zvr-VI-R9S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-sw-4Af"/>
                     </view>
@@ -443,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="5319.1999999999998" y="-191.1544227886057"/>
         </scene>
-        <!--캘린더-->
+        <!--달력-->
         <scene sceneID="SZr-a3-tVg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rqd-My-rr1" sceneMemberID="viewController">
+                <navigationController title="달력" automaticallyAdjustsScrollViewInsets="NO" id="Rqd-My-rr1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar-page-empty" id="O51-EI-Rl1"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -455,15 +478,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.23137254900000001" green="0.35686274509999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="spD-sU-jlC" kind="relationship" relationship="rootViewController" id="5qY-Hj-q3Q"/>
+                        <segue destination="spD-sU-jlC" kind="relationship" relationship="rootViewController" id="2Oh-mP-30I"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ani-7x-s3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,31 +534,31 @@
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ0-aa-LvF">
-                                        <rect key="frame" x="15" y="163" width="49" height="21"/>
+                                        <rect key="frame" x="15.000000000000004" y="163" width="48.333333333333343" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zg-gn-wZd">
-                                        <rect key="frame" x="15" y="278" width="49" height="21"/>
+                                        <rect key="frame" x="15.000000000000004" y="278" width="48.333333333333343" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q51-OJ-32Z">
-                                        <rect key="frame" x="14" y="507" width="33" height="21"/>
+                                        <rect key="frame" x="14" y="507" width="32.333333333333336" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 추가" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvm-U9-OaN">
-                                        <rect key="frame" x="16" y="393" width="69" height="21"/>
+                                        <rect key="frame" x="16" y="393" width="68.333333333333329" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-H2-fC0">
-                                        <rect key="frame" x="15" y="53" width="69" height="21"/>
+                                        <rect key="frame" x="15" y="53" width="68.333333333333329" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -614,13 +634,13 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" / 300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-yA-7ly">
-                                        <rect key="frame" x="355" y="732" width="42" height="19"/>
+                                        <rect key="frame" x="354.66666666666669" y="732" width="42.333333333333314" height="19"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDW-ja-UDI">
-                                        <rect key="frame" x="315" y="732" width="39.333333333333314" height="18.666666666666629"/>
+                                        <rect key="frame" x="314.66666666666669" y="732" width="39.333333333333314" height="18.666666666666629"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

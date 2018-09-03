@@ -13,7 +13,7 @@ import UIKit
 
 
 class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate  {
- 
+    
     let prof = ["이","박"]
     let phone = ["010-1234-5678","010-1234-1234"]
     let email = ["gudwn@naver.com","gudwn@inu.ac.kr"]
@@ -25,7 +25,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var MajorLabel: UILabel!
     @IBOutlet weak var PhoneBookTableView: UITableView!
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,19 +35,19 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         SearchBar.returnKeyType = UIReturnKeyType.done
     }
     
-  
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return prof.count
-     }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryTableViewCell", for: indexPath) as! DirectoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryTableViewCell", for: indexPath) as! DirectoryTableViewCell
         
         cell.ProfNameLabel.text! = prof[indexPath.row]
         
         return cell
-        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -57,10 +57,35 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
             dvc.GetEmail = email[indexPath.row]
             dvc.GetLab = lab[indexPath.row]
             dvc.GetMemo = memo[indexPath.row]
-          
+            
             self.navigationController?.show(dvc, sender: nil)
         }
         
     }
     
 }
+/*
+    // 서치바
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        filtered = searchText.isEmpty ? names : names.filter({(dataString : String) -> Bool in
+            return dataString.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        Tableview.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    
+    
+    
+}
+ */
+
