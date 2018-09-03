@@ -48,7 +48,7 @@ private let serverURL = "http://117.16.231.66:7001"
         
         let header = ["Content-Type" : "application/x-www-form-urlencoded"]
         
-        Alamofire.request("\(serverURL)/boardSort/", method: .post, parameters: param, headers: header).responseJSON { response in
+        Alamofire.request("\(serverURL)/boardSelect/", method: .post, parameters: param, headers: header).responseJSON { response in
             switch response.result{
             case .success(let item):
                 self.view.networkSuc(resultdata: item, code: "boardListSuccess")

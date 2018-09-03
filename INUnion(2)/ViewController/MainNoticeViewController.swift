@@ -32,6 +32,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,25 +92,25 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
         cell.TitleLabel.text! = boardList[indexPath.row].title!
         cell.TimeLabel.text! = boardList[indexPath.row].timeSave!
-//        cell.MyImageView.image =  imageArr[indexPath.row]
-//        cell.MyImageView2.image = imageArr[indexPath.row]
-//        cell.MyImageView3.image = imageArr[indexPath.row]
-//        cell.MyImageView4.image = imageArr[indexPath.row]
         
         for i in 0..<(boardList[indexPath.row].fileName?.count)!{
             let logo = "http://117.231.66:7001/imgload/\(boardList[indexPath.row].fileName![i])"
             let resource = ImageResource(downloadURL: URL(string: logo)!, cacheKey: logo)
             switch i{
             case 0:
+                cell.MyImageView.isHidden = false
                 cell.MyImageView.kf.setImage(with: resource)
                 break
             case 1:
+                cell.MyImageView2.isHidden = false
                 cell.MyImageView2.kf.setImage(with: resource)
                 break
             case 2:
+                cell.MyImageView3.isHidden = false
                 cell.MyImageView3.kf.setImage(with: resource)
                 break
             case 3:
+                cell.MyImageView4.isHidden = false
                 cell.MyImageView4.kf.setImage(with: resource)
                 break
             default:
@@ -172,10 +173,8 @@ extension MainNoticeViewController: NetworkCallback{
                     let content = item["content"] as? String ?? ""
                     let department = item["department"] as? String ?? ""
                     let timeSave = item["timeSave"] as? String ?? ""
-                    let keyNum = item["keyNum"] as? Int ?? 0
                     let fileName = item["fileName"] as? [String] ?? [""]
-                    let fileKey = item["fileKey"] as? Int ?? 0
-                    let obj = NoticeResult.init(content_serial_id: content_serial_id, title: title, content: content, department: department, timeSave: timeSave, keyNum: keyNum, fileName: fileName, fileKey: fileKey)
+                    let obj = NoticeResult.init(content_serial_id: content_serial_id, title: title, content: content, department: department, timeSave: timeSave, fileName: fileName)
                     temp.append(obj)
                 }
             }
