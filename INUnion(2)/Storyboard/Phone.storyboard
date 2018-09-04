@@ -118,7 +118,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="연락처" id="Ihe-yP-rKu"/>
                     <connections>
-                        <outlet property="MajorLabel" destination="VCd-4P-ixT" id="ViE-jk-Jth"/>
+                        <outlet property="MajorLabel" destination="VCd-4P-ixT" id="s5w-Yz-x1J"/>
                         <outlet property="PhoneBookTableView" destination="9dd-uU-ZDj" id="Y5S-YD-GEp"/>
                         <outlet property="PlusButton" destination="dmK-jw-vRm" id="SWO-WF-8fz"/>
                         <outlet property="SearchBar" destination="epy-Na-yNu" id="o2T-NQ-sbF"/>

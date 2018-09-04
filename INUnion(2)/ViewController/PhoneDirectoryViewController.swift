@@ -10,20 +10,32 @@ import UIKit
 
 class Prof {
     let name : String
-    let phone : String
+    let phoneNumber : String
     let email : String
-    let lab : String
-    let memo : String
-    
-    init(name : String, phone: String, email: String, lab: String, memo: String){
+    let position : String
+    let etc : String
+    let addressId : Int
+    let department : String
+    init(name : String, phoneNumber: String, email: String, position: String, etc: String, addressId: Int, department: String){
         self.name = name
-        self.phone = phone
+        self.phoneNumber = phoneNumber
         self.email = email
-        self.lab = lab
-        self.memo = memo
+        self.position = position
+        self.etc = etc
+        self.addressId = addressId
+        self.department = department
     }
 }
 
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+var model : NetworkModel?
+var Address:[NoticeResult] = []{
+    didSet {
+        if self.tableView != nil {
+            self.tableView.reloadData()
+        }
+    }
+}
 
 class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
@@ -31,6 +43,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var PlusButton: UIButton!
     @IBOutlet weak var MajorLabel: UILabel!
     @IBOutlet weak var PhoneBookTableView: UITableView!
+    @IBOutlet weak var MajorLabel: UILabel!
     
     var profArray = [Prof]()
     var currentProfArray = [Prof]() //Upload Table
@@ -39,6 +52,8 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         super.viewDidLoad()
         setUpProf()
         setUpSearchBar()
+        
+        MajorLabel.text = self.appDelegate.department!
         PhoneBookTableView.layer.cornerRadius = 10
         SearchBar.backgroundImage = UIImage()
         SearchBar.setValue("취소", forKey: "_cancelButtonText")
@@ -47,11 +62,11 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     }
     
     private func setUpProf() {
-        profArray.append(Prof(name: "Lim", phone: "4321", email: "gudwn@naver.com", lab: "korea", memo: "hello"))
-        profArray.append(Prof(name: "Lee", phone: "1234", email: "gudwn@naver.com", lab: "korea", memo: "hello"))
-           profArray.append(Prof(name: "Kim", phone: "3421", email: "gudwn@naver.com", lab: "korea", memo: "hello"))
-           profArray.append(Prof(name: "Park", phone: "4321", email: "gudwn@naver.com", lab: "korea", memo: "hello"))
-        profArray.append(Prof(name: "Lim", phone: "4321", email: "gudwn@naver.com", lab: "korea", memo: "hello"))
+        profArray.append(Prof(name: "Lim", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
+        profArray.append(Prof(name: "Lee", phoneNumber: "1234", email: "gudwn@naver.com", position: "korea", etc: "hello"))
+        profArray.append(Prof(name: "Kim", phoneNumber: "3421", email: "gudwn@naver.com", position: "korea", etc: "hello"))
+           profArray.append(Prof(name: "Park", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
+        profArray.append(Prof(name: "Lim", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
         currentProfArray = profArray
     }
     
@@ -60,7 +75,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentProfArray.count
+        return Address.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,10 +89,10 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "PhoneBookViewDetail") as? PhoneBookViewDetail{
             dvc.GetName = profArray[indexPath.row].name
-            dvc.GetNum = profArray[indexPath.row].phone
+            dvc.GetNum = profArray[indexPath.row].phoneNumber
             dvc.GetEmail = profArray[indexPath.row].email
-            dvc.GetLab = profArray[indexPath.row].lab
-            dvc.GetMemo = profArray[indexPath.row].memo
+            dvc.GetLab = profArray[indexPath.row].position
+            dvc.GetMemo = profArray[indexPath.row].etc
             self.navigationController?.show(dvc, sender: nil)
         }
         
@@ -98,6 +113,40 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     }
 }
 
+extension PhoneDirectoryViewController: NetworkCallback{
+   
+    func networkSuc(resultdata: Any, code: String) {
+        if code == "AddressListSuccess" {
+            print(resultdata)
+            
+            var temp: [NoticeResult] = []
+            if let items = resultdata as? [NSDictionary] {
+                for item in items {
+                   
+                    let name = item["name"] as? String ?? ""
+                    let phoneNumber = item["phoneNumber"] as? String ?? ""
+                    let position = item["position"] as? String ?? ""
+                    let etc = item["etc"] as? String ?? ""
+                    let addressId = item["addressId"] as? Int ?? 0
+                    let department = item["department"] as? String ?? ""
+                    
+                    let obj = NoticeResult.init(name: name, phoneNumber: phoneNumber, position: position, etc: etc, addressId: addressId, department: department)
+                    temp.append(obj)
+                }
+            }
+            
+            self.AddressList = temp
+            
+        }
+    }
+    
+    func networkFail(code: String) {
+        if(code == "AddressListError") {
+            print("실패하였습니다.")
+        }
+        
+    }
+}
 
 
 

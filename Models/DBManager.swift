@@ -68,3 +68,25 @@ class BoardDetail{
         self.fileName = fileName
     }
 }
+
+// 연락처 불러오기
+class AddressResult{
+    var name: String?
+    var phoneNumber: String?
+    var email: String?
+    var position: String?
+    var etc: String
+    var addressId : Int?
+    var department: String?
+    
+    init(name:String, phoneNumber:String, email:String, position:String, etc:String, addressId:Int, department:String) {
+        self.name = name
+        self.phoneNumber = phoneNumber
+        self.email = email
+        self.position = position
+        self.etc = etc
+        self.addressId = addressId
+        self.department = department
+    }
+    
+}

@@ -191,4 +191,22 @@ private let serverURL = "http://117.16.231.66:7001"
             }
         }
     }
+    
+//연락처 불러오기
+    func AddressList(department: String){
+        let param = ["department": department]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/addressSelectAll/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "AddressListSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "AddressListError")
+                print(error)
+            }
+        }
+    }
  }
