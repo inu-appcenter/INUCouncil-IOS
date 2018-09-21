@@ -5,7 +5,7 @@
 //  Created by 이형주 on 2018. 8. 17..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
-
+/*
 import UIKit
 import Kingfisher
 
@@ -89,7 +89,7 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         let alertController = UIAlertController(title: "선택해", message: "쉬이발", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action:UIAlertAction) in
-            self.model?.deleteBoard(content_serial_id: "\(self.detailBoard!.content_serial_id!)")
+            self.model?.deletePost(content_serial_id: "(self.detailBoard!.content_serial_id!)")
             return
         }
         let editAction = UIAlertAction(title: "수정수정정수정", style: .default) {
@@ -129,7 +129,7 @@ override func viewDidLoad() {
     department.text = self.appDelegate.department
     model = NetworkModel(self)
 
-    model?.boardDetailList(department: (self.appDelegate.department)!, content_serial_id: String(boardId))
+    model?.boardDetailList(department: (self.appDelegate.department)!, content_serial_id: Int(boardId))
     
    MainView.layer.cornerRadius = 10
     tableview.delegate = self
@@ -164,8 +164,10 @@ override func didReceiveMemoryWarning() {
     
 }
 
-extension DetailNoticeViewController: NetworkCallback{
-    func networkSuc(resultdata: Any, code: String) {
+extension DetailNoticeViewController: NetworkCallBack{
+    
+    
+    func networkSuccess(data resultdata: Any, code: String) {
         if code == "boardListSuccess" {
             print(resultdata)
             
@@ -208,3 +210,4 @@ extension DetailNoticeViewController: NetworkCallback{
         
     }
 }
+*/

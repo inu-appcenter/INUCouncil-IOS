@@ -5,8 +5,6 @@ import Toast_Swift
 
 class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate {
    
-   
-    
    @IBAction func CancelButtonClicked(_ sender: Any) {
     // 글작성 취소
     self.dismiss(animated: true, completion: nil)
@@ -20,10 +18,10 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
         }
         if noticeNumber == 0{
             // 글등록
-        model?.uploadBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text!, department: (self.appDelegate.department)!)
+        model?.uploadPost(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text!, department: (self.appDelegate.department)!)
         }else{
             // 글 수정
-            model?.modifyBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text, department: (self.appDelegate.department)!, content_serial_id: String(noticeNumber))
+            model?.modifyPost(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text, department: (self.appDelegate.department)!, content_serial_id: Int(noticeNumber))
             
         }
     }
@@ -157,7 +155,7 @@ extension AddNoticeViewController{
                         self.SelectedAssets.removeAll()
                     }, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "에러!", message: "앨범 접근을 허용해 주세요!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "에러", message: "앨범 접근을 허용해 주세요", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -212,12 +210,11 @@ extension AddNoticeViewController{
     }
 }
 
-extension AddNoticeViewController:NetworkCallback{
-    func networkSuc(resultdata: Any, code: String) {
+extension AddNoticeViewController:NetworkCallBack{
+    func networkSuccess(data: Any, code: String) {
         if code == "uploadProductSuccess"{
-            print(resultdata)
-            
-            if let item = resultdata as? NSDictionary {
+            print(data)
+            if let item = data as? NSDictionary {
                 let ans = item["ans"] as? Bool ?? false
                 let obj = AnsBoolResult.init(ans: ans)
                 self.uploadResult = obj
@@ -226,9 +223,9 @@ extension AddNoticeViewController:NetworkCallback{
                 endLoading()
             }
         }else if code == "modifyProductSuccess"{
-            print(resultdata)
+            print(data)
             
-            if let item = resultdata as? NSDictionary {
+            if let item = data as? NSDictionary {
                 let ans = item["ans"] as? Bool ?? false
                 let obj = AnsBoolResult.init(ans: ans)
                 self.uploadResult = obj

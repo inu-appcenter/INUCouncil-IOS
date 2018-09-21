@@ -15,6 +15,11 @@
 		A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520397A211F3D0100AD9918 /* DetailViewController.swift */; };
 		A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52049B52137E1CB00897889 /* ImageUploadCollectionViewCell.swift */; };
 		A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */; };
+		A523A1DC21553B2E00611029 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523A1DB21553B2E00611029 /* Post.swift */; };
+		A523A1DE21553B3700611029 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523A1DD21553B3700611029 /* Calendar.swift */; };
+		A523A1E021553B4100611029 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523A1DF21553B4100611029 /* Contact.swift */; };
+		A523A1E421553D5A00611029 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523A1E321553D5A00611029 /* UIColorExtension.swift */; };
+		A523A1E721553F6C00611029 /* ServerUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523A1E621553F6C00611029 /* ServerUrls.swift */; };
 		A5300FB92132F44900E20BCE /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FB82132F44900E20BCE /* ContentsCell.swift */; };
 		A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FBA2132F48000E20BCE /* ImageCell.swift */; };
 		A536C9492139AAF6005B34EF /* AddCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */; };
@@ -63,6 +68,11 @@
 		A520397A211F3D0100AD9918 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A52049B52137E1CB00897889 /* ImageUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMajorViewController.swift; sourceTree = "<group>"; };
+		A523A1DB21553B2E00611029 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A523A1DD21553B3700611029 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		A523A1DF21553B4100611029 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A523A1E321553D5A00611029 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A523A1E621553F6C00611029 /* ServerUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrls.swift; sourceTree = "<group>"; };
 		A5300FB82132F44900E20BCE /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		A5300FBA2132F48000E20BCE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarViewController.swift; sourceTree = "<group>"; };
@@ -151,11 +161,30 @@
 		A51D97D72114237A00088FE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A51D97D82114239500088FE2 /* NetworkModel.swift */,
-				A51D97DA211423D500088FE2 /* NetworkCallBack.swift */,
-				A5AFD2B0213666D800BDA2FD /* DBManager.swift */,
+				A523A1DB21553B2E00611029 /* Post.swift */,
+				A523A1DD21553B3700611029 /* Calendar.swift */,
+				A523A1DF21553B4100611029 /* Contact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A523A1E221553D4200611029 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A523A1E321553D5A00611029 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A523A1E521553E2F00611029 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A51D97DA211423D500088FE2 /* NetworkCallBack.swift */,
+				A51D97D82114239500088FE2 /* NetworkModel.swift */,
+				A5AFD2B0213666D800BDA2FD /* DBManager.swift */,
+				A523A1E621553F6C00611029 /* ServerUrls.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A52FABDA2125C7FD008532EF /* Cell */ = {
@@ -197,6 +226,8 @@
 		A56706B32111ED7700A66C81 = {
 			isa = PBXGroup;
 			children = (
+				A523A1E521553E2F00611029 /* Network */,
+				A523A1E221553D4200611029 /* Extensions */,
 				A51D97D72114237A00088FE2 /* Models */,
 				A56706BE2111ED7700A66C81 /* INUnion(2) */,
 				A56706BD2111ED7700A66C81 /* Products */,
@@ -328,6 +359,7 @@
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -339,6 +371,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -374,6 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A523A1DE21553B3700611029 /* Calendar.swift in Sources */,
+				A523A1DC21553B2E00611029 /* Post.swift in Sources */,
+				A523A1E021553B4100611029 /* Contact.swift in Sources */,
 				A536C9492139AAF6005B34EF /* AddCalendarViewController.swift in Sources */,
 				A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */,
 				A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */,
@@ -396,6 +432,7 @@
 				68C55177211DA0F000D22DB4 /* StudentInfoClass.swift in Sources */,
 				A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */,
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
+				A523A1E721553F6C00611029 /* ServerUrls.swift in Sources */,
 				A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */,
 				A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */,
 				A56706D82111FE4500A66C81 /* NoticeViewController.swift in Sources */,
@@ -403,6 +440,7 @@
 				A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */,
 				A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */,
 				A5931D6C213A6AF00001E59A /* MakingNewPhonebook.swift in Sources */,
+				A523A1E421553D5A00611029 /* UIColorExtension.swift in Sources */,
 				A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */,
 				A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */,
 				A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */,
@@ -564,6 +602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inu.INUION;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "INUnion(2)/INUnion(2)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;

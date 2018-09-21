@@ -5,7 +5,6 @@
 //  Created by 이형주 on 2018. 9. 1..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
-
 import UIKit
 
 class Prof {
@@ -28,7 +27,9 @@ class Prof {
 }
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 var model : NetworkModel?
+
 var Address:[NoticeResult] = []{
     didSet {
         if self.tableView != nil {
@@ -37,20 +38,18 @@ var Address:[NoticeResult] = []{
     }
 }
 
+
 class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var PlusButton: UIButton!
-    @IBOutlet weak var MajorLabel: UILabel!
     @IBOutlet weak var PhoneBookTableView: UITableView!
     @IBOutlet weak var MajorLabel: UILabel!
     
     var profArray = [Prof]()
     var currentProfArray = [Prof]() //Upload Table
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpProf()
         setUpSearchBar()
         
         MajorLabel.text = self.appDelegate.department!
@@ -61,19 +60,12 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         SearchBar.returnKeyType = UIReturnKeyType.done
     }
     
-    private func setUpProf() {
-        profArray.append(Prof(name: "Lim", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
-        profArray.append(Prof(name: "Lee", phoneNumber: "1234", email: "gudwn@naver.com", position: "korea", etc: "hello"))
-        profArray.append(Prof(name: "Kim", phoneNumber: "3421", email: "gudwn@naver.com", position: "korea", etc: "hello"))
-           profArray.append(Prof(name: "Park", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
-        profArray.append(Prof(name: "Lim", phoneNumber: "4321", email: "gudwn@naver.com", position: "korea", etc: "hello"))
-        currentProfArray = profArray
-    }
+   
     
     private func setUpSearchBar() {
         SearchBar.delegate = self
     }
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Address.count
     }
@@ -97,7 +89,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         }
         
     }
- 
+    
     //Search Bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         guard !searchText.isEmpty else {
@@ -106,23 +98,23 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
             return
         }
         currentProfArray = profArray.filter({Prof -> Bool in
-        guard let text = searchBar.text else {return false}
-       return Prof.name.contains(text)
-     })
-     PhoneBookTableView.reloadData()
+            guard let text = searchBar.text else {return false}
+            return Prof.name.contains(text)
+        })
+        PhoneBookTableView.reloadData()
     }
 }
 
-extension PhoneDirectoryViewController: NetworkCallback{
-   
-    func networkSuc(resultdata: Any, code: String) {
+extension PhoneDirectoryViewController: NetworkCallBack{
+    
+    func networkSuccess(data resultdata: Any, code: String) {
         if code == "AddressListSuccess" {
             print(resultdata)
             
             var temp: [NoticeResult] = []
             if let items = resultdata as? [NSDictionary] {
                 for item in items {
-                   
+                    
                     let name = item["name"] as? String ?? ""
                     let phoneNumber = item["phoneNumber"] as? String ?? ""
                     let position = item["position"] as? String ?? ""
@@ -147,7 +139,6 @@ extension PhoneDirectoryViewController: NetworkCallback{
         
     }
 }
-
 
 
 

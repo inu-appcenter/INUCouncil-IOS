@@ -82,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         password=PassTextField.text!
         let model = NetworkModel(self)
         startLoading()
-        model.login(username: username, password: password)
+        model.login(userName: username, password: password)
         
         //주석 해제하면 login 생략 가능.
         
@@ -101,9 +101,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
 }
 
-      extension LoginViewController : NetworkCallback{
-            func networkSuc(resultdata: Any, code: String) {
-                if code == "loginSuccess" {
+      extension LoginViewController : NetworkCallBack{
+        func networkSuccess(data resultdata: Any, code: String) {
+                if code == "login" {
                     print(resultdata)
                     if let item = resultdata as? NSDictionary{
                         let ans = item["ans"] as? Bool ?? false

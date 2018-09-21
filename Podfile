@@ -8,8 +8,9 @@ target 'INUnion(2)' do
   # Pods for INUnion(2)
 
 pod 'FSCalendar'
-pod 'Alamofire', '~> 4.5'
+pod 'Alamofire', '~> 4.6'
 pod "Device", '~> 3.0.3'
+pod 'CodableAlamofire'
 pod 'Kingfisher'
 pod "BSImagePicker"
 pod 'Toast-Swift', '~> 3.0.1'

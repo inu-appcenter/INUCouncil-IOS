@@ -54,7 +54,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewWillAppear(animated)
         model = NetworkModel(self)
         boardList.removeAll()
-        model?.boardList(department: self.appDelegate.department!)
+        model?.getBoardList(department: self.appDelegate.department!)
         self.navigationController?.navigationBar.tintColor = UIColor.white
 
 //        navigationController?.setNavigationBarHidden(true, animated: false)
@@ -139,7 +139,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-
+/*
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath)
     cell?.isSelected = false
@@ -152,7 +152,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
     self.navigationController?.show(DNvC, sender: nil)
     }
     }
- 
+ */
     @objc func keyboardWillHide(notification: NSNotification) {
     }
     
@@ -160,8 +160,8 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 
-extension MainNoticeViewController: NetworkCallback{
-    func networkSuc(resultdata: Any, code: String) {
+extension MainNoticeViewController: NetworkCallBack{
+    func networkSuccess(data resultdata: Any, code: String) {
         if code == "boardListSuccess" {
             print(resultdata)
             
