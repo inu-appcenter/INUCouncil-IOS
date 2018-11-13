@@ -9,7 +9,6 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
     // 글작성 취소
     self.dismiss(animated: true, completion: nil)
     }
-    
     @IBAction func CompleteButton(_ sender: Any) {
         // 서버전송
         startLoading()
@@ -18,11 +17,10 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
         }
         if noticeNumber == 0{
             // 글등록
-        model?.uploadPost(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text!, department: (self.appDelegate.department)!)
+        model?.uploadBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text!, department: (self.appDelegate.department)!)
         }else{
             // 글 수정
-            model?.modifyPost(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text, department: (self.appDelegate.department)!, content_serial_id: Int(noticeNumber))
-            
+            model?.modifyBoard(userfile: uploadArr, title: uploadTitleTextField.text!, content: UploadTextField.text, department: (self.appDelegate.department)!, content_serial_id: String(noticeNumber))
         }
     }
     
@@ -38,31 +36,28 @@ class AddNoticeViewController: UIViewController,UIImagePickerControllerDelegate 
     var noticeTitle: String = ""
     var noticeContent: String = ""
     var noticeNumber: Int = 0
+  
     
    @IBOutlet weak var UploadCollectionView: UICollectionView!
     @IBOutlet weak var UploadTextField: UITextView!
     @IBOutlet weak var uploadTitleTextField: UITextField!
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //    self.navigationController?.navigationBar.topItem?.title = "";
 
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         model = NetworkModel(self)
         if noticeTitle != ""{
             uploadTitleTextField.text = noticeTitle
-        }
+                            }
         if noticeContent != ""{
             UploadTextField.text = noticeContent
         }
 
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -85,7 +80,6 @@ extension AddNoticeViewController: UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageUploadCollectionViewCell", for: indexPath) as! ImageUploadCollectionViewCell
         cell.ImageUpload.image = imageArr[indexPath.row]
-        
         return cell
     }
     
@@ -155,7 +149,7 @@ extension AddNoticeViewController{
                         self.SelectedAssets.removeAll()
                     }, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "에러", message: "앨범 접근을 허용해 주세요", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "에러!", message: "앨범 접근을 허용해 주세요!", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -164,7 +158,6 @@ extension AddNoticeViewController{
     }
     
     func getAllImages() -> Void {
-        
         print("get all images method called here")
         if SelectedAssets.count != 0{
             for i in 0..<SelectedAssets.count{
@@ -185,7 +178,7 @@ extension AddNoticeViewController{
                 if self.isfull == false{
                     self.UploadCollectionView.reloadData()
                 }else{
-//                    self.view.makeToast("사진은 7개가 최대입니다.")
+                   self.view.makeToast("사진은 7개가 최대입니다.")
                     self.UploadCollectionView.reloadData()
                 }
             }
@@ -210,11 +203,12 @@ extension AddNoticeViewController{
     }
 }
 
-extension AddNoticeViewController:NetworkCallBack{
-    func networkSuccess(data: Any, code: String) {
+extension AddNoticeViewController:NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
         if code == "uploadProductSuccess"{
-            print(data)
-            if let item = data as? NSDictionary {
+            print(resultdata)
+            
+            if let item = resultdata as? NSDictionary {
                 let ans = item["ans"] as? Bool ?? false
                 let obj = AnsBoolResult.init(ans: ans)
                 self.uploadResult = obj
@@ -223,9 +217,9 @@ extension AddNoticeViewController:NetworkCallBack{
                 endLoading()
             }
         }else if code == "modifyProductSuccess"{
-            print(data)
+            print(resultdata)
             
-            if let item = data as? NSDictionary {
+            if let item = resultdata as? NSDictionary {
                 let ans = item["ans"] as? Bool ?? false
                 let obj = AnsBoolResult.init(ans: ans)
                 self.uploadResult = obj

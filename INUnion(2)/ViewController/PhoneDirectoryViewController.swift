@@ -5,141 +5,123 @@
 //  Created by 이형주 on 2018. 9. 1..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
+
 import UIKit
 
-class Prof {
-    let name : String
-    let phoneNumber : String
-    let email : String
-    let position : String
-    let etc : String
-    let addressId : Int
-    let department : String
-    init(name : String, phoneNumber: String, email: String, position: String, etc: String, addressId: Int, department: String){
-        self.name = name
-        self.phoneNumber = phoneNumber
-        self.email = email
-        self.position = position
-        self.etc = etc
-        self.addressId = addressId
-        self.department = department
-    }
-}
-
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
-var model : NetworkModel?
-
-var Address:[NoticeResult] = []{
-    didSet {
-        if self.tableView != nil {
-            self.tableView.reloadData()
+class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate  {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var Model : NetworkModel?
+    var DirectoryList:[DirectoryName] = []{
+        didSet {
+            if self.PhoneBookTableView != nil {
+                self.PhoneBookTableView.reloadData()
+            }
         }
     }
-}
-
-
-class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
-    
+ 
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var PlusButton: UIButton!
-    @IBOutlet weak var PhoneBookTableView: UITableView!
     @IBOutlet weak var MajorLabel: UILabel!
+    @IBOutlet weak var PhoneBookTableView: UITableView!
+   
     
-    var profArray = [Prof]()
-    var currentProfArray = [Prof]() //Upload Table
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSearchBar()
-        
-        MajorLabel.text = self.appDelegate.department!
-        PhoneBookTableView.layer.cornerRadius = 10
+        PhoneBookTableView.layer.cornerRadius = 10;
+        Model = NetworkModel(self)
+        MajorLabel.text!=self.appDelegate.department!
+        Model?.DirectoryList(department: self.appDelegate.department!)
+        self.PhoneBookTableView.delegate = self
+        self.PhoneBookTableView.dataSource = self
         SearchBar.backgroundImage = UIImage()
         SearchBar.setValue("취소", forKey: "_cancelButtonText")
         SearchBar.delegate = self
         SearchBar.returnKeyType = UIReturnKeyType.done
     }
     
-   
-    
-    private func setUpSearchBar() {
-        SearchBar.delegate = self
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "연락처"
+        super.viewWillAppear(animated)
+        Model = NetworkModel(self)
+        DirectoryList.removeAll()
+        Model?.DirectoryList(department: self.appDelegate.department!)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Address.count
+        return DirectoryList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryTableViewCell", for: indexPath) as? DirectoryTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.ProfNameLabel.text = currentProfArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryTableViewCell", for: indexPath) as! DirectoryTableViewCell
+        cell.ProfNameLabel.text! = DirectoryList[indexPath.row].name!
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let dvc = storyboard?.instantiateViewController(withIdentifier: "PhoneBookViewDetail") as? PhoneBookViewDetail{
-            dvc.GetName = profArray[indexPath.row].name
-            dvc.GetNum = profArray[indexPath.row].phoneNumber
-            dvc.GetEmail = profArray[indexPath.row].email
-            dvc.GetLab = profArray[indexPath.row].position
-            dvc.GetMemo = profArray[indexPath.row].etc
-            self.navigationController?.show(dvc, sender: nil)
-        }
         
-    }
-    
-    //Search Bar
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        guard !searchText.isEmpty else {
-            currentProfArray = profArray
-            PhoneBookTableView.reloadData()
-            return
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+         let cell = tableView.cellForRow(at: indexPath)
+            cell?.isSelected = false
+            
+            if let dvc = storyboard?.instantiateViewController(withIdentifier: "PhoneBookViewDetail") as? PhoneBookViewDetail{
+               
+                Model?.DirectoryDetail(name: DirectoryList[indexPath.row].name!)
+               /*
+                dvc.GetName = DirectoryList[indexPath.row].name
+                dvc.GetNum = phone[indexPath.row]
+                dvc.GetEmail = email[indexPath.row]
+                dvc.GetLab = lab[indexPath.row]
+                dvc.GetMemo = memo[indexPath.row]
+                */
+                self.navigationController?.show(dvc, sender: nil)
+            }
         }
-        currentProfArray = profArray.filter({Prof -> Bool in
-            guard let text = searchBar.text else {return false}
-            return Prof.name.contains(text)
-        })
-        PhoneBookTableView.reloadData()
-    }
+    
+ 
+        
+    /*
+     // 서치바
+     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+     filtered = searchText.isEmpty ? names : names.filter({(dataString : String) -> Bool in
+     return dataString.range(of: searchText, options: .caseInsensitive) != nil
+     })
+     
+     Tableview.reloadData()
+     }
+     
+     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+     searchActive = true
+     
+     }
+     
+     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+     searchActive = false
+     }
+     }
+     */
 }
 
-extension PhoneDirectoryViewController: NetworkCallBack{
-    
-    func networkSuccess(data resultdata: Any, code: String) {
-        if code == "AddressListSuccess" {
+extension PhoneDirectoryViewController: NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
+        if code == "directoryListSuccess" {
             print(resultdata)
-            
-            var temp: [NoticeResult] = []
+            var temp: [DirectoryName] = []
             if let items = resultdata as? [NSDictionary] {
                 for item in items {
-                    
                     let name = item["name"] as? String ?? ""
-                    let phoneNumber = item["phoneNumber"] as? String ?? ""
-                    let position = item["position"] as? String ?? ""
-                    let etc = item["etc"] as? String ?? ""
-                    let addressId = item["addressId"] as? Int ?? 0
-                    let department = item["department"] as? String ?? ""
-                    
-                    let obj = NoticeResult.init(name: name, phoneNumber: phoneNumber, position: position, etc: etc, addressId: addressId, department: department)
+                    let obj = DirectoryName.init(name: name)
                     temp.append(obj)
                 }
             }
-            
-            self.AddressList = temp
-            
+            self.DirectoryList = temp
         }
     }
     
     func networkFail(code: String) {
-        if(code == "AddressListError") {
+        if(code == "directoryListError") {
             print("실패하였습니다.")
         }
         
     }
 }
-
-
-
 

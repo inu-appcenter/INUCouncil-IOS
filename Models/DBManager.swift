@@ -37,7 +37,6 @@ class NoticeResult{
     var timeSave: String?
     var fileName:[String]?
     
-
     init(content_serial_id: Int, title: String, content:String, department:String, timeSave:String, fileName:[String]){
         self.content_serial_id = content_serial_id
         self.title = title
@@ -45,7 +44,7 @@ class NoticeResult{
         self.department = department
         self.timeSave = timeSave
         self.fileName = fileName
-    }
+                                            }
     
 }
 
@@ -69,17 +68,25 @@ class BoardDetail{
     }
 }
 
-// 연락처 불러오기
-class AddressResult{
+class DirectoryName{
+    var name: String?
+    
+    init(name:String){
+        self.name = name
+    }
+}
+
+class DirectoryDetail{
     var name: String?
     var phoneNumber: String?
     var email: String?
     var position: String?
-    var etc: String
-    var addressId : Int?
+    var etc: String?
+    var addressId: Int?
     var department: String?
     
-    init(name:String, phoneNumber:String, email:String, position:String, etc:String, addressId:Int, department:String) {
+    init(name: String, phoneNumber: String, email:String, position:String, etc:String, addressId: Int, department: String){
+      
         self.name = name
         self.phoneNumber = phoneNumber
         self.email = email
@@ -90,3 +97,4 @@ class AddressResult{
     }
     
 }
+

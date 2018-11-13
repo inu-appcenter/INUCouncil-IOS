@@ -25,11 +25,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
+        self.navigationItem.title = "달력"
+     
         CalendarTableView.delegate = self
         CalendarTableView.dataSource = self
         calendar.dataSource = self
@@ -41,8 +38,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
             calendar.layer.cornerRadius = 10
             CalendarTableView.layer.cornerRadius = 10
 
-      
-       
     }
     //테이블 갯수 몇개인지
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +54,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     //선택한 테이블 뷰 상세보기
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
             dvc.getTitle = titlelabel[indexPath.row]
             dvc.getStartTime = StartTime[indexPath.row]

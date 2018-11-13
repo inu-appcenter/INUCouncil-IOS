@@ -30,9 +30,9 @@ extension SettingViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return " 씨발 앱센터"
+            return " 알림 설정"
         case 1:
-            return " 망해라 앱센터"
+            return " 관리자 로그인"
         default:
             return ""
         }
@@ -49,10 +49,11 @@ extension SettingViewController: UITableViewDelegate,UITableViewDataSource{
         switch indexPath.section {
         case 0:
             cell.settingSwitch.isHidden = false
-            cell.settingNameLabel.text = "알림 허용"
+            cell.settingNameLabel.text = "   알림 허용"
+       
         case 1:
             cell.settingSwitch.isHidden = true
-            cell.settingNameLabel.text = "로그아웃"
+            cell.settingNameLabel.text = "   로그아웃"
             cell.settingNameLabel.textColor = UIColor.red
         default:
             break

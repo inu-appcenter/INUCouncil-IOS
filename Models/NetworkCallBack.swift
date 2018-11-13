@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol NetworkCallBack {
-    func networkSuccess(data : Any, code: String)
+protocol NetworkCallback {
+    func networkSuc(resultdata : Any, code: String)
     func networkFail(code: String)
 }
 

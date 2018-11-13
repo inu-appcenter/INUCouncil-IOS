@@ -5,7 +5,7 @@
 //  Created by 이형주 on 2018. 8. 17..
 //  Copyright © 2018년 이형주. All rights reserved.
 //
-/*
+
 import UIKit
 import Kingfisher
 
@@ -40,16 +40,15 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
             return 1
         case 1:
             return imageCount
-//            return 1
         default:
             return 0
         }
-        
-        
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -58,13 +57,9 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
             return cell
         case 1:
             let cell: ImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-            for i in 0..<imageCount{
-                let logo = "http://117.231.66:7001/imgload/\(detailBoard!.fileName![i])"
+                let logo = "http://117.16.231.66:7001/imgload/\(detailBoard!.fileName![indexPath.row])"
                 let resource = ImageResource(downloadURL: URL(string: logo)!, cacheKey: logo)
                 cell.ContentsImage.kf.setImage(with: resource)
-            }
-            
-            
             return cell
         default:
             let cell: ContentsCell = tableView.dequeueReusableCell(withIdentifier: "ContentsCell", for: indexPath) as! ContentsCell
@@ -85,14 +80,14 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
     }
     
     
-    @IBAction func rightButtonClicked(_ sender: Any) {
-        let alertController = UIAlertController(title: "선택해", message: "쉬이발", preferredStyle: UIAlertControllerStyle.actionSheet)
+    @IBAction func RightButtonClicked(_ sender: Any) {
+        let alertController = UIAlertController(title: "선택하세요", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action:UIAlertAction) in
-            self.model?.deletePost(content_serial_id: "(self.detailBoard!.content_serial_id!)")
+            self.model?.deleteBoard(content_serial_id: "\(self.detailBoard!.content_serial_id!)")
             return
         }
-        let editAction = UIAlertAction(title: "수정수정정수정", style: .default) {
+        let editAction = UIAlertAction(title: "수정", style: .default) {
             (_) in
             if let addNotice = self.storyboard?.instantiateViewController(withIdentifier: "AddNoticeViewController") as? AddNoticeViewController{
                 addNotice.noticeTitle = self.titleName
@@ -110,17 +105,11 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         alertController.addAction(deleteAction)
         self.present(alertController, animated: true, completion: nil)
 
-        
     }
-    
+
     @IBOutlet weak var tableview: UITableView!
     
-  /*
-    var getTitle = String()
-    var getTime = String()
-    var getContents = String()
-    //var getImage = UIImage()
-*/
+
 override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -129,16 +118,16 @@ override func viewDidLoad() {
     department.text = self.appDelegate.department
     model = NetworkModel(self)
 
-    model?.boardDetailList(department: (self.appDelegate.department)!, content_serial_id: Int(boardId))
+    model?.boardDetailList(department: (self.appDelegate.department)!, content_serial_id: String(boardId))
     
    MainView.layer.cornerRadius = 10
     tableview.delegate = self
     tableview.dataSource = self
 
-    let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+   /* let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
     let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
     statusBarView.backgroundColor = statusBarColor
-    view.addSubview(statusBarView)
+    view.addSubview(statusBarView)*/
 }
 
 
@@ -164,10 +153,8 @@ override func didReceiveMemoryWarning() {
     
 }
 
-extension DetailNoticeViewController: NetworkCallBack{
-    
-    
-    func networkSuccess(data resultdata: Any, code: String) {
+extension DetailNoticeViewController: NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
         if code == "boardListSuccess" {
             print(resultdata)
             
@@ -210,4 +197,3 @@ extension DetailNoticeViewController: NetworkCallBack{
         
     }
 }
-*/

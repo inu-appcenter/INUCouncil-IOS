@@ -21,6 +21,7 @@ class PhoneBookViewDetail: UIViewController {
         alertController.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: self.okHandler))
         alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         self.present(alertController,animated:true, completion: nil)
+        
     }
     func okHandler(alert: UIAlertAction!){
         self.navigationController?.pushViewController(UIViewController(), animated: true)
@@ -28,13 +29,13 @@ class PhoneBookViewDetail: UIViewController {
     
     
     @IBAction func BackButtonClicked(_ sender: Any) {
-    
     }
     
     @IBOutlet weak var ProfNameLabel: UILabel!
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var LabLabel: UILabel!
+    
     @IBOutlet weak var MemoTextView: UITextView!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -99,7 +99,6 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
             EndText.text =  dateFormatter.string(from: datePicker.date)
         }
     }
-    
 }
 
 

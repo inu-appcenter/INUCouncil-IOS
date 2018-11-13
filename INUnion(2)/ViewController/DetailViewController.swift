@@ -21,8 +21,7 @@ class DetailViewController: UIViewController
     
     @IBOutlet weak var CardView: UIView!
     
-    @IBAction func AlertButtonClicked(_ sender: Any) {
-        
+    @IBAction func RightButtonClicked(_ sender: Any) {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "수정하기", style: .default, handler: self.okHandler))
         alertController.addAction(UIAlertAction(title: "삭제하기", style: .destructive, handler: self.okHandler))
@@ -33,14 +32,11 @@ class DetailViewController: UIViewController
     func okHandler(alert: UIAlertAction!){
         self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
+  
     
     
     
-    
-    
-    @IBAction func BackButtonClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+  
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var StartTimeText: UILabel!
     @IBOutlet weak var EndTimeText: UILabel!
@@ -78,7 +74,7 @@ class DetailViewController: UIViewController
     }
     
     
-    class CustomNavController: UINavigationController {
+   class CustomNavController: UINavigationController {
         override func viewDidLoad() {
             super.viewDidLoad()
             navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -89,7 +85,7 @@ class DetailViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = "";
+        //self.navigationController?.navigationBar.topItem?.title = "";
         
     }
     

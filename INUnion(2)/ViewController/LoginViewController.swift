@@ -82,14 +82,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         password=PassTextField.text!
         let model = NetworkModel(self)
         startLoading()
-        model.login(userName: username, password: password)
+        model.login(username: username, password: password)
         
-        //주석 해제하면 login 생략 가능.
-        
-      /*  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-       if let vc = storyBoard.instantiateViewController(withIdentifier: "Start") as? UITabBarController {
-         self.present(vc, animated: true, completion: nil)
-        }*/
+ 
     }
     
     func startLoading(){
@@ -101,9 +96,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
 }
 
-      extension LoginViewController : NetworkCallBack{
-        func networkSuccess(data resultdata: Any, code: String) {
-                if code == "login" {
+      extension LoginViewController : NetworkCallback{
+            func networkSuc(resultdata: Any, code: String) {
+                if code == "loginSuccess" {
                     print(resultdata)
                     if let item = resultdata as? NSDictionary{
                         let ans = item["ans"] as? Bool ?? false
