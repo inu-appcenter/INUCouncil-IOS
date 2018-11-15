@@ -13,6 +13,27 @@ import UIKit
 
 class PhoneBookViewDetail: UIViewController {
     
+    var deleteResult: AnsBoolResult?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var model : NetworkModel?
+    
+    
+    var GetName = ""
+    var GetNum = ""
+    var GetEmail = ""
+    var GetLab = ""
+    var GetMemo = ""
+    
+   /* var detailBoard: DirectoryDetail?{
+        didSet {
+            if self.view != nil {
+                self.view.reloadData()
+            }
+        }
+    }
+    */
+    
+    
     @IBOutlet weak var CardView: UIView!
     
     @IBAction func AlertButton(_ sender: Any) {
@@ -31,6 +52,7 @@ class PhoneBookViewDetail: UIViewController {
     @IBAction func BackButtonClicked(_ sender: Any) {
     }
     
+    @IBOutlet weak var MajorLabel: UILabel!
     @IBOutlet weak var ProfNameLabel: UILabel!
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
@@ -45,22 +67,18 @@ class PhoneBookViewDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CardView.layer.cornerRadius = 10
+        MajorLabel.text! = self.appDelegate.department!
         ProfNameLabel.text! = GetName
-        PhoneNumberLabel.text! = GetNum
+        PhoneNumberLabel.text! = GetName
         EmailLabel.text! = GetEmail
         LabLabel.text! = GetLab
-        MemoTextView.text! = GetMemo
+        
+        CardView.layer.cornerRadius = 10
+        
+  
     }
     
-    
-    var GetName = String()
-    var GetNum = String()
-    var GetEmail = String()
-    var GetLab = String()
-    var GetMemo = String()
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

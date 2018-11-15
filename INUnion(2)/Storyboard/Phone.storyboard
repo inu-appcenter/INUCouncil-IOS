@@ -129,7 +129,7 @@
         <!--Phone Book View Detail-->
         <scene sceneID="79o-O4-k7h">
             <objects>
-                <viewController id="YaQ-Cg-I1j" customClass="PhoneBookViewDetail" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PhoneBookViewDetail" storyboardIdentifier="PhoneBookViewDetail" id="YaQ-Cg-I1j" customClass="PhoneBookViewDetail" customModule="INUnion_2_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSf-gf-cIJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,14 +364,15 @@
                         <outlet property="CardView" destination="7wb-cU-RVK" id="rQ5-EA-Zwo"/>
                         <outlet property="EmailLabel" destination="vKh-UC-Rdq" id="ZK9-Ju-qm9"/>
                         <outlet property="LabLabel" destination="mZi-mp-gkH" id="hPh-my-1Ac"/>
+                        <outlet property="MajorLabel" destination="gx4-zs-DUx" id="Btz-BU-yJK"/>
                         <outlet property="MemoTextView" destination="yPP-tl-WfC" id="cmY-3J-dgd"/>
                         <outlet property="PhoneNumberLabel" destination="3nl-Y7-EfQ" id="LTT-IV-oXz"/>
-                        <outlet property="ProfNameLabel" destination="gx4-zs-DUx" id="GpG-s2-6Da"/>
+                        <outlet property="ProfNameLabel" destination="kLo-5S-cFM" id="pQN-OO-aA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnU-rI-cHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5171" y="639"/>
+            <point key="canvasLocation" x="5248" y="638"/>
         </scene>
         <!--Add Phone Directory View Controller-->
         <scene sceneID="Hm5-5J-LbJ">

@@ -11,12 +11,14 @@ import UIKit
 
 class DetailViewController: UIViewController
 {
-    var getTitle = String()
-    var getStartTime = String()
-    var getEndTime = String()
-    var getlocation = String()
-    var getcontents = String()
+    var getTitle = ""
+    var getStartTime = ""
+    var getEndTime = ""
+    var getlocation = ""
+    var getcontents = ""
     
+    var boardId:Int = 0
+  
     @IBOutlet weak var MajorLabel: UILabel!
     
     @IBOutlet weak var CardView: UIView!

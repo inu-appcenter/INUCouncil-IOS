@@ -197,7 +197,7 @@ private let serverURL = "http://117.16.231.66:7001"
         let param = ["department": department]
         let header = ["Content-Type" : "application/x-www-form-urlencoded"]
         
-        Alamofire.request("\(serverURL)/addressSort/", method: .post, parameters: param, headers: header).responseJSON { response in
+        Alamofire.request("\(serverURL)/addressSelectAll/", method: .post, parameters: param, headers: header).responseJSON { response in
             switch response.result{
             case .success(let item):
                 self.view.networkSuc(resultdata: item, code: "directoryListSuccess")

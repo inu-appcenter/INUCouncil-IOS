@@ -31,6 +31,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         Model = NetworkModel(self)
         MajorLabel.text!=self.appDelegate.department!
         Model?.DirectoryList(department: self.appDelegate.department!)
+        
         self.PhoneBookTableView.delegate = self
         self.PhoneBookTableView.dataSource = self
         SearchBar.backgroundImage = UIImage()
@@ -54,6 +55,8 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryTableViewCell", for: indexPath) as! DirectoryTableViewCell
+        
+        
         cell.ProfNameLabel.text! = DirectoryList[indexPath.row].name!
         return cell
     }
@@ -65,14 +68,12 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
             
             if let dvc = storyboard?.instantiateViewController(withIdentifier: "PhoneBookViewDetail") as? PhoneBookViewDetail{
                
-                Model?.DirectoryDetail(name: DirectoryList[indexPath.row].name!)
-               /*
-                dvc.GetName = DirectoryList[indexPath.row].name
-                dvc.GetNum = phone[indexPath.row]
-                dvc.GetEmail = email[indexPath.row]
-                dvc.GetLab = lab[indexPath.row]
-                dvc.GetMemo = memo[indexPath.row]
-                */
+             dvc.GetName = DirectoryList[indexPath.row].name!
+                dvc.GetNum = DirectoryList[indexPath.row].phoneNumber!
+                dvc.GetEmail = DirectoryList[indexPath.row].email!
+                dvc.GetLab = DirectoryList[indexPath.row].position!
+                dvc.GetMemo = DirectoryList[indexPath.row].etc!
+               
                 self.navigationController?.show(dvc, sender: nil)
             }
         }
@@ -109,7 +110,14 @@ extension PhoneDirectoryViewController: NetworkCallback{
             if let items = resultdata as? [NSDictionary] {
                 for item in items {
                     let name = item["name"] as? String ?? ""
-                    let obj = DirectoryName.init(name: name)
+                    let phoneNumber = item["phoneNumber"] as? String ?? ""
+                    let email = item["email"] as? String ?? ""
+                    let position = item["position"] as? String ?? ""
+                    let etc = item["ect"] as? String ?? ""
+                    let addressId = item["addressId"] as? String ?? ""
+                    let department = item["department"] as? String ?? ""
+                    
+                    let obj = DirectoryName.init(name: name, phoneNumber: phoneNumber, email:email, position:position, etc:etc, addressId: addressId, department: department)
                     temp.append(obj)
                 }
             }

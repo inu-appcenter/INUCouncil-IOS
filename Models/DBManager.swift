@@ -70,9 +70,22 @@ class BoardDetail{
 
 class DirectoryName{
     var name: String?
+    var phoneNumber: String?
+    var email: String?
+    var position: String?
+    var etc: String?
+    var addressId: String?
+    var department: String?
     
-    init(name:String){
+    init(name: String, phoneNumber: String, email:String, position:String, etc:String, addressId:String, department: String){
+        
         self.name = name
+        self.phoneNumber = phoneNumber
+        self.email = email
+        self.position = position
+        self.etc = etc
+        self.addressId = addressId
+        self.department = department
     }
 }
 
