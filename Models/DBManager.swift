@@ -74,10 +74,10 @@ class DirectoryName{
     var email: String?
     var position: String?
     var etc: String?
-    var addressId: String?
+    var addressId: Int?
     var department: String?
     
-    init(name: String, phoneNumber: String, email:String, position:String, etc:String, addressId:String, department: String){
+    init(name: String, phoneNumber: String, email:String, position:String, etc:String, addressId:Int, department: String){
         
         self.name = name
         self.phoneNumber = phoneNumber
@@ -108,6 +108,35 @@ class DirectoryDetail{
         self.addressId = addressId
         self.department = department
     }
-    
 }
+
+//캘린더 리스트 불러오기
+    class CalendarList{
+        var scheduleTitle: String?
+        var startTime: String?
+        var position: String?
+        var memo: String?
+        var department: String?
+        var scheduleId: Int?
+        var endTime: String?
+        var endDate: String?
+        var startDate: String?
+        
+        init(scheduleTitle: String, startTime: String, position: String, memo:String, department: String, scheduleId: Int, endTime: String, endDate: String, startDate: String)
+        {
+            self.scheduleTitle = scheduleTitle
+            self.startTime = startTime
+            self.position = position
+            self.memo = memo
+            self.department = department
+            self.scheduleId = scheduleId
+            self.endTime = endTime
+            self.endDate = endDate
+            self.startDate = startDate
+        }
+        
+    }
+
+
+
 

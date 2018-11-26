@@ -27,6 +27,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         PhoneBookTableView.layer.cornerRadius = 10;
         Model = NetworkModel(self)
         MajorLabel.text!=self.appDelegate.department!
@@ -68,38 +69,15 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
             
             if let dvc = storyboard?.instantiateViewController(withIdentifier: "PhoneBookViewDetail") as? PhoneBookViewDetail{
                
-             dvc.GetName = DirectoryList[indexPath.row].name!
+                dvc.GetName = DirectoryList[indexPath.row].name!
                 dvc.GetNum = DirectoryList[indexPath.row].phoneNumber!
                 dvc.GetEmail = DirectoryList[indexPath.row].email!
                 dvc.GetLab = DirectoryList[indexPath.row].position!
                 dvc.GetMemo = DirectoryList[indexPath.row].etc!
-               
+                dvc.GetAddressId = DirectoryList[indexPath.row].addressId!
                 self.navigationController?.show(dvc, sender: nil)
             }
         }
-    
- 
-        
-    /*
-     // 서치바
-     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-     filtered = searchText.isEmpty ? names : names.filter({(dataString : String) -> Bool in
-     return dataString.range(of: searchText, options: .caseInsensitive) != nil
-     })
-     
-     Tableview.reloadData()
-     }
-     
-     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-     searchActive = true
-     
-     }
-     
-     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-     searchActive = false
-     }
-     }
-     */
 }
 
 extension PhoneDirectoryViewController: NetworkCallback{
@@ -113,8 +91,8 @@ extension PhoneDirectoryViewController: NetworkCallback{
                     let phoneNumber = item["phoneNumber"] as? String ?? ""
                     let email = item["email"] as? String ?? ""
                     let position = item["position"] as? String ?? ""
-                    let etc = item["ect"] as? String ?? ""
-                    let addressId = item["addressId"] as? String ?? ""
+                    let etc = item["etc"] as? String ?? ""
+                    let addressId = item["addressId"] as? Int ?? 0
                     let department = item["department"] as? String ?? ""
                     
                     let obj = DirectoryName.init(name: name, phoneNumber: phoneNumber, email:email, position:position, etc:etc, addressId: addressId, department: department)

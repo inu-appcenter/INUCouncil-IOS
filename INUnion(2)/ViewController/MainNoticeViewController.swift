@@ -175,6 +175,9 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath)
     cell?.isSelected = false
+    
+  
+    
     if let DNvC = storyboard?.instantiateViewController(withIdentifier: "DetailNoticeViewController") as? DetailNoticeViewController{
         DNvC.boardId = boardList[indexPath.row].content_serial_id!
         DNvC.titleName = boardList[indexPath.row].title!

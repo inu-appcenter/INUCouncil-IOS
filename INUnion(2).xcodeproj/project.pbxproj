@@ -12,12 +12,12 @@
 		7074A07C58FCF2D3E029864F /* Pods_INUnion_2_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1F00FA5F2B6827C449D694 /* Pods_INUnion_2_.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A51D97D92114239500088FE2 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D97D82114239500088FE2 /* NetworkModel.swift */; };
 		A51D97DB211423D500088FE2 /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D97DA211423D500088FE2 /* NetworkCallBack.swift */; };
-		A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520397A211F3D0100AD9918 /* DetailViewController.swift */; };
 		A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52049B52137E1CB00897889 /* ImageUploadCollectionViewCell.swift */; };
 		A5213079211A8C09007717D5 /* ChooseMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */; };
 		A5300FB92132F44900E20BCE /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FB82132F44900E20BCE /* ContentsCell.swift */; };
 		A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5300FBA2132F48000E20BCE /* ImageCell.swift */; };
 		A536C9492139AAF6005B34EF /* AddCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */; };
+		A541F31A21ABED45000CB46A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A541F31921ABED45000CB46A /* DetailViewController.swift */; };
 		A558559821229813003EADE6 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559721229813003EADE6 /* StudentDetailViewController.swift */; };
 		A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */; };
 		A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */; };
@@ -33,7 +33,6 @@
 		A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56706DF211201E800A66C81 /* SearchMajorViewController.swift */; };
 		A56BF5C8212D5C4F00C7E2B2 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */; };
 		A571C3BD2126A99B0067D30D /* DetailNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */; };
-		A5931D6C213A6AF00001E59A /* MakingNewPhonebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */; };
 		A5931D6E213A6B450001E59A /* PhoneBookViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */; };
 		A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */; };
 		A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD2B0213666D800BDA2FD /* DBManager.swift */; };
@@ -60,12 +59,12 @@
 		7231E0C1B44DD3B17F437F0F /* Pods-INUnion(2).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUnion(2).release.xcconfig"; path = "Pods/Target Support Files/Pods-INUnion(2)/Pods-INUnion(2).release.xcconfig"; sourceTree = "<group>"; };
 		A51D97D82114239500088FE2 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		A51D97DA211423D500088FE2 /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
-		A520397A211F3D0100AD9918 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A52049B52137E1CB00897889 /* ImageUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5213078211A8C09007717D5 /* ChooseMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMajorViewController.swift; sourceTree = "<group>"; };
 		A5300FB82132F44900E20BCE /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		A5300FBA2132F48000E20BCE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarViewController.swift; sourceTree = "<group>"; };
+		A541F31921ABED45000CB46A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A558559721229813003EADE6 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		A558559B2122CE32003EADE6 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		A5620FC0212682EA0094D4C8 /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		A56706DF211201E800A66C81 /* SearchMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMajorViewController.swift; sourceTree = "<group>"; };
 		A56BF5C7212D5C4F00C7E2B2 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A571C3BC2126A99B0067D30D /* DetailNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoticeViewController.swift; sourceTree = "<group>"; };
-		A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingNewPhonebook.swift; sourceTree = "<group>"; };
 		A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewDetail.swift; sourceTree = "<group>"; };
 		A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDirectoryViewController.swift; sourceTree = "<group>"; };
 		A5AFD2B0213666D800BDA2FD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -176,8 +174,8 @@
 		A52FABDB2125C83D008532EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A541F31921ABED45000CB46A /* DetailViewController.swift */,
 				A56706C12111ED7700A66C81 /* ViewController.swift */,
-				A520397A211F3D0100AD9918 /* DetailViewController.swift */,
 				A56706DD2112001700A66C81 /* SettingViewController.swift */,
 				A56706D92111FF3B00A66C81 /* CalendarViewController.swift */,
 				A56706D72111FE4500A66C81 /* NoticeViewController.swift */,
@@ -186,7 +184,6 @@
 				A5D3A951212C553A0042AD07 /* MainNoticeViewController.swift */,
 				A5AFD2B6213677F700BDA2FD /* AddNoticeViewController.swift */,
 				A536C9482139AAF6005B34EF /* AddCalendarViewController.swift */,
-				A5931D6B213A6AF00001E59A /* MakingNewPhonebook.swift */,
 				A5931D6D213A6B450001E59A /* PhoneBookViewDetail.swift */,
 				A5931D6F213A6B730001E59A /* PhoneDirectoryViewController.swift */,
 				A5DDF19A213D83B5009DF025 /* AddPhoneDirectoryViewController.swift */,
@@ -375,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A536C9492139AAF6005B34EF /* AddCalendarViewController.swift in Sources */,
+				A541F31A21ABED45000CB46A /* DetailViewController.swift in Sources */,
 				A56706E0211201E800A66C81 /* SearchMajorViewController.swift in Sources */,
 				A558559C2122CE32003EADE6 /* NoticeTableViewCell.swift in Sources */,
 				A56706C22111ED7700A66C81 /* ViewController.swift in Sources */,
@@ -394,7 +392,6 @@
 				A5300FBB2132F48000E20BCE /* ImageCell.swift in Sources */,
 				A5931D6E213A6B450001E59A /* PhoneBookViewDetail.swift in Sources */,
 				68C55177211DA0F000D22DB4 /* StudentInfoClass.swift in Sources */,
-				A520397B211F3D0100AD9918 /* DetailViewController.swift in Sources */,
 				A5620FC1212682EA0094D4C8 /* DirectoryTableViewCell.swift in Sources */,
 				A5931D70213A6B730001E59A /* PhoneDirectoryViewController.swift in Sources */,
 				A5DDF19B213D83B5009DF025 /* AddPhoneDirectoryViewController.swift in Sources */,
@@ -402,7 +399,6 @@
 				A52049B62137E1CB00897889 /* ImageUploadCollectionViewCell.swift in Sources */,
 				A5D3A952212C553A0042AD07 /* MainNoticeViewController.swift in Sources */,
 				A5E9DC4D2121783200EC8DA4 /* StudentNoticeViewController.swift in Sources */,
-				A5931D6C213A6AF00001E59A /* MakingNewPhonebook.swift in Sources */,
 				A56706DE2112001700A66C81 /* SettingViewController.swift in Sources */,
 				A5D3A950212C54C20042AD07 /* NoticeCollectionViewCell.swift in Sources */,
 				A5AFD2B1213666D800BDA2FD /* DBManager.swift in Sources */,

@@ -83,11 +83,12 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
     @IBAction func RightButtonClicked(_ sender: Any) {
         let alertController = UIAlertController(title: "선택하세요", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action:UIAlertAction) in
-            self.model?.deleteBoard(content_serial_id: "\(self.detailBoard!.content_serial_id!)")
+       let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { (action:UIAlertAction) in
+          self.model?.deleteBoard(content_serial_id: "\(self.detailBoard!.content_serial_id!)")
             return
-        }
-        let editAction = UIAlertAction(title: "수정", style: .default) {
+           }
+        
+        let editAction = UIAlertAction(title: "수정하기", style: .default) {
             (_) in
             if let addNotice = self.storyboard?.instantiateViewController(withIdentifier: "AddNoticeViewController") as? AddNoticeViewController{
                 addNotice.noticeTitle = self.titleName
@@ -104,15 +105,15 @@ class  DetailNoticeViewController: UIViewController,UITableViewDataSource,UITabl
         alertController.addAction(editAction)
         alertController.addAction(deleteAction)
         self.present(alertController, animated: true, completion: nil)
-
     }
-
+    
     @IBOutlet weak var tableview: UITableView!
     
 
 override func viewDidLoad() {
     
     super.viewDidLoad()
+  
     TitleLabel.text = titleName
     TimeLabel.text = titleTime
     department.text = self.appDelegate.department
@@ -124,10 +125,7 @@ override func viewDidLoad() {
     tableview.delegate = self
     tableview.dataSource = self
 
-   /* let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-    let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
-    statusBarView.backgroundColor = statusBarColor
-    view.addSubview(statusBarView)*/
+  
 }
 
 

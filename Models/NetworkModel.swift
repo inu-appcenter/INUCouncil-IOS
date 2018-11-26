@@ -226,4 +226,75 @@ private let serverURL = "http://117.16.231.66:7001"
             }
         }
     }
+    //    연락처 등록
+    func upLoadDirectory(name: String, phoneNumber: String, email: String, position: String, etc: String, department: String){
+        let param = ["name": name, "phoneNumber": phoneNumber, "email":email, "position":position, "etc":etc, "department":department]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/addressSave/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "DirectorySaveSucces")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "DirectorySaveFail")
+                print(error)
+            }
+        }
+    }
+    
+    //    연락처 삭제
+    func deleteDirectory(addressId: String){
+        let param = ["addressId": addressId]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/addressDelete/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "DirectoryDeleteSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "DirectoryListError")
+                print(error)
+            }
+        }
+    }
+    //    연락처 수정
+    func modifyDirectory(name: String, phoneNumber: String, email: String, position: String, etc: String, department: String, addressId: Int){
+        let param = ["name": name, "phoneNumber": phoneNumber, "email":email, "position":position, "etc":etc, "department": department, "addressId":addressId] as [String : Any]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/addressModify", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "DirectoryModifySucces")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "DirectoryModifyError")
+                print(error)
+            }
+        }
  }
+
+    //    캘린더 등록
+    func upLoadCalendar(scheduleTitle: String, startTime: String, position: String, memo: String, department: String, endTime: String, startDate: String, endDate: String){
+        let param = ["scheduleTitle": scheduleTitle, "startTime": startTime, "position": position, "memo":memo, "department":department, "endTime":endTime, "startDate":startDate, "endDate":endDate]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/calendarSave/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "CalendarSaveSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "CalendarSaveFail")
+                print(error)
+            }
+        }
+    }
+}
+

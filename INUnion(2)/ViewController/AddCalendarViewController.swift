@@ -10,12 +10,19 @@ import UIKit
 
 class AddCalendarViewController: UIViewController,UITextViewDelegate {
     
+     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var model : NetworkModel?
+    var uploadResult: AnsBoolResult?
+    
     @IBOutlet weak var MemoTextView: UITextView!
     @IBOutlet weak var InputTextLabel: UILabel!
     
     @IBOutlet weak var MaximulLabel: UILabel!
     @IBAction func CompleteButtonClicked(_ sender: Any)
     {
+        if ScheduleId == 0 {
+    model?.upLoadCalendar(scheduleTitle: TitleText.text!, startTime: StartText.text!, position: LocateText.text!, memo: MemoTextView.text!, department: (self.appDelegate.department)!, endTime: EndText.text!, startDate: StartText.text!, endDate: EndText.text!)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -30,6 +37,14 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var EndText: UITextField!
     @IBOutlet weak var LocateText: UITextField!
     
+    var Title: String = ""
+    var StartTime: String = ""
+    var EndTime: String = ""
+    var Locate: String = ""
+    var Memo: String = ""
+    var StartDate: String = ""
+    var EndDate: String = ""
+    var ScheduleId: Int = 0
     
     var datePicker: UIDatePicker?
     
@@ -90,7 +105,10 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
     //시작일,종료일 입력받음. 입력 완료 후 배경 탭해야 종료 됨.
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let timeFormatter = DateFormatter()
+        
+        timeFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         if(StartText.isEditing){
             StartText.text = dateFormatter.string(from: datePicker.date)
         }
