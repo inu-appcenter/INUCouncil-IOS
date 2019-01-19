@@ -52,7 +52,9 @@ class PhoneBookViewDetail: UIViewController,UIScrollViewDelegate {
                 addDirectory.ProfPosition = self.GetLab
                 addDirectory.ProfAddressId = self.GetAddressId
                 
-                self.present(addDirectory, animated: true, completion: nil)
+                self.present(addDirectory, animated: true, completion: {
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
             }
             return
         }

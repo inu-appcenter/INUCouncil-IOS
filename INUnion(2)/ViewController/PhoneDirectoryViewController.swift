@@ -19,8 +19,10 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         }
     }
  
+    @IBAction func PlusButtonClicked(_ sender: Any) {
+    
+    }
     @IBOutlet weak var SearchBar: UISearchBar!
-    @IBOutlet weak var PlusButton: UIButton!
     @IBOutlet weak var MajorLabel: UILabel!
     @IBOutlet weak var PhoneBookTableView: UITableView!
    
@@ -59,6 +61,7 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
         
         
         cell.ProfNameLabel.text! = DirectoryList[indexPath.row].name!
+//        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         return cell
     }
         
@@ -78,6 +81,9 @@ class PhoneDirectoryViewController: UIViewController,UITableViewDataSource,UITab
                 self.navigationController?.show(dvc, sender: nil)
             }
         }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 43
+    }
 }
 
 extension PhoneDirectoryViewController: NetworkCallback{

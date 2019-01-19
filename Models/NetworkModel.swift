@@ -279,6 +279,23 @@ private let serverURL = "http://117.16.231.66:7001"
         }
  }
 
+    //    캘린더 통신
+    func calendarList(department: String){
+        let param = ["department": department]
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/calendarSelect/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "calendarListSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "calendarListError")
+                print(error)
+            }
+        }
+    }
+    
     //    캘린더 등록
     func upLoadCalendar(scheduleTitle: String, startTime: String, position: String, memo: String, department: String, endTime: String, startDate: String, endDate: String){
         let param = ["scheduleTitle": scheduleTitle, "startTime": startTime, "position": position, "memo":memo, "department":department, "endTime":endTime, "startDate":startDate, "endDate":endDate]
@@ -292,6 +309,42 @@ private let serverURL = "http://117.16.231.66:7001"
                 
             case .failure(let error):
                 self.view.networkFail(code: "CalendarSaveFail")
+                print(error)
+            }
+        }
+    }
+    
+    //    캘린더 수정
+    func modifyCalendar(scheduleTitle: String, endTime: String, position: String, memo: String, department: String, startTime: String, scheduleId: String){
+        let param = ["scheduleTitle": scheduleTitle, "endTime": endTime, "position": position, "memo":memo, "department":department, "startTime":startTime, "scheduleId":scheduleId]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/calendarModify/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "CalendarModifySuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "CalendarModifyFail")
+                print(error)
+            }
+        }
+    }
+    
+    //  캘린더 삭제
+    func deleteCalendar(scheduleId: String){
+        let param = ["scheduleId": scheduleId]
+        
+        let header = ["Content-Type" : "application/x-www-form-urlencoded"]
+        
+        Alamofire.request("\(serverURL)/calendarDelete/", method: .post, parameters: param, headers: header).responseJSON { response in
+            switch response.result{
+            case .success(let item):
+                self.view.networkSuc(resultdata: item, code: "CalendarDeleteSuccess")
+                
+            case .failure(let error):
+                self.view.networkFail(code: "CalendarDeleteError")
                 print(error)
             }
         }

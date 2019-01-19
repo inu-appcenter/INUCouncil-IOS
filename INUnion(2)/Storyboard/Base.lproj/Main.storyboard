@@ -172,7 +172,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIg-Ec-EpB">
-                                <rect key="frame" x="52" y="454" width="16.333333333333329" height="19"/>
+                                <rect key="frame" x="52" y="454" width="16" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="Az7-wg-p5U"/>
                                 </constraints>
@@ -188,7 +188,7 @@
                                     <constraint firstAttribute="width" constant="331" id="HTr-VC-Pr6"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVe-1j-ZQl">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVe-1j-ZQl">
                                 <rect key="frame" x="88" y="529" width="254" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="iM7-d5-VP5"/>
@@ -206,7 +206,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kba-Yg-svd">
-                                <rect key="frame" x="52.000000000000007" y="529" width="26.333333333333336" height="19"/>
+                                <rect key="frame" x="52" y="529" width="26" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="1jY-vA-T4t"/>
                                 </constraints>
@@ -214,7 +214,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-iT-mP8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-iT-mP8">
                                 <rect key="frame" x="88" y="454" width="254" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="Hg4-Db-wmc"/>
@@ -225,7 +225,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디 또는 비밀번호를 다시 확인하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqg-ex-jZ9">
-                                <rect key="frame" x="45" y="577" width="257" height="18.666666666666629"/>
+                                <rect key="frame" x="45" y="577" width="257" height="19"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                 <color key="textColor" red="0.98039215686274506" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -236,19 +236,18 @@
                             <constraint firstItem="LIg-Ec-EpB" firstAttribute="leading" secondItem="hSi-Jb-2gF" secondAttribute="leading" constant="52" id="25D-6r-b0E"/>
                             <constraint firstItem="kba-Yg-svd" firstAttribute="top" secondItem="huB-fo-Qh8" secondAttribute="bottom" constant="43" id="5Gz-BX-0Cp"/>
                             <constraint firstItem="7iY-Kl-YRP" firstAttribute="top" secondItem="cVe-1j-ZQl" secondAttribute="bottom" constant="11" id="6GE-43-fOC"/>
+                            <constraint firstItem="cVe-1j-ZQl" firstAttribute="leading" secondItem="kba-Yg-svd" secondAttribute="trailing" constant="10" id="BhX-9o-SVB"/>
+                            <constraint firstItem="cVe-1j-ZQl" firstAttribute="leading" secondItem="OLk-iT-mP8" secondAttribute="leading" id="ERK-d4-am5"/>
                             <constraint firstItem="7iY-Kl-YRP" firstAttribute="top" secondItem="kba-Yg-svd" secondAttribute="bottom" constant="11" id="GdU-yF-8Kd"/>
                             <constraint firstAttribute="trailing" secondItem="7iY-Kl-YRP" secondAttribute="trailing" constant="38" id="Hid-Du-tyN"/>
                             <constraint firstItem="7iY-Kl-YRP" firstAttribute="leading" secondItem="XRm-EV-63h" secondAttribute="leading" constant="45" id="JnP-4p-7Pl"/>
                             <constraint firstItem="gOp-0T-ft1" firstAttribute="leading" secondItem="hSi-Jb-2gF" secondAttribute="leading" id="Mhf-Qn-QC3"/>
                             <constraint firstAttribute="trailing" secondItem="huB-fo-Qh8" secondAttribute="trailing" constant="38" id="NOw-5W-4mY"/>
-                            <constraint firstItem="hSi-Jb-2gF" firstAttribute="trailing" secondItem="cVe-1j-ZQl" secondAttribute="trailing" constant="72" id="QOZ-sV-Ctp"/>
-                            <constraint firstItem="hSi-Jb-2gF" firstAttribute="trailing" secondItem="OLk-iT-mP8" secondAttribute="trailing" constant="72" id="b3g-Vf-KVv"/>
                             <constraint firstItem="lqg-ex-jZ9" firstAttribute="leading" secondItem="hSi-Jb-2gF" secondAttribute="leading" constant="45" id="bhv-SC-kiS"/>
                             <constraint firstItem="gOp-0T-ft1" firstAttribute="trailing" secondItem="hSi-Jb-2gF" secondAttribute="trailing" id="dg4-ob-edw"/>
                             <constraint firstItem="gOp-0T-ft1" firstAttribute="top" secondItem="7iY-Kl-YRP" secondAttribute="bottom" constant="120" id="hUM-zm-OPc"/>
                             <constraint firstItem="huB-fo-Qh8" firstAttribute="top" secondItem="OLk-iT-mP8" secondAttribute="bottom" constant="11" id="iR6-qa-s4k"/>
                             <constraint firstItem="9ep-1u-wn9" firstAttribute="leading" secondItem="hSi-Jb-2gF" secondAttribute="leading" constant="35" id="jcA-K6-ssn"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9ep-1u-wn9" secondAttribute="trailing" constant="20" symbolic="YES" id="l6R-4u-eOn"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LIg-Ec-EpB" secondAttribute="trailing" constant="20" symbolic="YES" id="nXT-fe-XUk"/>
                             <constraint firstItem="lqg-ex-jZ9" firstAttribute="top" secondItem="7iY-Kl-YRP" secondAttribute="bottom" constant="16" id="nyG-ZV-Mb8"/>
                             <constraint firstItem="huB-fo-Qh8" firstAttribute="top" secondItem="LIg-Ec-EpB" secondAttribute="bottom" constant="11" id="qcj-BH-dOY"/>

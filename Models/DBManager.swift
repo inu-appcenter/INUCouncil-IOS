@@ -34,15 +34,15 @@ class NoticeResult{
     var title: String?
     var content: String?
     var department: String?
-    var timeSave: String?
+    var date: String?
     var fileName:[String]?
     
-    init(content_serial_id: Int, title: String, content:String, department:String, timeSave:String, fileName:[String]){
+    init(content_serial_id: Int, title: String, content:String, department:String, date:String, fileName:[String]){
         self.content_serial_id = content_serial_id
         self.title = title
         self.content = content
         self.department = department
-        self.timeSave = timeSave
+        self.date = date
         self.fileName = fileName
                                             }
     
@@ -55,12 +55,12 @@ class BoardDetail{
     var title: String?
     var content: String?
     var department: String?
-    var timeSave: String?
+    var date: String?
     var fileName:[String]?
     
-    init(content_serial_id:Int, title:String, content:String, department:String, timeSave:String,fileName: [String]) {
+    init(content_serial_id:Int, title:String, content:String, department:String, date:String,fileName: [String]) {
         self.content_serial_id = content_serial_id
-        self.timeSave = timeSave
+        self.date = date
         self.content = content
         self.department = department
         self.title = title
@@ -110,8 +110,8 @@ class DirectoryDetail{
     }
 }
 
-//캘린더 리스트 불러오기
-    class CalendarList{
+//캘린더 불러오기
+    class CalendarResult{
         var scheduleTitle: String?
         var startTime: String?
         var position: String?

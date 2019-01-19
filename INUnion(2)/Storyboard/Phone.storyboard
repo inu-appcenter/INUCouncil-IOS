@@ -23,36 +23,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-xz-S9f">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-xz-S9f">
                                 <rect key="frame" x="0.0" y="64" width="414" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmK-jw-vRm">
-                                        <rect key="frame" x="340" y="46" width="48" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="PlusButton"/>
-                                        <connections>
-                                            <segue destination="PGa-iR-Ifw" kind="presentation" id="8Z0-gF-2Xy"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="학부이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCd-4P-ixT">
-                                        <rect key="frame" x="24" y="50" width="268" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학부이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCd-4P-ixT">
+                                        <rect key="frame" x="24" y="42" width="260" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="Cbg-aq-gxu"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="연락처 검색" translatesAutoresizingMaskIntoConstraints="NO" id="epy-Na-yNu">
-                                        <rect key="frame" x="0.0" y="118" width="414" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <searchBar contentMode="redraw" placeholder="연락처 검색" translatesAutoresizingMaskIntoConstraints="NO" id="epy-Na-yNu">
+                                        <rect key="frame" x="16" y="117" width="382" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-tT-Ldg">
+                                        <rect key="frame" x="338" y="42" width="50" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="flf-v1-cnu"/>
+                                        </constraints>
+                                        <state key="normal" image="WriteIcon"/>
+                                        <connections>
+                                            <action selector="PlusButtonClicked:" destination="eWw-bt-WSo" eventType="touchUpInside" id="TP8-tB-WVn"/>
+                                            <segue destination="PGa-iR-Ifw" kind="presentation" id="BzQ-Ub-34b"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.43137254899999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VCd-4P-ixT" firstAttribute="leading" secondItem="p7h-xz-S9f" secondAttribute="leading" constant="24" id="08c-3e-Kwq"/>
+                                    <constraint firstAttribute="trailing" secondItem="epy-Na-yNu" secondAttribute="trailing" constant="16" id="0WU-NJ-LLG"/>
+                                    <constraint firstAttribute="trailing" secondItem="p1W-tT-Ldg" secondAttribute="trailing" constant="26" id="5hy-3E-wSV"/>
+                                    <constraint firstItem="p1W-tT-Ldg" firstAttribute="top" secondItem="p7h-xz-S9f" secondAttribute="top" constant="42" id="7j2-5P-tQK"/>
+                                    <constraint firstAttribute="height" constant="227" id="C57-pS-36Y"/>
+                                    <constraint firstItem="epy-Na-yNu" firstAttribute="top" secondItem="VCd-4P-ixT" secondAttribute="bottom" constant="40" id="QWV-hc-qmo"/>
+                                    <constraint firstAttribute="trailing" secondItem="epy-Na-yNu" secondAttribute="trailing" constant="16" id="XPq-mR-orY"/>
+                                    <constraint firstItem="epy-Na-yNu" firstAttribute="top" secondItem="p1W-tT-Ldg" secondAttribute="bottom" constant="27" id="hkx-41-uPT"/>
+                                    <constraint firstItem="epy-Na-yNu" firstAttribute="leading" secondItem="p7h-xz-S9f" secondAttribute="leading" constant="16" id="kHL-5O-R9Q"/>
+                                    <constraint firstItem="epy-Na-yNu" firstAttribute="leading" secondItem="p7h-xz-S9f" secondAttribute="leading" constant="16" id="stm-FC-Itd"/>
+                                    <constraint firstItem="VCd-4P-ixT" firstAttribute="top" secondItem="p7h-xz-S9f" secondAttribute="top" constant="42" id="xyu-jz-eNP"/>
+                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9dd-uU-ZDj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9dd-uU-ZDj">
                                 <rect key="frame" x="17" y="255" width="382" height="438"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DirectoryTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DirectoryTableViewCell" rowHeight="43" id="jvE-4P-iir" customClass="DirectoryTableViewCell" customModule="INUnion_2_" customModuleProvider="target">
@@ -62,17 +77,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-2n-81r">
-                                                    <rect key="frame" x="37" y="15" width="100" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-2n-81r">
+                                                    <rect key="frame" x="36" y="16" width="240" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
                                                     <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vep-Xc-0ce">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3j-h6-Cum">
                                                     <rect key="frame" x="36" y="40" width="308" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -88,6 +103,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p7h-xz-S9f" firstAttribute="leading" secondItem="AJp-R1-CnY" secondAttribute="leading" id="BPU-th-vi6"/>
+                            <constraint firstItem="p7h-xz-S9f" firstAttribute="trailing" secondItem="AJp-R1-CnY" secondAttribute="trailing" id="LWg-rX-QIa"/>
+                            <constraint firstItem="9dd-uU-ZDj" firstAttribute="top" secondItem="AJp-R1-CnY" secondAttribute="top" constant="191" id="Mz4-p0-6ca"/>
+                            <constraint firstAttribute="bottom" secondItem="9dd-uU-ZDj" secondAttribute="bottom" constant="43" id="VHr-9x-Ptz"/>
+                            <constraint firstItem="9dd-uU-ZDj" firstAttribute="leading" secondItem="AJp-R1-CnY" secondAttribute="leading" constant="17" id="cHH-Uu-Dxm"/>
+                            <constraint firstItem="p7h-xz-S9f" firstAttribute="top" secondItem="AJp-R1-CnY" secondAttribute="top" id="h9H-I5-BiW"/>
+                            <constraint firstItem="AJp-R1-CnY" firstAttribute="trailing" secondItem="9dd-uU-ZDj" secondAttribute="trailing" constant="15" id="pJc-uw-dz0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AJp-R1-CnY"/>
                     </view>
                     <navigationItem key="navigationItem" title="연락처" id="Ihe-yP-rKu">
@@ -96,13 +120,12 @@
                     <connections>
                         <outlet property="MajorLabel" destination="VCd-4P-ixT" id="ViE-jk-Jth"/>
                         <outlet property="PhoneBookTableView" destination="9dd-uU-ZDj" id="Y5S-YD-GEp"/>
-                        <outlet property="PlusButton" destination="dmK-jw-vRm" id="SWO-WF-8fz"/>
                         <outlet property="SearchBar" destination="epy-Na-yNu" id="o2T-NQ-sbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDk-PM-jBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="635"/>
+            <point key="canvasLocation" x="4240.579710144928" y="634.23913043478262"/>
         </scene>
         <!--AddPhoneDirectoryViewController-->
         <scene sceneID="Hm5-5J-LbJ">
@@ -609,7 +632,7 @@
     </scenes>
     <resources>
         <image name="Group" width="16" height="4"/>
-        <image name="PlusButton" width="66" height="66"/>
+        <image name="WriteIcon" width="50" height="50"/>
         <image name="Xbutton" width="17" height="17"/>
         <image name="unactive" width="23" height="22"/>
     </resources>

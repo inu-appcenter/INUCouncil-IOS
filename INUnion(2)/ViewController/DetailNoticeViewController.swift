@@ -162,14 +162,14 @@ extension DetailNoticeViewController: NetworkCallback{
                     let title = item["title"] as? String ?? ""
                     let content = item["content"] as? String ?? ""
                     let department = item["department"] as? String ?? ""
-                    let timeSave = item["timeSave"] as? String ?? ""
+                    let date = item["date"] as? String ?? ""
 //                    let keyNum = item["keyNum"] as? Int ?? 0
                     let fileName = item["fileName"] as? [String] ?? [""]
 //                    let fileKey = item["fileKey"] as? Int ?? 0
-                let obj = BoardDetail.init(content_serial_id: content_serial_id, title: title, content: content, department: department, timeSave: timeSave,fileName:fileName)
+                let obj = BoardDetail.init(content_serial_id: content_serial_id, title: title, content: content, department: department, date: date,fileName:fileName)
                     temp.append(obj)
                 titleName = obj.title!
-                titleTime = obj.timeSave!
+                titleTime = obj.date!
                 imageCount = (obj.fileName?.count)!
                 
                 detailBoard = obj
