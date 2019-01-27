@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class AddCalendarViewController: UIViewController,UITextViewDelegate {
     
-     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var model : NetworkModel?
     var uploadResult: AnsBoolResult?
     
@@ -18,18 +19,23 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var InputTextLabel: UILabel!
     
     @IBOutlet weak var MaximulLabel: UILabel!
+    
     @IBAction func CompleteButtonClicked(_ sender: Any)
     {
         if ScheduleId == 0 {
-    model?.upLoadCalendar(scheduleTitle: TitleText.text!, startTime: StartText.text!, position: LocateText.text!, memo: MemoTextView.text!, department: (self.appDelegate.department)!, endTime: EndText.text!, startDate: StartText.text!, endDate: EndText.text!)
+          model?.upLoadCalendar(scheduleTitle: TitleText.text!, startTime: StartTime, position: LocateText.text!, memo: MemoTextView.text!, department: (self.appDelegate.department)!, endTime: EndTime, startDate: StartDate, endDate: EndDate)
+          
         }
-        self.dismiss(animated: true, completion: nil)
+        
+        
+        
     }
     
     
     @IBAction func XbuttnClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBOutlet weak var CompleteButton: UIButton!
     
     @IBOutlet weak var TitleText: UITextField!
@@ -51,7 +57,7 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        model = NetworkModel(self)
         InputTextLabel.text = "0"
         MemoTextView.text = "내용을 적어주세요"
         MemoTextView.textColor = UIColor.lightGray
@@ -67,6 +73,16 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddCalendarViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         StartText.inputView = datePicker
+  
+        
+        var EndTime: String = ""
+        var Locate: String = ""
+        var Memo: String = ""
+        var StartDate: String = ""
+        var EndDate: String = ""
+        var ScheduleId: Int = 0
+        
+        
     }
     
     //배경 탭하면 입력 종료되는 함수
@@ -107,16 +123,44 @@ class AddCalendarViewController: UIViewController,UITextViewDelegate {
         let dateFormatter = DateFormatter()
         let timeFormatter = DateFormatter()
         
-        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.dateFormat = "HH:mm:00"
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if(StartText.isEditing){
-            StartText.text = dateFormatter.string(from: datePicker.date)
+            
+            StartText.text = "\(dateFormatter.string(from: datePicker.date)) \(timeFormatter.string(from: datePicker.date))"
+            StartDate = dateFormatter.string(from: datePicker.date)
+            StartTime = timeFormatter.string(from: datePicker.date)
         }
         else
         {
-            EndText.text =  dateFormatter.string(from: datePicker.date)
+            EndText.text = "\(dateFormatter.string(from: datePicker.date)) \(timeFormatter.string(from: datePicker.date))"
+            EndDate = dateFormatter.string(from: datePicker.date)
+            EndTime = timeFormatter.string(from: datePicker.date)
         }
     }
+}
+
+
+extension AddCalendarViewController:NetworkCallback{
+    func networkSuc(resultdata: Any, code: String) {
+        if code == "CalendarSaveSuccess"{
+            print(resultdata)
+            if let item = resultdata as? NSDictionary {
+                let ans = item["ans"] as? Bool ?? false
+                let obj = AnsBoolResult.init(ans: ans)
+                self.uploadResult = obj
+                self.dismiss(animated: true, completion: nil)
+
+            }
+        }
+    }
+    func networkFail(code: String) {
+        if code == "DirectorySaveFail"{
+            print("실패했습니다.")
+        }
+    }
+    
+    
 }
 
 

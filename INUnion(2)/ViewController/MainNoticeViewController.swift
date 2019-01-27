@@ -13,7 +13,6 @@ import Kingfisher
 
 class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    
     @IBOutlet weak var BoardSearchBar: UISearchBar!
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var MajorLabel: UILabel!
@@ -38,6 +37,7 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         model = NetworkModel(self)
         boardList.removeAll()
         model?.DirectoryList(department: self.appDelegate.department!)
+       
         MajorLabel.text! = self.appDelegate.department!
         self.CollectionView.delegate = self
         self.CollectionView.dataSource = self
@@ -101,11 +101,6 @@ class MainNoticeViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoticeCollectionViewCell", for: indexPath) as! NoticeCollectionViewCell
 
-      
-        
-        
-        
-        
        cell.TitleLabel.text! = boardList[indexPath.row].title!
      // cell.TimeLabel.text! = boardList[indexPath.row].date!
       

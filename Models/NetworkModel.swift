@@ -280,7 +280,7 @@ private let serverURL = "http://117.16.231.66:7001"
  }
 
     //    캘린더 통신
-    func calendarList(department: String){
+    func CalendarList(department: String){
         let param = ["department": department]
         let header = ["Content-Type" : "application/x-www-form-urlencoded"]
         
