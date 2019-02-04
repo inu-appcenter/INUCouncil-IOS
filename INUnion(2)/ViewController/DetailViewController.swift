@@ -6,11 +6,13 @@
 //  Copyright © 2018년 이형주. All rights reserved.
 //
 
-
 import UIKit
 
 class DetailViewController: UIViewController
 {
+    
+     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var getTitle = ""
     var getStartTime = ""
     var getEndTime = ""
@@ -22,7 +24,7 @@ class DetailViewController: UIViewController
     @IBOutlet weak var MajorLabel: UILabel!
     
     @IBOutlet weak var CardView: UIView!
-    
+ 
     @IBAction func RightButtonClicked(_ sender: Any) {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "수정하기", style: .default, handler: self.okHandler))
@@ -34,11 +36,7 @@ class DetailViewController: UIViewController
     func okHandler(alert: UIAlertAction!){
         self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
-  
     
-    
-    
-  
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var StartTimeText: UILabel!
     @IBOutlet weak var EndTimeText: UILabel!
@@ -48,18 +46,17 @@ class DetailViewController: UIViewController
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        CardView.layer.cornerRadius = 10
+        self.title = "달력 상세"
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(red: 59/255, green: 91/255, blue: 219/255, alpha: 1)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
+ 
+        CardView.layer.cornerRadius = 10
         titleText.text! = getTitle
         StartTimeText.text! = getStartTime
         EndTimeText.text! = getEndTime
         whereText.text! = getlocation
         textView.text! = getcontents
-        
+        MajorLabel.text = self.appDelegate.department
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -75,15 +72,7 @@ class DetailViewController: UIViewController
         textView.backgroundColor = UIColor.white
     }
     
-    
-   class CustomNavController: UINavigationController {
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationBar.shadowImage = UIImage()
-            
-        }
-    }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -37,7 +37,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "달력"
+     
         model = NetworkModel(self)
         CalendarList.removeAll()
         SCalendarList.removeAll()
@@ -72,11 +72,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     //선택한 테이블 뷰 상세보기
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-            /*dvc.getTitle = titlelabel[indexPath.row]
-            dvc.getStartTime = StartTime[indexPath.row]
-            dvc.getEndTime = EndTime[indexPath.row]
-            dvc.getcontents = contents[indexPath.row]
-            dvc.getlocation = location[indexPath.row]*/
+            dvc.getTitle = SCalendarList[indexPath.row].scheduleTitle!
+            dvc.getStartTime = SCalendarList[indexPath.row].startTime!
+            dvc.getEndTime = SCalendarList[indexPath.row].endTime!
+            dvc.getcontents = SCalendarList[indexPath.row].memo!
+            dvc.getlocation = SCalendarList[indexPath.row].position!
             self.navigationController?.show(dvc, sender: nil)
         }
         
@@ -86,31 +86,22 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete)
         {
-          /*  StartTime.remove(at: indexPath.row)
-            titlelabel.remove(at: indexPath.row)
-            contents.remove(at: indexPath.row)
-            location.remove(at: indexPath.row)
-            tableView.reloadData()*/
+            self.model?.deleteCalendar(scheduleId: SCalendarList[indexPath.row].scheduleId!)
+                tableView.reloadData()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "달력"
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         model = NetworkModel(self)
+        model?.CalendarList(department: self.appDelegate.department!)
+        CalendarList.removeAll()
         SCalendarList.removeAll()
-         model?.CalendarList(department: self.appDelegate.department!)
-    
     }
     
-    
-    
-    
-    // 이벤트 점
-    /*  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-     return 1
-     }*/
+
     
     func calendarCurrentMonthDidChange(_ calendar: FSCalendar) {
         Label.text = "\(calendar.year(of: calendar.currentPage))년 \(calendar.month(of: calendar.currentPage))월"
@@ -160,6 +151,10 @@ extension CalendarViewController: NetworkCallback{
             
             self.CalendarList = temp
             
+        }
+        else if code == "DirectoryDeleteSuccess"{
+            print(resultdata)
+            self.viewDidLoad()
         }
     }
     
