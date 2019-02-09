@@ -335,9 +335,8 @@ private let serverURL = "http://117.16.231.66:7001"
     //  캘린더 삭제
     func deleteCalendar(scheduleId: Int){
         let param = ["scheduleId":scheduleId]
-        
         let header = ["Content-Type" : "application/x-www-form-urlencoded"]
- 
+        
         Alamofire.request("\(serverURL)/calendarDelete/", method: .post, parameters: param, headers: header).responseJSON { response in
             switch response.result{
             case .success(let item):
