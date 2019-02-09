@@ -2,12 +2,17 @@
 import UIKit
 import FSCalendar
 
+struct CellData {
+    let image : UIImage?
+    let message : String?
+    let time : String?
+    let title : String?
+}
 
 class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, FSCalendarDelegate,FSCalendarDataSource {
  
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var model : NetworkModel?
-   
     var CalendarList:[CalendarResult] = []{
         didSet{
             if self.CalendarTableView != nil{
@@ -39,7 +44,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
         
         model?.CalendarList(department: self.appDelegate.department!)
    
-        
         CalendarTableView.delegate = self
         CalendarTableView.dataSource = self
         calendar.dataSource = self
@@ -61,6 +65,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
         cell.TimeLabel.text! = SCalendarList[indexPath.row].startTime!
         cell.TitleLabel.text! = SCalendarList[indexPath.row].scheduleTitle!
         cell.ContentsLabel.text! = SCalendarList[indexPath.row].memo!
+        
         return cell
     }
     
@@ -81,10 +86,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete)
         {
-          
             self.model?.deleteCalendar(scheduleId: SCalendarList[indexPath.row].scheduleId!)
-            
-            tableView.reloadData()
+            print(SCalendarList[indexPath.row].scheduleId!)
+                SCalendarList.removeAll()
+                model?.CalendarList(department: self.appDelegate.department!)
+                tableView.reloadData()
         }
     }
     
@@ -117,8 +123,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate,UITableViewD
             let calDate = formatter.string(from: date)
             if itemDate == calDate{
                 SCalendarList.append(item)
-            
             }
+            
         }
     }
     
@@ -145,9 +151,11 @@ extension CalendarViewController: NetworkCallback{
                     temp.append(obj)
                 }
             }
+            
             self.CalendarList = temp
+            
         }
-        else if code == "CalendarDeleteSuccess"{
+        else if code == "DirectoryDeleteSuccess"{
             print(resultdata)
             self.viewDidLoad()
         }
